@@ -1,0 +1,41 @@
+/**
+ * Centers its child vertically in the viewport.
+ * Allows for a child above and/or below the principal element;
+ * these will be aligned to the top and/or bottom.
+ * 
+ * Use cases: <dialog> elements and other modals, full-page blog
+ * titles, etc.
+ */
+
+@mixin \@v-centerer() {
+	--height : 100vh;
+	--padding: 1rem;
+	--width  : 100vw;
+
+	// Structural settings
+	display        : flex;
+	flex-direction : column;
+	justify-content: center;
+
+	// Adjustable settings
+	max-width : var(--width);
+	min-height: var(--height);
+	padding   : var(--padding);
+
+	&__center {
+		margin-bottom: auto;
+		margin-top   : auto;
+	}
+
+	&> :first-child:not(&__center) {
+		margin-top: 0;
+	}
+
+	&> :last-child:not(&__center) {
+		margin-bottom: 0;
+	}
+}
+
+.\@v-centerer {
+	@include \@v-centerer();
+}

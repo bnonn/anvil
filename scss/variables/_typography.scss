@@ -1,0 +1,40 @@
+@function beats($rhythm) {
+	@return $rhythm * #{$leading}rem;
+}
+
+:root {
+
+	// Sizes & rhythm
+
+	$fs_head   : 2rem;
+	$fs_subhead: 1.5rem;
+	$fs_running: 1rem;
+	$fs_caption: .75rem;
+	$leading   : 1.5; // universal line-height and the basis of our vertical rhythm
+	--leading  : 1.5;
+
+	$measure : 72ch;
+	--measure: 72ch;
+
+	--col_minwidth: beats(10);
+	--gap         : beats(1);
+	--gutter      : beats(.5);
+
+	// Font-faces
+
+	--ff_head: "Chivo",
+		"Helvetica Neue",
+		Helvetica,
+		Arial,
+		sans-serif;
+
+	--ff_running: "IBM Plex Serif",
+		Georgia,
+		serif;
+
+	--ff_alt: "IBM Plex Sans",
+		"Helvetica Neue",
+		Helvetica,
+		Arial,
+		sans-serif;
+}

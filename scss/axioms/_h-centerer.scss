@@ -1,0 +1,29 @@
+/**
+ * Centers its children horizontally in the viewport.
+ * 
+ * Use cases: pretty much anything.
+ */
+
+@mixin \@h-centerer() {
+	--height : 100vh;
+	--padding: 1rem;
+	--width  : 100vw;
+
+	// Structural settings
+	display       : flex;
+	flex-direction: column;
+
+	// Adjustable settings
+	max-width : var(--width);
+	min-height: var(--height);
+	padding   : var(--padding);
+
+	&>* {
+		margin-left : auto;
+		margin-right: auto;
+	}
+}
+
+.\@h-centerer {
+	@include \@h-centerer();
+}
