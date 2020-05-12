@@ -1,0 +1,19 @@
+/**
+ * Used to establish sane baselines for headings.
+ */
+
+@mixin \+heading() {
+	@include \+textblock();
+	font-family: var(--ff-heading);
+	line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.\+heading {
+	@include \+heading();
+}

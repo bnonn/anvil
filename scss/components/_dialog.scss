@@ -1,0 +1,63 @@
+dialog {
+	background   : #fff;
+	border       : 2px solid WindowFrame;
+	border-radius: 3px;
+	box-shadow   : 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 7rem rgba(0, 0, 0, 0.3);
+	display      : block;
+	left         : 50%;
+	margin       : 0;
+	max-height   : 100vh;
+	max-width    : 100vw;
+	padding      : 0 1rem 1rem;
+	position     : fixed;
+	top          : 50%;
+	transform    : translate(-50%, -50%);
+
+	@media all and (min-width: 52rem) {
+		padding: 0 2rem 2rem;
+	}
+
+	@media all and (max-width: 32rem) {
+		overflow: scroll;
+	}
+
+	&:not([open]) {
+		display: none;
+	}
+
+	&::backdrop,
+	&+.backdrop {
+		background : rgba(255, 255, 255, 0.35);
+		transition : background 0.25s;
+		will-change: background;
+	}
+
+	.dialog\:close {
+		background : transparent;
+		border     : 0;
+		color      : #444;
+		cursor     : pointer;
+		height     : 3rem;
+		line-height: 3.4rem; // not quite sure why
+		overflow   : hidden;
+		position   : absolute;
+		right      : 0;
+		top        : 0;
+		width      : 3rem;
+
+		&:hover {
+			color     : black;
+			transform : scale(1.1);
+			transition: all 0.2s;
+		}
+
+		&:focus {
+			transform : scale(0.3);
+			transition: transform 0.5s;
+		}
+
+		i {
+			font-size: 1.5rem;
+		}
+	}
+}

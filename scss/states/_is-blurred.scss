@@ -1,0 +1,9 @@
+/**
+ * Blurs out an element. Useful for e.g., "dimming" the entire
+ * `main` element when a dialog pops over it.
+ */
+
+.is-blurred,
+.js\\is-blurred {
+	filter: blur(6px);
+}

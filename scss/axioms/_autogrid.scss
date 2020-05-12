@@ -1,9 +1,0 @@
-@mixin Layouts\\autogrid() {
-	display              : grid;
-	grid-gap             : var(--gap, 0);
-	grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr)); // auto add new cols
-}
-
-.L\\autogrid {
-	@include Layouts\\autogrid();
-}

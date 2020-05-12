@@ -1,0 +1,9 @@
+@mixin \@autogrid() {
+	display              : grid;
+	grid-gap             : var(--gap, 0);
+	grid-template-columns: repeat(auto-fit, minmax(var(--stretch-min), 1fr)); // auto add new cols
+}
+
+.\@autogrid {
+	@include \@autogrid();
+}

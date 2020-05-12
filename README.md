@@ -42,7 +42,7 @@ Because the axiomatic system relies on layout primitives and a clear view of the
  - `+` for components: concrete, functional implementations that rely on the axioms; e.g. `.+masthead`
  - `!` for utilities: helper classes that make single-use overrides at the implementation level; e.g. `.!text-align:center`
  - `[is|has]-` for states; e.g. `.is-active`
- - `js-` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.js-hidden`
+ - `js\` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.js\is-active`
 
 Axioms are defined using mixins that can then be included in components. This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
 ```

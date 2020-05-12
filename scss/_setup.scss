@@ -1,0 +1,149 @@
+/**
+ * Set up the page and fix any cross-browser weirdness
+ */
+
+/**
+ * Page setup
+ */
+
+:root {
+	color      : var(--c-running);
+	font-family: var(--ff-running);
+	font-size  : 20px; // fallback
+	font-size  : var(--fs-running);
+	line-height: var(--leading);
+	min-height : 0vw; // Safari resize fix
+
+	@media screen and (min-width:80rem) {
+		font-size: 1.25rem;
+	}
+}
+
+/**
+ * Change the cursor on busy elements in all browsers.
+ */
+
+[aria-busy="true"] {
+	cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers.
+ */
+
+[aria-controls] {
+	cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers.
+ */
+
+[aria-disabled="true"],
+[disabled] {
+	cursor: not-allowed;
+}
+
+/*
+ * Remove the tapping delay on clickable elements in all browsers.
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+	touch-action: manipulation;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size  : 100%;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Chrome, Safari & Edge don't get this right
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+	display: block;
+}
+
+iframe {
+	border-style: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+	display: list-item;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+	font-size     : 75%;
+	line-height   : 0;
+	position      : relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+	color  : inherit;
+	opacity: 0.54;
+}

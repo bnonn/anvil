@@ -1,0 +1,11 @@
+/**
+ * Used to set basic styles for running text.
+ */
+
+@mixin \+running() {
+	@include \+textblock();
+}
+
+.\+running {
+	@include \+running();
+}

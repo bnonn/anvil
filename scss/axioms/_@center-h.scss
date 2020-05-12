@@ -4,8 +4,8 @@
  * Use cases: pretty much anything.
  */
 
-@mixin \@h-centerer() {
-	--height : 100vh;
+@mixin \@center-h() {
+	--height : autofit;
 	--padding: 1rem;
 	--width  : 100vw;
 
@@ -24,6 +24,6 @@
 	}
 }
 
-.\@h-centerer {
-	@include \@h-centerer();
+.\@center-h {
+	@include \@center-h();
 }

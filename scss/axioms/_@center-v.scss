@@ -7,7 +7,7 @@
  * titles, etc.
  */
 
-@mixin \@v-centerer() {
+@mixin \@center-v() {
 	--height : 100vh;
 	--padding: 1rem;
 	--width  : 100vw;
@@ -22,20 +22,20 @@
 	min-height: var(--height);
 	padding   : var(--padding);
 
-	&__center {
+	&\\center {
 		margin-bottom: auto;
 		margin-top   : auto;
 	}
 
-	&> :first-child:not(&__center) {
+	&> :first-child:not(&\\center) {
 		margin-top: 0;
 	}
 
-	&> :last-child:not(&__center) {
+	&> :last-child:not(&\\center) {
 		margin-bottom: 0;
 	}
 }
 
-.\@v-centerer {
-	@include \@v-centerer();
+.\@center-v {
+	@include \@center-v();
 }
