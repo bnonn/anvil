@@ -38,13 +38,14 @@ In order to properly implement the principles of SOLID, Semantic Anvil is based 
 
 Because the axiomatic system relies on layout primitives and a clear view of the cascade, class namespacing is extremely helpful. We don't need anything as extensive as https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/, but we will take the general idea and use symbols to namespace our major class types:
 
- - `@` for layout axioms: abstract, implementation-agnostic structural objects; e.g. `.@stack`
- - `+` for components: concrete, functional implementations that rely on the axioms; e.g. `.+masthead`
+ - `@` for layout primitives: abstract, implementation-agnostic structures; e.g. `.@stack`
+  - `+` for objects: concrete, functional implementations or compositions of the primitives; e.g. `.+masthead`
+  - `&` for primitive- or object-specific variations; e.g., `<div class="@box .&reversed">` to invert the colors; essentially a way to build in booleans
  - `!` for utilities: helper classes that make single-use overrides at the implementation level; e.g. `.!text-align:center`
  - `[is|has]-` for states; e.g. `.is-active`
  - `js\` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.js\is-active`
 
-Axioms are defined using mixins that can then be included in components. This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
+Primitives are defined using mixins that can then be included in objects. This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
 ```
 <dialog class="@cover">
 	<ul class="@stack fa-ul">
@@ -64,9 +65,26 @@ ul {
 	...
 }
 ```
-Given our implementation of SOLID, the BEM naming convention, while much-loved, is at best a misguided misnomer. There is no block, then element, then modifier. Axioms do not have sub-elements, and components have variants before the component variant, and the component elements. If anything, this is more like BME than BEM. Subsequently, we are ditching BEM to avoid confusion and using a kind of namespace notation instead:
+Given our implementation of SOLID, the BEM naming convention, while much-loved, is at best a misguided misnomer. There is no block, then element, then modifier. Modifiers should be variants, prefixed with `&`. Blocks should be primitives or objects, and elements should be _other_ primitives or objects. In other words, composition is the name of the game rather than the creation of complex components at the CSS level. Primitives and objects are already namespaced to avoid runtime conflicts, so what we want beneath that level is a standard nomenclature for a minimal set of possible variants or sub-elements.
+
+For example, we will assume that any element that can reasonably take them will have variants like:
+
+ - `.&reversed` for a light-on-dark color scheme
+ - `.&tight` for a condensed version of an element without the usual `--gutter`
+
+In the same way, we will use consistent CSS custom values to ensure that key parts of elements can be easily modified:
+
+ - `--gutter` for whatever spacing is logical for an element (horizontal, vertical, interior, exterior; this should be easily inferred from the element's nature)
+ - `--border` for border-color and width
+ - `--color` for text color
+ - `--ff` for font-face (which in turn takes `--ff-running`, `--ff-alt` etc)
+ - `--bg` for background-color (which in turn takes `--c-house`, `--c-bg` etc)
+
+This doesn't mean there is never any need for a `block__element`-style naming convention; obviously plenty of objects get complex enough to count as full components, and will need some kind of sane naming convention. However, to avoid confusion given the discrepancies between BEM assumptions and Anvil's, we will use a namespacing-style convention instead of the classic double-underscore:
+
 ```
-<ul class="+feature-list features\full-descriptions">
+<ul class="+feature-list &full-descriptions">
+	<li class="+feature-list\feature-item">
 	...
 </ul>
 ```
