@@ -47,7 +47,7 @@ Because the axiomatic system relies on layout primitives and a clear view of the
  - `[is|has]-` for states; e.g. `.is-active`
  - `js\` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.js\is-active`
 
-Primitives are defined using mixins that can then be included in objects. (We are not using sass extends, for reasons outlined e.g. [here]{https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/}.) This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
+Primitives are defined using mixins that can then be included in objects. (We are not using sass extends, for reasons outlined e.g. [here](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/).) This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
 ```
 <dialog class="@cover">
 	<ul class="@stack fa-ul">
