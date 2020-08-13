@@ -24,7 +24,7 @@ The basic idea of this is that a child class and parent class should be function
 
 This is particularly important given the cascading nature of CSS. Changing one class should not affect an unrelated class. Declarations should be limited to their proper domains, so that editing or adding classes later doesn't produce weird and unforeseen results.
 
-A classic example of this is finding extra spaces between elements because margins and padding are being unexpectedly added together from classes that the developer didn't anticipate being adjacent. It should not be necessary for every combination of class adjacency to be hard-coded, or even for hacks like `&:last-child { margin-bottom: 0; } to be used.
+A classic example of this is finding extra spaces between elements because margins and padding are being unexpectedly added together from classes that the developer didn't anticipate being adjacent. It should not be necessary for every combination of class adjacency to be hard-coded, or even for hacks like `&:last-child { margin-bottom: 0; }` to be used.
 
 ### 5. Dependency inversion
 
@@ -32,9 +32,11 @@ We should never depend on anything concrete; only on abstractions. This is obvio
 
 The functional outworking of this is that Semantic Anvil's classes are almost entirely flat in their specificity, except that the highest-level components have lower specificity. This also means that we prefer negative prescriptions to positive ones: exception-based changes to universal rules (using .e.g. `:not()`), tend to be better than hard-coded positive declarations for every conceivable situation.
 
-## 2. Axioms
+## 2. Axiomatic & algorithmic
 
-In order to properly implement the principles of SOLID, Semantic Anvil is based on an axiomatic and algorithmic style architecture. This means we're starting with monad-like style algorithms, rather than manually-defined per-component definitions. This is inspired by https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ and https://every-layout.dev. The idea is simple, but deep: generate a limited number of discrete and very low-specificity classes for creating any layout, before considering any component-level prescriptions. Then, only when necessary, we build exceptions to these primitives at a higher specificity. Another way to think of this is as adding some imperative qualities to CSS, rather than relying on pure declaration.
+In order to properly implement the principles of SOLID, Semantic Anvil is based on an axiomatic and algorithmic style architecture. This means we're starting with monad-like style algorithms, rather than manually-defined per-component definitions. This is inspired by https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ and https://every-layout.dev. The idea is simple, but deep: generate a limited number of discrete and very low-specificity classes for creating any layout, before considering any higher-level prescriptions. Then, only when necessary, we build exceptions to these primitives at a higher specificity.
+
+Another way to think of this is as adding some imperative qualities to CSS, rather than relying on pure declaration.
 
 Because the axiomatic system relies on layout primitives and a clear view of the cascade, class namespacing is extremely helpful. We don't need anything as extensive as https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/, but we will take the general idea and use symbols to namespace our major class types:
 
@@ -45,7 +47,7 @@ Because the axiomatic system relies on layout primitives and a clear view of the
  - `[is|has]-` for states; e.g. `.is-active`
  - `js\` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.js\is-active`
 
-Primitives are defined using mixins that can then be included in objects. This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
+Primitives are defined using mixins that can then be included in objects. (We are not using sass extends, for reasons outlined e.g. [here]{https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/}.) This means that at the implementation level, it isn't necessary to manually declare every element's structural type. E.g., we do _not_ need to do this:
 ```
 <dialog class="@cover">
 	<ul class="@stack fa-ul">
