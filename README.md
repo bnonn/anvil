@@ -71,6 +71,7 @@ Given our implementation of SOLID, the BEM naming convention, while much-loved, 
 
 For example, we will assume that any element that can reasonably take them will have variants like:
 
+ - `.&align-right` for fitting elements to the right margin
  - `.&reversed` for a light-on-dark color scheme
  - `.&tight` for a condensed version of an element without the usual `--gutter`
 
