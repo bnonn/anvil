@@ -91,3 +91,15 @@ This doesn't mean there is never any need for a `block__element`-style naming co
 	...
 </ul>
 ```
+
+We can also avoid most of this kind of space-wasting by simply using logical generic classnames. For this we will prefix them with an underscore to emphasize that they not standalone classes, but only work as "subsets" of another defined class:
+
+```
+<article class="+review">
+	<i class="_avatar fas fa-user-circle"></i>
+	<ul>
+		<li class="_author">John Doe</li>
+		...
+	</ul>
+</article>
+```
