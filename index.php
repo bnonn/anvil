@@ -45,8 +45,9 @@
 		<h2>Customer Generation Field Manual</h2>
 	</header>
 
-	<main class="@center-v\center @center-h">
+	<main class="@center-h">
 		<article>
+			<h1>No more Rube Goldberg marketing machines</h1>
 			<p class="+lede">The marketing system of every business is different, just as the engine of every car is different. Yet every engine is based on a universal plan: a plan for turning fuel into torque.</p>
 
 			<p><strong>In the same way, every marketing system is based on a universal plan for turning traffic into customers.</strong></p>
@@ -63,7 +64,6 @@
 			New Zealand<br />
 			<a href="mailto:bnonn@informationhighwayman.com">bnonn@informationhighwayman.com</a></p>
 	</footer>
-
 </body>
 
 </html>
