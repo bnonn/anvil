@@ -1,0 +1,8 @@
+@mixin strong() {
+	--fw: var(--fw-bold);
+}
+
+strong,
+b {
+	@include strong();
+}

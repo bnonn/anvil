@@ -1,0 +1,11 @@
+/**
+ * Creates an "old lens" effect.
+ */
+
+@mixin chromatic-aberration($box_magnitude: .1rem, $text_magnitude: .1rem) {
+
+	box-shadow: -#{$box_magnitude} -#{$box_magnitude} .02rem transparentize(dodgerblue, .6),
+	$box_magnitude $box_magnitude .02rem transparentize(orangered, .6);
+	text-shadow: -#{$text_magnitude} -#{$text_magnitude} .02rem transparentize(dodgerblue, .6),
+	#{$text_magnitude} #{$text_magnitude} .02rem transparentize(orangered, .6);
+}

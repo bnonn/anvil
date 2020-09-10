@@ -1,0 +1,25 @@
+/**
+ * Stick an element in the middle of the screen, out of the
+ * normal flow, above everything else.
+ *
+ * Used on <dialog> elements and so forth.
+ */
+
+@mixin overlay() {
+	--space-h: calc(var(--leading) * 1rem);
+	--space-v: var(--space-h);
+
+	display   : block;
+	left      : 50%;
+	margin    : 0;
+	max-height: 100vh;
+	max-width : 100vw;
+	padding   : var(--space-v) var(--space-h);
+	position  : fixed;
+	top       : 50%;
+	transform : translate(-50%, -50%);
+}
+
+.\@overlay {
+	@include overlay();
+}

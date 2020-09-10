@@ -1,6 +1,8 @@
-@import "variables/index";
-@import "setup";
-@import "axioms/index";
+@import "-setup/index";
+@import "fx/index";
+@import "layout/index";
+@import "objects/index";
+@import "templates/index";
 @import "utilities/index";
-@import "components/index";
 @import "states/index";
+@import "vendor/index";

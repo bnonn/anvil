@@ -1,0 +1,62 @@
+/**
+ * Anything that should look like a button. Extended in _button.scss.
+ */
+
+@mixin button() {
+	background : var(--c-alert);
+	border     : var(--border-medium) solid var(--c-bg);
+	color      : var(--c-running--reversed);
+	cursor     : pointer;
+	font-family: var(--ff-sans);
+	font-weight: var(--fw-bold);
+	padding    : beats(.5) beats(1);
+	position   : relative;
+	transition : all .2s;
+
+	&::after {
+		border    : var(--border-medium) solid var(--c-bg);
+		bottom    : calc(var(--border-large)*-1);
+		content   : '';
+		display   : block;
+		left      : calc(var(--border-large)*-1);
+		position  : absolute;
+		right     : calc(var(--border-large)*-1);
+		top       : calc(var(--border-large)*-1);
+		transition: all .2s;
+	}
+
+	&:hover {
+		border-color: var(--c-bg);
+		transition  : all .2s;
+
+		&::after {
+			border-color: var(--c-alert);
+			transition  : all .2s;
+		}
+	}
+
+	&:focus {
+		background-color: var(--c-alert--dark);
+		border-color    : var(--c-bg);
+		transition      : all .2s;
+
+		&::after {
+			border-color: var(--c-bg);
+			border-width: var(--border-small);
+			bottom      : var(--border-medium);
+			left        : var(--border-medium);
+			right       : var(--border-medium);
+			top         : var(--border-medium);
+			transition  : all .2s;
+		}
+	}
+
+	i.fas {
+		display: inline;
+	}
+}
+
+.\%button {
+	@include focusable();
+	@include button();
+}

@@ -1,0 +1,24 @@
+.\!size {
+	&\:border {
+		&\:small {
+			border-style: solid;
+			border-width: var(--border-small);
+		}
+
+		&\:medium {
+			border-style: solid;
+			border-width: var(--border-medium);
+		}
+
+		&\:large {
+			border-style: solid;
+			border-width: var(--border-large);
+		}
+	}
+
+	&\!width {
+		&\:measure {
+			max-width: var(--measure) !important;
+		}
+	}
+}

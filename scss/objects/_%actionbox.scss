@@ -1,0 +1,16 @@
+/**
+ * Creates form-like boxes for visually emphasizing an important
+ * place of interaction, such as calls to action.
+ */
+
+@mixin actionbox() {
+	--background: var(--c-neutral--lighter);
+	--border    : var(--border-large) solid var(--c-neutral--light);
+
+	background: var(--background);
+	border    : var(--border);
+}
+
+.\%actionbox {
+	@include actionbox();
+}

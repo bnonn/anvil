@@ -1,0 +1,58 @@
+/**
+ * Stacks elements one on top of another with sane margins and no
+ * pesky extra vertical space.
+ *
+ * Use cases: running text, vertical menus, forms etc.
+ */
+
+@mixin stack() {
+	--space: var(--beat);
+
+	display        : flex;
+	flex-direction : column;
+	justify-content: flex-start;
+
+	&>* {
+		margin-bottom: 0;
+		margin-top   : 0;
+	}
+
+	&>*+* {
+		margin-top: var(--space);
+	}
+
+	&:only-child {
+		height: 100%;
+	}
+
+	&.\&tight,
+	&.\&tight+* {
+		--space: 0;
+	}
+
+	/**
+	 * Position some elements at the top, and others at the bottom, after the
+	 * nth element.
+	 */
+
+	&.\&split-after-1> :nth-child(1) {
+		margin-bottom: auto;
+	}
+
+	&.\&split-after-2> :nth-child(2) {
+		margin-bottom: auto;
+	}
+
+	&.\&split-after-3> :nth-child(3) {
+		margin-bottom: auto;
+	}
+
+	&.\&sticky-bottom> :nth-last-child(2) {
+		// flex-grow    : 2; // we might need this to expand
+		margin-bottom: auto;
+	}
+}
+
+.\@stack {
+	@include stack();
+}

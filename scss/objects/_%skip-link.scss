@@ -1,0 +1,19 @@
+.\%skip-link {
+	background    : var(--c-neutral--alpha);
+	color         : var(--c-running);
+	display       : block;
+	font-size     : var(--fs-xs);
+	font-weight   : var(--fw-medium);
+	left          : var(--beat);
+	padding       : 0 var(--beat-xs);
+	position      : fixed;
+	text-transform: uppercase;
+	transform     : translateY(-100%);
+	transition    : transform .3s;
+	top           : 0;
+
+	&:focus {
+		transform: translateY(0%);
+		top      : var(--beat-s);
+	}
+}

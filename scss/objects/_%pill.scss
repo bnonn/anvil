@@ -1,0 +1,14 @@
+@mixin pill() {
+	--bg   : var(--c-neutral--light);
+	--color: var(--c-neutral--dark);
+
+	background   : var(--bg);
+	border-radius: var(--border-medium);
+	color        : var(--color);
+	padding-left : var(--border-large);
+	padding-right: var(--border-large);
+}
+
+.\%pill {
+	@include pill();
+}

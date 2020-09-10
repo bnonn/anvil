@@ -1,0 +1,40 @@
+/**
+ * Used to typeset universal running copy.
+ */
+
+@mixin running() {
+	font-family: var(--ff-running);
+
+	h1 {
+		margin-top: beats(2);
+	}
+
+	& h1+h2 {
+		margin-top: 1rem;
+	}
+
+	&>* {
+		margin-left : auto;
+		margin-right: auto;
+		max-width   : var(--measure);
+	}
+
+	a:link {
+		color: var(--c-house);
+	}
+
+	a:visited {
+		color: var(--c-neutral);
+	}
+
+	a:hover {
+		background     : var(--c-house);
+		border-radius  : beats(.1);
+		color          : var(--c-running--reversed);
+		text-decoration: none;
+	}
+}
+
+.\%running {
+	@include running();
+}

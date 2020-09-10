@@ -1,0 +1,46 @@
+dialog {
+	background   : var(--c-neutral--lighter);
+	border       : var(--border-medium) solid var(--c-neutral);
+	border-radius: var(--border-medium);
+	box-shadow   : 0 1rem 1rem rgba(0, 0, 0, 0.1),
+		0 2rem 4rem rgba(0, 0, 0, 0.3);
+	width: var(--measure);
+
+	&:not([open]) {
+		display: none;
+	}
+
+	&::backdrop,
+	&+.backdrop {
+		background : rgba(255, 255, 255, 0.35);
+		transition : background 0.25s;
+		will-change: background;
+	}
+
+	.\?close\(dialog\) {
+		background : transparent;
+		border     : 0;
+		color      : var(--c-running);
+		cursor     : pointer;
+		height     : 3rem;
+		line-height: 3.4rem; // not quite sure why
+		margin     : 0;
+		overflow   : hidden;
+		padding    : 0;
+		position   : absolute;
+		right      : 0;
+		top        : 0;
+		width      : 3rem;
+
+		&:hover {
+			color     : black;
+			transform : scale(1.1);
+			transition: all 0.2s;
+		}
+
+		i {
+			font-size : 1.5rem;
+			font-style: normal;
+		}
+	}
+}

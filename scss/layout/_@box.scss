@@ -1,0 +1,181 @@
+/**
+ * A box. With padding. That's it. It's a primitive, not an 
+ * object.
+ *
+ * Use cases: pretty much anything, but actually less than you'd
+ * think. It's handy for including on the <article> element, for
+ * instance.
+ */
+
+@mixin box() {
+	--space-above: var(--beat);
+	--space-below: var(--beat);
+	--space-left : var(--beat);
+	--space-right: var(--beat);
+
+	margin-top    : 0;
+	padding-bottom: var(--space-below);
+	padding-left  : var(--space-left);
+	padding-right : var(--space-right);
+	padding-top   : var(--space-above);
+
+	&.\&space\:above\:tight {
+		--space-above: 0;
+	}
+
+	&.\&space\:above\:xsmall {
+		--space-above: var(--beat-xs);
+	}
+
+	&.\&space\:above\:small {
+		--space-above: var(--beat-s);
+	}
+
+	&.\&space\:above\:medium {
+		--space-above: var(--beat-m);
+	}
+
+	&.\&space\:above\:large {
+		--space-above: var(--beat-l);
+	}
+
+	&.\&space\:above\:xlarge {
+		--space-above: var(--beat-xl);
+	}
+
+	&.\&space\:below\:tight {
+		--space-below: 0;
+	}
+
+	&.\&space\:below\:xsmall {
+		--space-below: var(--beat-xs);
+	}
+
+	&.\&space\:below\:small {
+		--space-below: var(--beat-s);
+	}
+
+	&.\&space\:below\:medium {
+		--space-below: var(--beat-m);
+	}
+
+	&.\&space\:below\:large {
+		--space-below: var(--beat-l);
+	}
+
+	&.\&space\:below\:xlarge {
+		--space-below: var(--beat-xl);
+	}
+
+	&.\&space\:left\:tight {
+		--space-left: 0;
+	}
+
+	&.\&space\:left\:xsmall {
+		--space-left: var(--beat-xs);
+	}
+
+	&.\&space\:left\:small {
+		--space-left: var(--beat-s);
+	}
+
+	&.\&space\:left\:medium {
+		--space-left: var(--beat-m);
+	}
+
+	&.\&space\:left\:large {
+		--space-left: var(--beat-l);
+	}
+
+	&.\&space\:left\:xlarge {
+		--space-left: var(--beat-xl);
+	}
+
+	&.\&space\:right\:tight {
+		--space-right: 0;
+	}
+
+	&.\&space\:right\:xsmall {
+		--space-right: var(--beat-xs);
+	}
+
+	&.\&space\:right\:small {
+		--space-right: var(--beat-s);
+	}
+
+	&.\&space\:right\:medium {
+		--space-right: var(--beat-m);
+	}
+
+	&.\&space\:right\:large {
+		--space-right: var(--beat-l);
+	}
+
+	&.\&space\:right\:xlarge {
+		--space-right: var(--beat-xl);
+	}
+
+	&.\&space\:vert\:tight {
+		--space-above: 0;
+		--space-below: 0;
+	}
+
+	&.\&space\:vert\:xsmall {
+		--space-above: var(--beat-xs);
+		--space-below: var(--beat-xs);
+	}
+
+	&.\&space\:vert\:small {
+		--space-above: var(--beat-s);
+		--space-below: var(--beat-s);
+	}
+
+	&.\&space\:vert\:medium {
+		--space-above: var(--beat-m);
+		--space-below: var(--beat-m);
+	}
+
+	&.\&space\:vert\:large {
+		--space-above: var(--beat-l);
+		--space-below: var(--beat-l);
+	}
+
+	&.\&space\:vert\:xlarge {
+		--space-above: var(--beat-xl);
+		--space-below: var(--beat-xl);
+	}
+
+	&.\&space\:horiz\:tight {
+		--space-left : 0;
+		--space-right: 0;
+	}
+
+	&.\&space\:horiz\:xsmall {
+		--space-left : var(--beat-xs);
+		--space-right: var(--beat-xs);
+	}
+
+	&.\&space\:horiz\:small {
+		--space-left : var(--beat-s);
+		--space-right: var(--beat-s);
+	}
+
+	&.\&space\:horiz\:medium {
+		--space-left : var(--beat-m);
+		--space-right: var(--beat-m);
+	}
+
+	&.\&space\:horiz\:large {
+		--space-left : var(--beat-l);
+		--space-right: var(--beat-l);
+	}
+
+	&.\&space\:horiz\:xlarge {
+		--space-left : var(--beat-xl);
+		--space-right: var(--beat-xl);
+	}
+}
+
+.\@box {
+	@include box();
+}

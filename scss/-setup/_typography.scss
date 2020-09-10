@@ -1,0 +1,64 @@
+ /**
+ * Establish rhythm.
+ * 
+ * We're using a regular "beat" of the line-height, so all spacing
+ * will be done using a multiple of the beat.
+ */
+
+ $leading: 1.5;
+
+ @function beats($rhythm) {
+ 	$beat: $rhythm * $leading;
+ 	@return #{$beat}rem;
+ }
+
+ :root {
+
+ 	// Font-faces
+
+ 	--ff-alt    : "Work Sans", sans-serif;
+ 	--ff-heading: "Work Sans", sans-serif;
+ 	--ff-icon   : "Font Awesome 5 Pro";
+ 	--ff-running: "Work Sans", sans-serif;
+ 	--ff-sans   : "Work Sans", sans-serif;
+
+ 	// Font-sizes
+
+ 	--fs-xs: .8rem;
+ 	--fs-s : .9rem;
+ 	--fs-m : 1rem;
+ 	--fs-l : 1.75rem;
+ 	--fs-xl: 2.6rem;
+
+ 	/**
+ 	 * This is the only magic number in Anvil. Go me.
+ 	 * See websemantics.uk/tools/responsive-font-calculator/
+ 	 */
+
+ 	--fs-running: calc(0.8rem + ((1vw - 0.24rem) * 0.625));
+
+ 	// Font-weights
+
+ 	--fw-light : 300;
+ 	--fw-normal: 380;
+ 	--fw-medium: 530;
+ 	--fw-bold  : 600;
+ 	--fw-heavy : 800;
+
+ 	// Spaces and widths
+
+ 	--border-medium: 3px;
+ 	--border-large : 5px;
+ 	--border-small : 2px; // if we use rems we're going to get rounding errors and it will look kak
+ 	--leading      : #{$leading};
+ 	--measure      : #{beats(30)};
+ 	--measure-min  : #{beats(10)};
+ 	--space        : 0;
+
+ 	--beat-xs: calc(var(--leading)*.25rem);
+ 	--beat-s : calc(var(--leading)*.5rem);
+ 	--beat   : calc(var(--leading)*1rem);
+ 	--beat-m : calc(var(--leading)*1rem);
+ 	--beat-l : calc(var(--leading)*2rem);
+ 	--beat-xl: calc(var(--leading)*3rem);
+ }

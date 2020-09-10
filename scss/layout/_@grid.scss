@@ -1,0 +1,17 @@
+/**
+ * Lays out direct children in a grid format.
+ *
+ * Use cases: lists of posts, feature-lists etc.
+ */
+
+@mixin grid() {
+	--space: 0;
+
+	display              : grid;
+	grid-gap             : var(--space);
+	grid-template-columns: repeat(auto-fit, minmax(var(--measure-min), 1fr)); // auto add new cols
+}
+
+.\@grid {
+	@include grid();
+}

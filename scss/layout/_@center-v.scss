@@ -1,0 +1,73 @@
+/**
+ * Centers its child vertically in the viewport.
+ * Allows for a header and/or footer above/below the principal
+ * element; these will be aligned to the top and/or bottom. If
+ * multiple elements are placed, they will be arranged with the
+ * middle element centered.
+ * 
+ * Use cases: <dialog> elements and other modals, full-page blog
+ * titles, etc.
+ */
+
+@mixin center-v() {
+	--height: 100vh;
+	--space : 1rem;
+	--width : 100vw;
+
+	/**
+	 * Structural settings
+	 */
+
+	display        : flex;
+	flex-direction : column;
+	justify-content: center;
+
+	/**
+	 * Adjustable settings
+	 */
+
+	max-width : var(--width);
+	min-height: var(--height);
+	padding   : var(--space);
+
+	/**
+	 * Align the all-important central element(s).
+	 */
+
+	&>* {
+		margin-bottom: auto;
+		margin-top   : auto;
+	}
+
+	/**
+	 * Align the top element.
+	 */
+
+	&>header,
+	&\\header {
+		margin-top: 0;
+	}
+
+	/**
+	 * Align the bottom element.
+	 */
+
+	&>footer,
+	&\\footer {
+		margin-bottom: 0;
+	}
+
+	&.\&loose>footer,
+	&.\&loose>&\\footer {
+		margin-top: beats(2)
+	}
+
+	&.\&loose>header,
+	&.\&loose>&\\header {
+		margin-bottom: beats(2)
+	}
+}
+
+.\@center-v {
+	@include center-v();
+}

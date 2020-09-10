@@ -1,0 +1,22 @@
+.\!color {
+	&\:bg {
+		&\:lighter {
+			background: var(--c-neutral--lighter) !important;
+		}
+	}
+
+	&\:border {
+		&\:bg {
+			border-color: var(--c-bg);
+		}
+
+		&\:lighter {
+			border-color: var(--c-neutral--lighter) !important;
+		}
+	}
+
+	&\:reversed {
+		background-color: var(--c-bg--reversed);
+		color           : var(--c-running--reversed);
+	}
+}

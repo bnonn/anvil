@@ -1,0 +1,8 @@
+@mixin em() {
+	--ff-recursive--slnt: "slnt"-15;
+}
+
+em,
+i {
+	@include em();
+}

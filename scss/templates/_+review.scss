@@ -1,0 +1,76 @@
+/**
+* Review elements. Selectors are organized by their order in
+* the review template.
+*/
+
+@mixin review() {
+
+	--height: auto;
+
+	padding: 0;
+
+	/**
+	 * Review image
+	 */
+
+	img {
+		height    : auto;
+		margin    : 0;
+		object-fit: cover;
+		width     : 100%
+	}
+
+	/**
+	 * Review header items
+	 */
+
+	header {
+		background : var(--c-neutral--lighter);
+		display    : flex;
+		padding    : var(--space);
+		padding-top: 0;
+
+		li {
+			font      : normal 90% var(--ff-heading);
+			list-style: none;
+			margin    : 0;
+			padding   : 0;
+		}
+
+		.__author {
+			font-weight: var(--fw-bold);
+		}
+
+		.__avatar {
+			color       : var(--c-neutral--dark);
+			font-size   : beats(2);
+			margin-right: beats(.5);
+			margin-top  : 1.4rem; // optical adjustment
+		}
+
+		.__stars {
+			color    : var(--c-neutral--dark);
+			font-size: beats(1);
+			margin   : 0;
+
+			i[class*='star'] {
+				color: var(--c-warning);
+			}
+		}
+	}
+
+	/**
+	 * Review content
+	 */
+
+	blockquote {
+		font-size       : var(--fs-xs);
+		margin-top      : 0;
+		// margin-bottom: auto;
+		padding         : var(--space);
+	}
+}
+
+.\+review {
+	@include review();
+}

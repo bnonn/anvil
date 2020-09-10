@@ -1,0 +1,91 @@
+/**
+* Turns lists-items into blocks with icons.
+*/
+
+@mixin feature-list-icon() {
+	/**
+	 * We're defining this here because it's going to be used in
+	 * different ways: either manually via a class for uls etc,
+	 * or automatically via li::before for ols.
+	 */
+
+	background   : var(--icon-bg);
+	border       : var(--border-medium) solid var(--icon-border);
+	border-radius: 50%;
+	color        : var(--icon-color);
+	font-size    : var(--icon-size);
+	font-weight  : var(--icon-weight);
+	height       : calc(var(--icon-size) * var(--icon-size-multiplier));
+	line-height  : calc(var(--icon-size) * var(--icon-size-multiplier));
+	margin-bottom: auto; // correctly fit images
+	margin-right : beats(.5);
+	min-width    : calc(var(--icon-size) * var(--icon-size-multiplier));
+	text-align   : center;
+	width        : calc(var(--icon-size) * var(--icon-size-multiplier));
+
+	&+* {
+		flex-shrink: 99; // whatever comes after the icon needs to give it space
+		margin-top : 0;
+	}
+
+	.\&short-items & {
+		--icon-size           : 1.5rem;
+		--icon-size-multiplier: 2;
+	}
+}
+
+@mixin feature-list() {
+	--icon                : "\f251";
+	--icon-bg             : var(--c-neutral--light);
+	--icon-border         : transparent;
+	--icon-color          : var(--c-running);
+	--icon-size           : 2.5rem;
+	--icon-size-multiplier: 2;
+	--icon-weight         : 300;
+
+	li {
+		display       : flex;
+		flex-direction: row;
+		font-size     : 90%;
+		list-style    : none;
+		margin-left   : 0;
+
+		.__icon {
+			@include feature-list-icon();
+		}
+
+		strong {
+			display: inline-block; // hack to fix Firefox line separation on text wrap
+		}
+	}
+
+	&.\&short-items {
+
+		li {
+			--icon-size           : 1.5rem;
+			--icon-size-multiplier: 2;
+
+			align-items   : center;
+			flex-direction: column;
+			text-align    : center;
+		}
+	}
+
+}
+
+.\+feature-list {
+	@include feature-list();
+}
+
+ol.\+feature-list {
+	counter-reset: features;
+
+	li::before {
+		@include feature-list-icon();
+
+		color            : var(--c-neutral--dark);
+		counter-increment: features;
+		content          : counter(features);
+		font-weight      : var(--fw-heavy);
+	}
+}

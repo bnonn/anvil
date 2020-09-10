@@ -1,0 +1,23 @@
+/**
+ * Initial paragraphs that should stand out more than others by
+ * being larger, having a drop-cap, or whatever.
+ */
+
+@mixin lede() {
+	--drop-cap-margin-top: .5rem;
+
+	font-weight: var(--fw-bold);
+
+	&::first-letter {
+		float      : left;
+		font-size  : 3.1rem;
+		font-weight: bold;
+		line-height: 2rem;
+		margin     : var(--drop-cap-margin-top) beats(.25) 0 0;
+		text-align : center;
+	}
+}
+
+.\%lede {
+	@include lede();
+}

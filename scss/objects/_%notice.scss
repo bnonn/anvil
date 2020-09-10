@@ -1,0 +1,49 @@
+/**
+ * Used to create callout blocks.
+ */
+
+@mixin notice() {
+	--bg          : #f1f1f1;
+	--border      : var(--border-large);
+	--border-color: #e0e0e0;
+	--color       : black;
+
+	border           : var(--border);
+	border-color     : var(--border-color);
+	border-left-width: beats(2);
+	border-radius    : .4rem;
+	border-style     : solid;
+	color            : var(--color);
+	font-family      : var(--ff-heading);
+	padding          : beats(.5);
+	position         : relative;
+
+	&\\icon {
+		font-size : beats(1);
+		left      : -#{beats(2)};
+		position  : absolute;
+		text-align: center;
+		width     : beats(2);
+	}
+
+	&.\&info {
+		--bg          : var(--c-info--bg);
+		--border-color: var(--c-info--light);
+		--color       : var(--c-info--dark);
+	}
+
+	&.\&warning {
+		--bg          : var(--c-warning--bg);
+		--border-color: var(--c-warning--light);
+		--color       : var(--c-warning--dark);
+	}
+
+	&>* {
+		font-family: inherit; // override default p, ol etc
+	}
+
+}
+
+.\%notice {
+	@include notice();
+}

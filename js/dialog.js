@@ -1,6 +1,6 @@
-var modalTriggers = document.querySelectorAll( ".dialog\\:open" ),
-	modals = document.querySelectorAll( "dialog" ),
-	blurrableEls = document.querySelectorAll( "main" );
+var modalTriggers = Array.from( document.querySelectorAll( ".\\?open\\(dialog\\)" ) ),
+	modals = Array.from( document.querySelectorAll( "dialog" ) ),
+	blurrableEls = Array.from( document.querySelectorAll( "main, body>header, body>footer" ) );
 
 function toggleBlur()
 {
@@ -14,28 +14,39 @@ function toggleBlur()
 	} );
 }
 
-modalTriggers.forEach( ( trigger ) =>
+for ( let trigger of modalTriggers )
 {
-	// Listen for clicks that should open a modal
 	trigger.addEventListener( "click", () =>
 	{
 		// Get the target modal from the href or data-target attribute
 		var target = trigger.dataset.target || trigger.getAttribute( "href" );
 		document.querySelector( target ).showModal();
 		toggleBlur();
-	} );
-} );
+	} )
+}
 
-modals.forEach( ( modal ) =>
+// modalTriggers.forEach( ( trigger ) =>
+// {
+// 	// Listen for clicks that should open a modal
+// 	trigger.addEventListener( "click", () =>
+// 	{
+// 		// Get the target modal from the href or data-target attribute
+// 		var target = trigger.dataset.target || trigger.getAttribute( "href" );
+// 		document.querySelector( target ).showModal();
+// 		toggleBlur();
+// 	} );
+// } );
+
+for ( let modal of modals )
 {
 	// Register the modal with the polyfill to set up functionality for non-compliant browsers
 	dialogPolyfill.registerDialog( modal );
 
 	// Listen for clicks on the modal's close button
 	modal
-		.querySelector( ".dialog\\:close" )
+		.querySelector( ".\\?close\\(dialog\\)" )
 		.addEventListener( "click", () => modal.close() );
 
 	// Wait for the close event, then remove background blur
 	modal.addEventListener( "close", () => toggleBlur() );
-} );
+}

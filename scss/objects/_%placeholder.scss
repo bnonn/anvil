@@ -1,0 +1,42 @@
+@mixin placeholder() {
+	--aspect-vert : 16;
+	--aspect-horiz: 9;
+	--size        : var(--beat);
+
+	--size-horiz: calc((var(--size) * var(--aspect-horiz))/10);
+	--size-vert : calc((var(--size) * var(--aspect-vert))/10);
+
+	background    : transparent;
+	border        : var(--border-small) solid var(--c-neutral--light);
+	color         : var(--c-neutral--dark);
+	display       : block;
+	font-size     : var(--fs-s);
+	font-weight   : var(--fw-medium);
+	padding       : var(--size-vert) var(--size-horiz);
+	text-align    : center;
+	text-transform: uppercase;
+
+	&.\&size\:xsmall {
+		--size: var(--beat-xs);
+	}
+
+	&.\&size\:small {
+		--size: var(--beat-s);
+	}
+
+	&.\&size\:medium {
+		--size: var(--beat-m);
+	}
+
+	&.\&size\:large {
+		--size: var(--beat-l);
+	}
+
+	&.\&size\:xlarge {
+		--size: var(--beat-xl);
+	}
+}
+
+.\%placeholder {
+	@include placeholder();
+}

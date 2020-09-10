@@ -1,0 +1,69 @@
+/**
+ * Lays out direct children as equal-width columns.
+ *
+ * Use-cases: feature-columns, horizontal lists etc.
+ */
+
+@mixin columns() {
+	--space    : 1rem;
+	--threshold: 32rem;
+
+	display  : flex;
+	flex-wrap: wrap;
+
+	*+* {
+		margin-top: 0;
+	}
+
+	&>* {
+		flex-grow : 1;
+		flex-basis: calc((var(--threshold) - 100%) * 999);
+		margin    : var(--space);
+		margin-top: 0;
+		min-width : var(--measure-min);
+	}
+
+	&.\&max-2 {
+
+		&> :nth-last-child(n+3),
+		&> :nth-last-child(n+3)~* {
+			flex-basis: 100%;
+		}
+	}
+
+	&.\&max-3 {
+
+		&> :nth-last-child(n+4),
+		&> :nth-last-child(n+4)~* {
+			flex-basis: 100%;
+		}
+	}
+
+	&.\&max-4 {
+
+		&> :nth-last-child(n+5),
+		&> :nth-last-child(n+5)~* {
+			flex-basis: 100%;
+		}
+	}
+
+	&.\&max-5 {
+
+		&> :nth-last-child(n+6),
+		&> :nth-last-child(n+6)~* {
+			flex-basis: 100%;
+		}
+	}
+
+	&.\&max-6 {
+
+		&> :nth-last-child(n+7),
+		&> :nth-last-child(n+7)~* {
+			flex-basis: 100%;
+		}
+	}
+}
+
+.\@columns {
+	@include columns();
+}

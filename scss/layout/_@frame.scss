@@ -1,0 +1,42 @@
+/**
+ * Creates a frame around an image or video to crop it at the
+ * right aspect ratio.
+ *
+ * Use cases: hero areas, product photos, etc.
+ */
+
+@mixin frame() {
+	--aspect-h: 16; // denominator for aspect ratio
+	--aspect-v: 9; // numerator for aspect ratio
+
+	@media (orientation: portrait) {
+		--aspect-h: 1;
+		--aspect-v: 1;
+	}
+
+	padding-bottom: calc(var(--aspect-h) / var(--aspect-v) * 100%);
+	position      : relative;
+
+	&>* {
+		align-items    : center;
+		bottom         : 0;
+		display        : flex;
+		justify-content: center;
+		left           : 0;
+		overflow       : hidden;
+		position       : absolute;
+		right          : 0;
+		top            : 0;
+	}
+
+	&>img,
+	&>video {
+		width     : 100%;
+		height    : 100%;
+		object-fit: cover;
+	}
+}
+
+.\@frame {
+	@include frame();
+}

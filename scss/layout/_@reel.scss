@@ -1,0 +1,128 @@
+/**
+ * Creates a horizontally-scrolling carousel.
+ *
+ * Use-cases: image scrollers, testimonial sliders, web TV/movie
+ * pickers, etc.
+ */
+
+@mixin reel() {
+	--space: 1rem;
+
+	display        : flex;
+	height         : auto;
+	overflow-x     : auto;
+	overflow-y     : hidden;
+	position       : relative;
+	scrollbar-color: var(--c-neutral--light) var(--c-neutral);
+
+	/**
+	 * Make sure the scrollbar is visible...
+	 */
+
+	&::-webkit-scrollbar {
+		height: 1rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: var(--c-neutral--light);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--c-neutral--light);
+		background-image: linear-gradient(var(--c-neutral--light) 0, var(--c-neutral--light) 0.25rem, var(--c-neutral) 0.25rem, var(--c-neutral) 0.75rem, var(--c-neutral--light) 0.75rem);
+	}
+
+	&>[rel] {
+		// Scroller buttons
+		align-items  : center;
+		background   : var(--c-neutral--light);
+		border       : var(--border-small) solid var(--c-neutral--light);
+		bottom       : 0;
+		border-radius: var(--border-small);
+		cursor       : pointer;
+		display      : flex;
+		font-size    : beats(1);
+		padding      : beats(.5);
+		position     : absolute;
+		font-family  : var(--ff-icon);
+		top          : 0;
+	}
+
+	&>[rel="next"] {
+		right: 0;
+	}
+
+	&>* {
+		@include focusable();
+
+		flex: 0 0 auto;
+	}
+
+	&>:last-child {
+		margin-right: var(--space);
+	}
+
+	&>*+* {
+		margin-left: var(--space);
+		margin-top : 0 !important; // in a context of @running
+	}
+
+	&>img {
+		flex-basis: auto;
+		height    : 100%;
+		width     : auto;
+	}
+
+	&.\&hide-clicker,
+	&.\&no-clicker {
+
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+
+	&.\&no-focus {
+		/**
+		 * This is a dummy class for accessibility.js.
+		 * 
+		 * Not every reel contains items that require focusing.
+		 * For instance, a nav reel already contains anchors, so
+		 * creating a tabindex on every list item is going to be
+		 * a real pain for accessibility, since you'll have to
+		 * hit tab twice to get to each link, instead of just
+		 * once.
+		 */
+	}
+
+	&.\&hide-scroller,
+	&.\&no-scroller {
+		scrollbar-color: transparent;
+
+		&::-webkit-scrollbar {
+			height: 0;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: transparent;
+			background-image: none;
+		}
+	}
+
+	&.is-overflowing {
+		padding-bottom: var(--space);
+
+		&.\&hide-scroller,
+		&.\&no-scroller {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.\@reel {
+	@include reel();
+}

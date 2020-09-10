@@ -1,0 +1,8 @@
+$widescreen : "min-width: 72rem";
+$smallscreen: "max-width: 32rem";
+
+@mixin breakpoint($breakpoint) {
+	@media (#{$breakpoint}) {
+		@content;
+	}
+}

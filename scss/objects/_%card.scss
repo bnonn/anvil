@@ -1,0 +1,10 @@
+@mixin card() {
+	border       : 1px solid var(--c-neutral--light);
+	border-radius: var(--border-large);
+	box-shadow   : var(--box-shadow-large);
+	max-width    : var(--measure-min) !important;
+}
+
+.\%card {
+	@include card();
+}

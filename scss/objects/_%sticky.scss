@@ -1,0 +1,14 @@
+.\%sticky {
+	position: sticky;
+	z-index : 1;
+
+	&.\&arrange {
+		&\:bottom {
+			bottom: var(--beat-s);
+		}
+
+		&\:top {
+			top: var(--beat-s);
+		}
+	}
+}

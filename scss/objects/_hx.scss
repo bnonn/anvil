@@ -1,0 +1,36 @@
+@mixin h1() {
+	font-family: var(--ff-heading);
+	font-size  : var(--fs-xl);
+	font-weight: var(--fw-normal);
+	line-height: 1.1;
+
+	strong {
+		font-weight: var(--fw-medium);
+	}
+}
+
+@mixin h2() {
+	font-size  : var(--fs-l);
+	font-weight: var(--fw-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include heading();
+}
+
+h1 {
+	@include h1();
+}
+
+h2 {
+	@include h2();
+
+	*+& {
+		margin-top: beats(2);
+	}
+}

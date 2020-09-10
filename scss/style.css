@@ -1,69 +1,131 @@
 /**
- * RHYTHM
- */
-/**
-* We're using a regular "beat" of the line-height to establish
-* our vertical rhythm, so all spacing will be done using a
-* multiple of the beat.
-*/
-/**
- * FONT-FACES
- */
-/**
- * FONT-SIZES
- */
-/**
-	 * 0.9rem(14.4px) @ 24rem(384px) increasing to 1.25rem(20px) @ 80rem(1280px)
-	 * See websemantics.uk/tools/responsive-font-calculator/
-	 * Where 1.1458=100 * font-size_Difference / viewport_Width_Difference
-	 * The base value (0.875rem) must be stated in rem to maintain accessibility.
-	 */
-/**
- * Custom properties from Sass variables
+ * Establish rhythm.
+ * 
+ * We're using a regular "beat" of the line-height, so all spacing
+ * will be done using a multiple of the beat.
  */
 :root {
-  --ff-alt: IBM Plex Sans, sans-serif;
-  --ff-heading: Work Sans, sans-serif;
-  --ff-running: iA Writer Duo S, monospace;
-  --fs-blockquote: 0.9rem;
-  --fs-fineprint: 0.8rem;
-  --fs-h1: 2rem;
-  --fs-h2: 1.5rem;
-  --fs-h3: 1.25rem;
-  --fs-running: calc(0.9rem + ((1vw - 0.24rem) * 0.625));
+  --ff-alt: "Work Sans", sans-serif;
+  --ff-heading: "Work Sans", sans-serif;
+  --ff-icon: "Font Awesome 5 Pro";
+  --ff-running: "Work Sans", sans-serif;
+  --ff-sans: "Work Sans", sans-serif;
+  --fs-xs: .8rem;
+  --fs-s: .9rem;
+  --fs-m: 1rem;
+  --fs-l: 1.75rem;
+  --fs-xl: 2.6rem;
+  /**
+ 	 * This is the only magic number in Anvil. Go me.
+ 	 * See websemantics.uk/tools/responsive-font-calculator/
+ 	 */
+  --fs-running: calc(0.8rem + ((1vw - 0.24rem) * 0.625));
+  --fw-light: 300;
+  --fw-normal: 380;
+  --fw-medium: 530;
+  --fw-bold: 600;
+  --fw-heavy: 800;
+  --border-medium: 3px;
+  --border-large: 5px;
+  --border-small: 2px;
   --leading: 1.5;
-  --measure: 72ch;
-  --stretch-min: 15rem;
-  --gutter: 0.75rem;
+  --measure: 45rem;
+  --measure-min: 15rem;
+  --space: 0;
+  --beat-xs: calc(var(--leading)*.25rem);
+  --beat-s: calc(var(--leading)*.5rem);
+  --beat: calc(var(--leading)*1rem);
+  --beat-m: calc(var(--leading)*1rem);
+  --beat-l: calc(var(--leading)*2rem);
+  --beat-xl: calc(var(--leading)*3rem);
 }
 
 :root {
   --c-alt: powderblue;
   --c-bg: white;
-  --c-house: cadetblue;
-  --c-head: var(--c-house);
-  --c-running: #222;
+  --c-bg--reversed: #333;
+  --c-house: hsl(210, 50%, 50%);
+  --c-house--dark: hsl(210, 50%, 28%);
+  --c-house--light: hsl(210, 35%, 80%);
+  --c-neutral: hsl(210, 5%, 50%);
+  --c-neutral--alpha: hsla(210, 5%, 50%, 50%);
+  --c-neutral--dark: hsl(210, 5%, 28%);
+  --c-neutral--light: hsl(210, 5%, 85%);
+  --c-neutral--lighter: hsl(210, 5%, 92%);
+  --c-running: #333;
+  --c-running--reversed: var(--c-bg);
+  --c-info: hsl(194, 70%, 40%);
+  --c-info--bg: hsl(194, 100%, 98%);
+  --c-info--dark: hsl(194, 100%, 27%);
+  --c-info--light: hsl(194, 68%, 85%);
+  --c-note: hsl(35, 70%, 50%);
+  --c-alert: hsl(10, 96%, 56%);
+  --c-alert--bg: hsl(10, 100%, 96%);
+  --c-alert--dark: hsl(10, 91%, 42%);
+  --c-alert--light: hsl(10, 87%, 64%);
+  --c-warning--bg: var(--c-alert--bg);
+  --c-warning: var(--c-alert);
+  --c-warning--dark: var(--c-alert--dark);
+  --c-warning--light: var(--c-alert--light);
+  --box-shadow-large: 0 0 1rem rgba(0, 0, 0, .1);
 }
 
 /**
  * Set up the page and fix any cross-browser weirdness
  */
 /**
- * Page setup
+ * Site setup
  */
 :root {
-  color: var(--c-running);
-  font-family: var(--ff-running);
+  /**
+	 * Global variables we want to use on potentially any
+	 * element.
+	 */
+  --bg: var(--c-bg);
+  --border: 0;
+  --color: var(--c-running);
+  --ff: var(--ff-running);
+  --fs: var(--fs-running);
+  --fw: var(--fw-normal);
+  background-color: var(--bg);
+  color: var(--color);
+  font-family: var(--ff);
   font-size: 20px;
-  font-size: var(--fs-running);
+  font-size: var(--fs);
+  font-weight: var(--fw);
   line-height: var(--leading);
-  min-height: 0vw;
+  min-height: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-@media screen and (min-width: 80rem) {
-  :root {
-    font-size: 1.25rem;
-  }
+*,
+:after,
+:before {
+  border-style: solid;
+  border-width: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-variation-settings: var(--ff-recursive--mono), var(--ff-recursive--slnt), var(--ff-recursive--crsv);
+  margin: 0;
+  max-width: 100vw;
+  outline: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+:target {
+  -webkit-animation-name: focus-highlight;
+          animation-name: focus-highlight;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+* + * {
+  margin-top: 1.5rem;
 }
 
 /**
@@ -188,43 +250,303 @@ sup {
 }
 
 /**
- * Universal axioms
+ * Set up focus styling for elements we need to tab to, like 
+ * anchors, buttons, cards in a reel, etc.
  */
-* {
-  background: transparent;
-  border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 100%;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  vertical-align: baseline;
+/**
+ * Creates an "old lens" effect.
+ */
+/**
+ * Highlight an element when someone jumps to it from a link.
+ */
+@-webkit-keyframes focus-highlight {
+  0% {
+    background-color: transparent;
+  }
+  10% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: rgba(255, 196, 0, 0.25);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
-
-* + * {
-  margin-top: 1.5rem;
-}
-
-.\@autogrid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: var(--gap, 0);
-  -ms-grid-columns: (minmax(var(--stretch-min), 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(var(--stretch-min), 1fr));
+@keyframes focus-highlight {
+  0% {
+    background-color: transparent;
+  }
+  10% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: rgba(255, 196, 0, 0.25);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 /**
- * Centers its children horizontally in the viewport.
+ * Lays out grandchildren in a series that wraps.
+ *
+ * Use-cases: tag clusters, chains of items, navigation etc.
+ */
+.\@battery {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.\@battery * + * {
+  margin-top: 0;
+}
+
+.\@battery > * {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.\@battery > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+.\@battery.\&arrange\:centered > * {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.\@battery.\&arrange\:right > * {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.\@battery.\&space\:xsmall {
+  --space: var(--beat-xs);
+}
+
+.\@battery.\&space\:small {
+  --space: var(--beat-s);
+}
+
+.\@battery.\&space\:medium {
+  --space: var(--beat-m);
+}
+
+.\@battery.\&space\:large {
+  --space: var(--beat-l);
+}
+
+.\@battery.\&space\:tight {
+  --space: 0;
+}
+
+.\@battery.\&space\:xlarge {
+  --space: var(--beat-xl);
+}
+
+/**
+ * A box. With padding. That's it. It's a primitive, not an 
+ * object.
+ *
+ * Use cases: pretty much anything, but actually less than you'd
+ * think. It's handy for including on the <article> element, for
+ * instance.
+ */
+.\@box {
+  --space-above: var(--beat);
+  --space-below: var(--beat);
+  --space-left: var(--beat);
+  --space-right: var(--beat);
+  margin-top: 0;
+  padding-bottom: var(--space-below);
+  padding-left: var(--space-left);
+  padding-right: var(--space-right);
+  padding-top: var(--space-above);
+}
+
+.\@box.\&space\:above\:tight {
+  --space-above: 0;
+}
+
+.\@box.\&space\:above\:xsmall {
+  --space-above: var(--beat-xs);
+}
+
+.\@box.\&space\:above\:small {
+  --space-above: var(--beat-s);
+}
+
+.\@box.\&space\:above\:medium {
+  --space-above: var(--beat-m);
+}
+
+.\@box.\&space\:above\:large {
+  --space-above: var(--beat-l);
+}
+
+.\@box.\&space\:above\:xlarge {
+  --space-above: var(--beat-xl);
+}
+
+.\@box.\&space\:below\:tight {
+  --space-below: 0;
+}
+
+.\@box.\&space\:below\:xsmall {
+  --space-below: var(--beat-xs);
+}
+
+.\@box.\&space\:below\:small {
+  --space-below: var(--beat-s);
+}
+
+.\@box.\&space\:below\:medium {
+  --space-below: var(--beat-m);
+}
+
+.\@box.\&space\:below\:large {
+  --space-below: var(--beat-l);
+}
+
+.\@box.\&space\:below\:xlarge {
+  --space-below: var(--beat-xl);
+}
+
+.\@box.\&space\:left\:tight {
+  --space-left: 0;
+}
+
+.\@box.\&space\:left\:xsmall {
+  --space-left: var(--beat-xs);
+}
+
+.\@box.\&space\:left\:small {
+  --space-left: var(--beat-s);
+}
+
+.\@box.\&space\:left\:medium {
+  --space-left: var(--beat-m);
+}
+
+.\@box.\&space\:left\:large {
+  --space-left: var(--beat-l);
+}
+
+.\@box.\&space\:left\:xlarge {
+  --space-left: var(--beat-xl);
+}
+
+.\@box.\&space\:right\:tight {
+  --space-right: 0;
+}
+
+.\@box.\&space\:right\:xsmall {
+  --space-right: var(--beat-xs);
+}
+
+.\@box.\&space\:right\:small {
+  --space-right: var(--beat-s);
+}
+
+.\@box.\&space\:right\:medium {
+  --space-right: var(--beat-m);
+}
+
+.\@box.\&space\:right\:large {
+  --space-right: var(--beat-l);
+}
+
+.\@box.\&space\:right\:xlarge {
+  --space-right: var(--beat-xl);
+}
+
+.\@box.\&space\:vert\:tight {
+  --space-above: 0;
+  --space-below: 0;
+}
+
+.\@box.\&space\:vert\:xsmall {
+  --space-above: var(--beat-xs);
+  --space-below: var(--beat-xs);
+}
+
+.\@box.\&space\:vert\:small {
+  --space-above: var(--beat-s);
+  --space-below: var(--beat-s);
+}
+
+.\@box.\&space\:vert\:medium {
+  --space-above: var(--beat-m);
+  --space-below: var(--beat-m);
+}
+
+.\@box.\&space\:vert\:large {
+  --space-above: var(--beat-l);
+  --space-below: var(--beat-l);
+}
+
+.\@box.\&space\:vert\:xlarge {
+  --space-above: var(--beat-xl);
+  --space-below: var(--beat-xl);
+}
+
+.\@box.\&space\:horiz\:tight {
+  --space-left: 0;
+  --space-right: 0;
+}
+
+.\@box.\&space\:horiz\:xsmall {
+  --space-left: var(--beat-xs);
+  --space-right: var(--beat-xs);
+}
+
+.\@box.\&space\:horiz\:small {
+  --space-left: var(--beat-s);
+  --space-right: var(--beat-s);
+}
+
+.\@box.\&space\:horiz\:medium {
+  --space-left: var(--beat-m);
+  --space-right: var(--beat-m);
+}
+
+.\@box.\&space\:horiz\:large {
+  --space-left: var(--beat-l);
+  --space-right: var(--beat-l);
+}
+
+.\@box.\&space\:horiz\:xlarge {
+  --space-left: var(--beat-xl);
+  --space-right: var(--beat-xl);
+}
+
+/**
+ * Centers its children horizontally in a stack
  * 
  * Use cases: pretty much anything.
  */
 .\@center-h {
   --height: autofit;
-  --padding: 1rem;
-  --width: 100vw;
+  --space: beats(1);
+  --width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,28 +554,31 @@ sup {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: var(--width);
-  min-height: var(--height);
-  padding: var(--padding);
-}
-
-.\@center-h > * {
   margin-left: auto;
   margin-right: auto;
+  max-width: var(--width);
+  min-height: var(--height);
+  padding-left: var(--space);
+  padding-right: var(--space);
 }
 
 /**
  * Centers its child vertically in the viewport.
- * Allows for a child above and/or below the principal element;
- * these will be aligned to the top and/or bottom.
+ * Allows for a header and/or footer above/below the principal
+ * element; these will be aligned to the top and/or bottom. If
+ * multiple elements are placed, they will be arranged with the
+ * middle element centered.
  * 
  * Use cases: <dialog> elements and other modals, full-page blog
  * titles, etc.
  */
 .\@center-v {
   --height: 100vh;
-  --padding: 1rem;
+  --space: 1rem;
   --width: 100vw;
+  /**
+	 * Structural settings
+	 */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,163 +589,668 @@ sup {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  /**
+	 * Adjustable settings
+	 */
   max-width: var(--width);
   min-height: var(--height);
-  padding: var(--padding);
+  padding: var(--space);
+  /**
+	 * Align the all-important central element(s).
+	 */
+  /**
+	 * Align the top element.
+	 */
+  /**
+	 * Align the bottom element.
+	 */
 }
 
-.\@center-v\\center {
+.\@center-v > * {
   margin-bottom: auto;
   margin-top: auto;
 }
 
-.\@center-v > :first-child:not(.\@center-v\\center) {
+.\@center-v > header, .\@center-v\\header {
   margin-top: 0;
 }
 
-.\@center-v > :last-child:not(.\@center-v\\center) {
+.\@center-v > footer, .\@center-v\\footer {
   margin-bottom: 0;
 }
 
-/**
- * Creates an "old lens" effect.
- */
-.\!chromatic-aberration {
-  -webkit-box-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
-          box-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
-  text-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
+.\@center-v.\&loose > footer,
+.\@center-v.\&loose > .\@center-v\\footer {
+  margin-top: 3rem;
+}
+
+.\@center-v.\&loose > header,
+.\@center-v.\&loose > .\@center-v\\header {
+  margin-bottom: 3rem;
 }
 
 /**
- * Used to set universal text styles, like constraining
- * text blocks into sane widths.
+ * Lays out direct children as equal-width columns.
+ *
+ * Use-cases: feature-columns, horizontal lists etc.
  */
-blockquote,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-p,
-ul,
-.\+textblock {
-  max-width: var(--measure);
+.\@columns {
+  --space: 1rem;
+  --threshold: 32rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.\@columns * + * {
+  margin-top: 0;
+}
+
+.\@columns > * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: calc((var(--threshold) - 100%) * 999);
+      flex-basis: calc((var(--threshold) - 100%) * 999);
+  margin: var(--space);
+  margin-top: 0;
+  min-width: var(--measure-min);
+}
+
+.\@columns.\&max-2 > :nth-last-child(n+3),
+.\@columns.\&max-2 > :nth-last-child(n+3) ~ * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.\@columns.\&max-3 > :nth-last-child(n+4),
+.\@columns.\&max-3 > :nth-last-child(n+4) ~ * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.\@columns.\&max-4 > :nth-last-child(n+5),
+.\@columns.\&max-4 > :nth-last-child(n+5) ~ * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.\@columns.\&max-5 > :nth-last-child(n+6),
+.\@columns.\&max-5 > :nth-last-child(n+6) ~ * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.\@columns.\&max-6 > :nth-last-child(n+7),
+.\@columns.\&max-6 > :nth-last-child(n+7) ~ * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 /**
- * Used to establish sane baselines for headings.
+ * Creates a frame around an image or video to crop it at the
+ * right aspect ratio.
+ *
+ * Use cases: hero areas, product photos, etc.
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.\+heading {
-  max-width: var(--measure);
-  font-family: var(--ff-heading);
-  line-height: 1.25;
+.\@frame {
+  --aspect-h: 16;
+  --aspect-v: 9;
+  padding-bottom: calc(var(--aspect-h) / var(--aspect-v) * 100%);
+  position: relative;
+}
+
+@media (orientation: portrait) {
+  .\@frame {
+    --aspect-h: 1;
+    --aspect-v: 1;
+  }
+}
+
+.\@frame > * {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.\@frame > img,
+.\@frame > video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /**
- * Used to set basic styles for running text.
+ * Lays out direct children in a grid format.
+ *
+ * Use cases: lists of posts, feature-lists etc.
  */
-.\+running {
-  max-width: var(--measure);
+.\@grid {
+  --space: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: var(--space);
+  -ms-grid-columns: (minmax(var(--measure-min), 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(var(--measure-min), 1fr));
 }
 
 /**
- * Initial paragraphs that should stand out more than others by
- * being larger, having a drop-cap, or whatever.
+ * Stick an element in the middle of the screen, out of the
+ * normal flow, above everything else.
+ *
+ * Used on <dialog> elements and so forth.
  */
-.\+lede {
-  --drop-cap-margin-top: -1.75rem;
-}
-
-.\+lede::first-letter {
-  -webkit-box-shadow: -0.2rem -0.2rem 0.02rem rgba(30, 144, 255, 0.4), 0.2rem 0.2rem 0.02rem rgba(255, 69, 0, 0.4);
-          box-shadow: -0.2rem -0.2rem 0.02rem rgba(30, 144, 255, 0.4), 0.2rem 0.2rem 0.02rem rgba(255, 69, 0, 0.4);
-  text-shadow: -0.2rem -0.2rem 0.02rem rgba(30, 144, 255, 0.4), 0.2rem 0.2rem 0.02rem rgba(255, 69, 0, 0.4);
-  border: 0.375rem double;
-  border-radius: 50%;
-  float: left;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 2rem;
-  margin: var(--drop-cap-margin-top) 0.375rem 0 0;
-  padding: 1rem;
-  text-align: center;
-}
-
-.\+lede::first-line {
-  text-transform: uppercase;
-}
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-button,
-input[type="submit"] {
-  -webkit-box-shadow: -0.2rem -0.2rem 0.02rem rgba(30, 144, 255, 0.4), 0.2rem 0.2rem 0.02rem rgba(255, 69, 0, 0.4);
-          box-shadow: -0.2rem -0.2rem 0.02rem rgba(30, 144, 255, 0.4), 0.2rem 0.2rem 0.02rem rgba(255, 69, 0, 0.4);
-  text-shadow: -0 -0 0.02rem rgba(30, 144, 255, 0.4), 0 0 0.02rem rgba(255, 69, 0, 0.4);
-  background: var(--c-running);
-  color: var(--c-bg);
-  cursor: pointer;
-  padding: 0.75rem 1.5rem;
-  -webkit-transition: .1s all;
-  transition: .1s all;
-}
-
-button:hover,
-input[type="submit"]:hover {
-  -webkit-box-shadow: -0.3rem -0.3rem 0.02rem rgba(30, 144, 255, 0.4), 0.3rem 0.3rem 0.02rem rgba(255, 69, 0, 0.4);
-          box-shadow: -0.3rem -0.3rem 0.02rem rgba(30, 144, 255, 0.4), 0.3rem 0.3rem 0.02rem rgba(255, 69, 0, 0.4);
-  text-shadow: -0 -0 0.02rem rgba(30, 144, 255, 0.4), 0 0 0.02rem rgba(255, 69, 0, 0.4);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: .2s all;
-  transition: .2s all;
-}
-
-dialog {
-  background: #fff;
-  border: 2px solid WindowFrame;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 7rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 7rem rgba(0, 0, 0, 0.3);
+.\@overlay {
+  --space-h: calc(var(--leading) * 1rem);
+  --space-v: var(--space-h);
   display: block;
   left: 50%;
   margin: 0;
   max-height: 100vh;
   max-width: 100vw;
-  padding: 0 1rem 1rem;
+  padding: var(--space-v) var(--space-h);
   position: fixed;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-@media all and (min-width: 52rem) {
-  dialog {
-    padding: 0 2rem 2rem;
+/**
+ * Pull blocks to one side, for quotes, inline nav, asides etc.
+ */
+.\@pull {
+  --space: var(--beat);
+}
+
+@media (min-width: 72rem) {
+  .\@pull {
+    margin-bottom: var(--space);
+    margin-top: calc(var(--space) - var(--border));
+    max-width: 50%;
+  }
+  .\@pull.\&align-left {
+    float: left;
+    margin-right: calc(var(--space) / 2);
+  }
+  .\@pull.\&align-right {
+    float: right;
+    margin-left: calc(var(--space) / 2);
   }
 }
 
-@media all and (max-width: 32rem) {
-  dialog {
-    overflow: scroll;
-  }
+/**
+ * Creates a horizontally-scrolling carousel.
+ *
+ * Use-cases: image scrollers, testimonial sliders, web TV/movie
+ * pickers, etc.
+ */
+.\@reel {
+  --space: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scrollbar-color: var(--c-neutral--light) var(--c-neutral);
+  /**
+	 * Make sure the scrollbar is visible...
+	 */
+}
+
+.\@reel::-webkit-scrollbar {
+  height: 1rem;
+}
+
+.\@reel::-webkit-scrollbar-track {
+  background-color: var(--c-neutral--light);
+}
+
+.\@reel::-webkit-scrollbar-thumb {
+  background-color: var(--c-neutral--light);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, var(--c-neutral--light)), color-stop(0.25rem, var(--c-neutral--light)), color-stop(0.25rem, var(--c-neutral)), color-stop(0.75rem, var(--c-neutral)), color-stop(0.75rem, var(--c-neutral--light)));
+  background-image: linear-gradient(var(--c-neutral--light) 0, var(--c-neutral--light) 0.25rem, var(--c-neutral) 0.25rem, var(--c-neutral) 0.75rem, var(--c-neutral--light) 0.75rem);
+}
+
+.\@reel > [rel] {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--c-neutral--light);
+  border: var(--border-small) solid var(--c-neutral--light);
+  bottom: 0;
+  border-radius: var(--border-small);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  position: absolute;
+  font-family: var(--ff-icon);
+  top: 0;
+}
+
+.\@reel > [rel="next"] {
+  right: 0;
+}
+
+.\@reel > * {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: var(--border-medium) solid transparent;
+  outline-offset: calc(var(--border-medium) * -1);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.\@reel > *:focus {
+  outline: var(--border-medium) solid var(--c-neutral);
+  outline-offset: calc(var(--border-medium) * -1);
+}
+
+.\@reel > :last-child {
+  margin-right: var(--space);
+}
+
+.\@reel > * + * {
+  margin-left: var(--space);
+  margin-top: 0 !important;
+}
+
+.\@reel > img {
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  height: 100%;
+  width: auto;
+}
+
+.\@reel.\&hide-clicker::after, .\@reel.\&hide-clicker::before, .\@reel.\&no-clicker::after, .\@reel.\&no-clicker::before {
+  display: none;
+}
+
+.\@reel.\&no-focus {
+  /**
+		 * This is a dummy class for accessibility.js.
+		 * 
+		 * Not every reel contains items that require focusing.
+		 * For instance, a nav reel already contains anchors, so
+		 * creating a tabindex on every list item is going to be
+		 * a real pain for accessibility, since you'll have to
+		 * hit tab twice to get to each link, instead of just
+		 * once.
+		 */
+}
+
+.\@reel.\&hide-scroller, .\@reel.\&no-scroller {
+  scrollbar-color: transparent;
+}
+
+.\@reel.\&hide-scroller::-webkit-scrollbar, .\@reel.\&no-scroller::-webkit-scrollbar {
+  height: 0;
+}
+
+.\@reel.\&hide-scroller::-webkit-scrollbar-track, .\@reel.\&no-scroller::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.\@reel.\&hide-scroller::-webkit-scrollbar-thumb, .\@reel.\&no-scroller::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  background-image: none;
+}
+
+.\@reel.is-overflowing {
+  padding-bottom: var(--space);
+}
+
+.\@reel.is-overflowing.\&hide-scroller, .\@reel.is-overflowing.\&no-scroller {
+  padding-bottom: 0;
+}
+
+/**
+ * Stacks elements one on top of another with sane margins and no
+ * pesky extra vertical space.
+ *
+ * Use cases: running text, vertical menus, forms etc.
+ */
+.\@stack {
+  --space: var(--beat);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /**
+	 * Position some elements at the top, and others at the bottom, after the
+	 * nth element.
+	 */
+}
+
+.\@stack > * {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.\@stack > * + * {
+  margin-top: var(--space);
+}
+
+.\@stack:only-child {
+  height: 100%;
+}
+
+.\@stack.\&tight,
+.\@stack.\&tight + * {
+  --space: 0;
+}
+
+.\@stack.\&split-after-1 > :nth-child(1) {
+  margin-bottom: auto;
+}
+
+.\@stack.\&split-after-2 > :nth-child(2) {
+  margin-bottom: auto;
+}
+
+.\@stack.\&split-after-3 > :nth-child(3) {
+  margin-bottom: auto;
+}
+
+.\@stack.\&sticky-bottom > :nth-last-child(2) {
+  margin-bottom: auto;
+}
+
+body {
+  margin-top: 0;
+}
+
+a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: var(--border-medium) solid transparent;
+  outline-offset: calc(var(--border-medium) * -1);
+}
+
+a:focus {
+  outline: var(--border-medium) solid var(--c-neutral);
+  outline-offset: calc(var(--border-medium) * -1);
+}
+
+/**
+ * Used to typeset universal running copy.
+ */
+.\%running {
+  font-family: var(--ff-running);
+}
+
+.\%running h1 {
+  margin-top: 3rem;
+}
+
+.\%running h1 + h2 {
+  margin-top: 1rem;
+}
+
+.\%running > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--measure);
+}
+
+.\%running a:link {
+  color: var(--c-house);
+}
+
+.\%running a:visited {
+  color: var(--c-neutral);
+}
+
+.\%running a:hover {
+  background: var(--c-house);
+  border-radius: 0.15rem;
+  color: var(--c-running--reversed);
+  text-decoration: none;
+}
+
+li {
+  margin-left: 1rem;
+}
+
+strong,
+b {
+  --fw: var(--fw-bold);
+}
+
+em,
+i {
+  --ff-recursive--slnt: "slnt"-15;
+}
+
+/**
+ * Used to establish sane baselines for headings.
+ */
+.\%heading {
+  --ff-recursive--mono: "MONO"0;
+  font-family: var(--ff-heading);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  max-width: var(--measure);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --ff-recursive--mono: "MONO"0;
+  font-family: var(--ff-heading);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  max-width: var(--measure);
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-normal);
+  line-height: 1.1;
+}
+
+h1 strong {
+  font-weight: var(--fw-medium);
+}
+
+h2 {
+  font-size: var(--fs-l);
+  font-weight: var(--fw-bold);
+}
+
+* + h2 {
+  margin-top: 3rem;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-top: var(--border-small) solid var(--c-neutral--light);
+  height: 0;
+  overflow: visible;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/**
+ * Anything that should look like a button. Extended in _button.scss.
+ */
+.\%button {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: var(--border-medium) solid transparent;
+  outline-offset: calc(var(--border-medium) * -1);
+  background: var(--c-alert);
+  border: var(--border-medium) solid var(--c-bg);
+  color: var(--c-running--reversed);
+  cursor: pointer;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-bold);
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button:focus {
+  outline: var(--border-medium) solid var(--c-neutral);
+  outline-offset: calc(var(--border-medium) * -1);
+}
+
+.\%button::after {
+  border: var(--border-medium) solid var(--c-bg);
+  bottom: calc(var(--border-large)*-1);
+  content: '';
+  display: block;
+  left: calc(var(--border-large)*-1);
+  position: absolute;
+  right: calc(var(--border-large)*-1);
+  top: calc(var(--border-large)*-1);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button:hover {
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button:hover::after {
+  border-color: var(--c-alert);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button:focus {
+  background-color: var(--c-alert--dark);
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button:focus::after {
+  border-color: var(--c-bg);
+  border-width: var(--border-small);
+  bottom: var(--border-medium);
+  left: var(--border-medium);
+  right: var(--border-medium);
+  top: var(--border-medium);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%button i.fas {
+  display: inline;
+}
+
+button,
+input[type="submit"] {
+  background: var(--c-alert);
+  border: var(--border-medium) solid var(--c-bg);
+  color: var(--c-running--reversed);
+  cursor: pointer;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-bold);
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button::after,
+input[type="submit"]::after {
+  border: var(--border-medium) solid var(--c-bg);
+  bottom: calc(var(--border-large)*-1);
+  content: '';
+  display: block;
+  left: calc(var(--border-large)*-1);
+  position: absolute;
+  right: calc(var(--border-large)*-1);
+  top: calc(var(--border-large)*-1);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button:hover::after,
+input[type="submit"]:hover::after {
+  border-color: var(--c-alert);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button:focus,
+input[type="submit"]:focus {
+  background-color: var(--c-alert--dark);
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button:focus::after,
+input[type="submit"]:focus::after {
+  border-color: var(--c-bg);
+  border-width: var(--border-small);
+  bottom: var(--border-medium);
+  left: var(--border-medium);
+  right: var(--border-medium);
+  top: var(--border-medium);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+button i.fas,
+input[type="submit"] i.fas {
+  display: inline;
+}
+
+dialog {
+  background: var(--c-neutral--lighter);
+  border: var(--border-medium) solid var(--c-neutral);
+  border-radius: var(--border-medium);
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 4rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  width: var(--measure);
 }
 
 dialog:not([open]) {
@@ -443,21 +1273,23 @@ dialog + .backdrop {
   will-change: background;
 }
 
-dialog .dialog\:close {
+dialog .\?close\(dialog\) {
   background: transparent;
   border: 0;
-  color: #444;
+  color: var(--c-running);
   cursor: pointer;
   height: 3rem;
   line-height: 3.4rem;
+  margin: 0;
   overflow: hidden;
+  padding: 0;
   position: absolute;
   right: 0;
   top: 0;
   width: 3rem;
 }
 
-dialog .dialog\:close:hover {
+dialog .\?close\(dialog\):hover {
   color: black;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -465,25 +1297,603 @@ dialog .dialog\:close:hover {
   transition: all 0.2s;
 }
 
-dialog .dialog\:close:focus {
-  -webkit-transform: scale(0.3);
-          transform: scale(0.3);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+dialog .\?close\(dialog\) i {
+  font-size: 1.5rem;
+  font-style: normal;
 }
 
-dialog .dialog\:close i {
+/**
+ * Used to create callout blocks.
+ */
+.\%notice {
+  --bg: #f1f1f1;
+  --border: var(--border-large);
+  --border-color: #e0e0e0;
+  --color: black;
+  border: var(--border);
+  border-color: var(--border-color);
+  border-left-width: 3rem;
+  border-radius: .4rem;
+  border-style: solid;
+  color: var(--color);
+  font-family: var(--ff-heading);
+  padding: 0.75rem;
+  position: relative;
+}
+
+.\%notice\\icon {
   font-size: 1.5rem;
+  left: -3rem;
+  position: absolute;
+  text-align: center;
+  width: 3rem;
+}
+
+.\%notice.\&info {
+  --bg: var(--c-info--bg);
+  --border-color: var(--c-info--light);
+  --color: var(--c-info--dark);
+}
+
+.\%notice.\&warning {
+  --bg: var(--c-warning--bg);
+  --border-color: var(--c-warning--light);
+  --color: var(--c-warning--dark);
+}
+
+.\%notice > * {
+  font-family: inherit;
+}
+
+/**
+ * Initial paragraphs that should stand out more than others by
+ * being larger, having a drop-cap, or whatever.
+ */
+.\%lede {
+  --drop-cap-margin-top: .5rem;
+  font-weight: var(--fw-bold);
+}
+
+.\%lede::first-letter {
+  float: left;
+  font-size: 3.1rem;
+  font-weight: bold;
+  line-height: 2rem;
+  margin: var(--drop-cap-margin-top) 0.375rem 0 0;
+  text-align: center;
+}
+
+.\%card {
+  border: 1px solid var(--c-neutral--light);
+  border-radius: var(--border-large);
+  -webkit-box-shadow: var(--box-shadow-large);
+          box-shadow: var(--box-shadow-large);
+  max-width: var(--measure-min) !important;
+}
+
+details summary + * {
+  margin-top: 0 !important;
+}
+
+blockquote {
+  font-size: var(--fs-s);
+}
+
+.\%video {
+  padding: 56.25% 0 0 0;
+  position: relative;
+}
+
+.\%video > iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/**
+ * Creates form-like boxes for visually emphasizing an important
+ * place of interaction, such as calls to action.
+ */
+.\%actionbox {
+  --background: var(--c-neutral--lighter);
+  --border: var(--border-large) solid var(--c-neutral--light);
+  background: var(--background);
+  border: var(--border);
+}
+
+.\%pill {
+  --bg: var(--c-neutral--light);
+  --color: var(--c-neutral--dark);
+  background: var(--bg);
+  border-radius: var(--border-medium);
+  color: var(--color);
+  padding-left: var(--border-large);
+  padding-right: var(--border-large);
+}
+
+.\%placeholder {
+  --aspect-vert: 16;
+  --aspect-horiz: 9;
+  --size: var(--beat);
+  --size-horiz: calc((var(--size) * var(--aspect-horiz))/10);
+  --size-vert: calc((var(--size) * var(--aspect-vert))/10);
+  background: transparent;
+  border: var(--border-small) solid var(--c-neutral--light);
+  color: var(--c-neutral--dark);
+  display: block;
+  font-size: var(--fs-s);
+  font-weight: var(--fw-medium);
+  padding: var(--size-vert) var(--size-horiz);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.\%placeholder.\&size\:xsmall {
+  --size: var(--beat-xs);
+}
+
+.\%placeholder.\&size\:small {
+  --size: var(--beat-s);
+}
+
+.\%placeholder.\&size\:medium {
+  --size: var(--beat-m);
+}
+
+.\%placeholder.\&size\:large {
+  --size: var(--beat-l);
+}
+
+.\%placeholder.\&size\:xlarge {
+  --size: var(--beat-xl);
+}
+
+.\%skip-link {
+  background: var(--c-neutral--alpha);
+  color: var(--c-running);
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  left: var(--beat);
+  padding: 0 var(--beat-xs);
+  position: fixed;
+  text-transform: uppercase;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  top: 0;
+}
+
+.\%skip-link:focus {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  top: var(--beat-s);
+}
+
+.\%sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+}
+
+.\%sticky.\&arrange\:bottom {
+  bottom: var(--beat-s);
+}
+
+.\%sticky.\&arrange\:top {
+  top: var(--beat-s);
+}
+
+/**
+ * Site header, including nav.
+ */
+body > header {
+  background: var(--c-neutral--light);
+  max-width: none;
+}
+
+body > header hgroup {
+  border-bottom: var(--border-small) solid var(--c-neutral);
+}
+
+body > header h1 {
+  font-size: var(--fs-l);
+  font-weight: var(--fw-medium);
+  margin-top: 3rem;
+  margin-left: 1.5rem;
+  text-align: left;
+}
+
+body > header h2 {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-normal);
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  margin-top: auto !important;
+}
+
+body > header nav {
+  margin-top: 0;
+}
+
+body > header nav,
+body > header nav ul {
+  max-width: none;
+}
+
+body > header nav ul {
+  list-style: none;
+  width: auto;
+}
+
+body > header nav ul li a {
+  border-bottom: var(--border-large) solid transparent;
+  color: var(--c-neutral--dark);
+  display: block;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xs);
+  margin-right: var(--border-large);
+  padding: 1.125rem 1rem 1.125rem 0.75rem;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+body > header nav ul li a:hover {
+  text-decoration: underline;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+body > header nav ul li a.is-active {
+  border-color: var(--c-neutral);
+  color: var(--c-running);
+  font-weight: var(--fw-bold);
+}
+
+body > header nav[aria-label="main"] {
+  border-bottom: var(--border-small) solid var(--c-neutral);
+  margin-top: auto;
+}
+
+body > header nav[aria-label="secondary"] {
+  font-size: var(--fs-xs);
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+}
+
+body > header nav[aria-label="secondary"] a {
+  color: var(--c-neutral);
+  padding: 0.375rem;
+}
+
+body > header nav[aria-label="secondary"] a:hover, body > header nav[aria-label="secondary"] a.is-active {
+  background: transparent;
+}
+
+/**
+ * Main site footer
+ */
+body > footer {
+  background: var(--c-neutral--light);
+  padding: 4.5rem;
+}
+
+/**
+* Review elements. Selectors are organized by their order in
+* the review template.
+*/
+.\+review {
+  --height: auto;
+  padding: 0;
+  /**
+	 * Review image
+	 */
+  /**
+	 * Review header items
+	 */
+  /**
+	 * Review content
+	 */
+}
+
+.\+review img {
+  height: auto;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.\+review header {
+  background: var(--c-neutral--lighter);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: var(--space);
+  padding-top: 0;
+}
+
+.\+review header li {
+  font: normal 90% var(--ff-heading);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.\+review header .__author {
+  font-weight: var(--fw-bold);
+}
+
+.\+review header .__avatar {
+  color: var(--c-neutral--dark);
+  font-size: 3rem;
+  margin-right: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.\+review header .__stars {
+  color: var(--c-neutral--dark);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.\+review header .__stars i[class*='star'] {
+  color: var(--c-warning);
+}
+
+.\+review blockquote {
+  font-size: var(--fs-xs);
+  margin-top: 0;
+  padding: var(--space);
+}
+
+/**
+* Turns lists-items into blocks with icons.
+*/
+.\+feature-list {
+  --icon: "\f251";
+  --icon-bg: var(--c-neutral--light);
+  --icon-border: transparent;
+  --icon-color: var(--c-running);
+  --icon-size: 2.5rem;
+  --icon-size-multiplier: 2;
+  --icon-weight: 300;
+}
+
+.\+feature-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 90%;
+  list-style: none;
+  margin-left: 0;
+}
+
+.\+feature-list li .__icon {
+  /**
+	 * We're defining this here because it's going to be used in
+	 * different ways: either manually via a class for uls etc,
+	 * or automatically via li::before for ols.
+	 */
+  background: var(--icon-bg);
+  border: var(--border-medium) solid var(--icon-border);
+  border-radius: 50%;
+  color: var(--icon-color);
+  font-size: var(--icon-size);
+  font-weight: var(--icon-weight);
+  height: calc(var(--icon-size) * var(--icon-size-multiplier));
+  line-height: calc(var(--icon-size) * var(--icon-size-multiplier));
+  margin-bottom: auto;
+  margin-right: 0.75rem;
+  min-width: calc(var(--icon-size) * var(--icon-size-multiplier));
+  text-align: center;
+  width: calc(var(--icon-size) * var(--icon-size-multiplier));
+}
+
+.\+feature-list li .__icon + * {
+  -ms-flex-negative: 99;
+      flex-shrink: 99;
+  margin-top: 0;
+}
+
+.\&short-items .\+feature-list li .__icon {
+  --icon-size: 1.5rem;
+  --icon-size-multiplier: 2;
+}
+
+.\+feature-list li strong {
+  display: inline-block;
+}
+
+.\+feature-list.\&short-items li {
+  --icon-size: 1.5rem;
+  --icon-size-multiplier: 2;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+ol.\+feature-list {
+  counter-reset: features;
+}
+
+ol.\+feature-list li::before {
+  /**
+	 * We're defining this here because it's going to be used in
+	 * different ways: either manually via a class for uls etc,
+	 * or automatically via li::before for ols.
+	 */
+  background: var(--icon-bg);
+  border: var(--border-medium) solid var(--icon-border);
+  border-radius: 50%;
+  color: var(--icon-color);
+  font-size: var(--icon-size);
+  font-weight: var(--icon-weight);
+  height: calc(var(--icon-size) * var(--icon-size-multiplier));
+  line-height: calc(var(--icon-size) * var(--icon-size-multiplier));
+  margin-bottom: auto;
+  margin-right: 0.75rem;
+  min-width: calc(var(--icon-size) * var(--icon-size-multiplier));
+  text-align: center;
+  width: calc(var(--icon-size) * var(--icon-size-multiplier));
+  color: var(--c-neutral--dark);
+  counter-increment: features;
+  content: counter(features);
+  font-weight: var(--fw-heavy);
+}
+
+ol.\+feature-list li::before + * {
+  -ms-flex-negative: 99;
+      flex-shrink: 99;
+  margin-top: 0;
+}
+
+.\&short-items ol.\+feature-list li::before {
+  --icon-size: 1.5rem;
+  --icon-size-multiplier: 2;
+}
+
+.\!chromatic-aberration {
+  -webkit-box-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
+          box-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
+  text-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
+}
+
+.\!h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-normal);
+  line-height: 1.1;
+}
+
+.\!h1 strong {
+  font-weight: var(--fw-medium);
+}
+
+.\!h2 {
+  font-size: var(--fs-l);
+  font-weight: var(--fw-bold);
+}
+
+/**
+ * Specifies font overrides
+ */
+.\!font\:alt {
+  font-family: var(--ff-alt);
+}
+
+.\!font\:heading {
+  font-family: var(--ff-heading);
+}
+
+.\!font\:sans {
+  --ff-recursive--mono: MONO"0";
+  font-family: var(--ff-sans) !important;
+}
+
+.\!font\:xsmall {
+  font-size: var(--fs-xs) !important;
+}
+
+.\!font\:small {
+  font-size: var(--fs-s) !important;
+}
+
+.\!font\:medium {
+  font-size: var(--fs-m) !important;
+}
+
+.\!font\:large {
+  font-size: var(--fs-l) !important;
+}
+
+.\!font\:xlarge {
+  font-size: var(--fs-xl) !important;
+}
+
+.\!color\:bg\:lighter {
+  background: var(--c-neutral--lighter) !important;
+}
+
+.\!color\:border\:bg {
+  border-color: var(--c-bg);
+}
+
+.\!color\:border\:lighter {
+  border-color: var(--c-neutral--lighter) !important;
+}
+
+.\!color\:reversed {
+  background-color: var(--c-bg--reversed);
+  color: var(--c-running--reversed);
+}
+
+.\!align\:right {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+
+.\!align\:text\:left {
+  text-align: left !important;
+}
+
+.\!align\:text\:right {
+  text-align: right !important;
+}
+
+.\!size\:border\:small {
+  border-style: solid;
+  border-width: var(--border-small);
+}
+
+.\!size\:border\:medium {
+  border-style: solid;
+  border-width: var(--border-medium);
+}
+
+.\!size\:border\:large {
+  border-style: solid;
+  border-width: var(--border-large);
+}
+
+.\!size\!width\:measure {
+  max-width: var(--measure) !important;
 }
 
 /**
  * Blurs out an element. Useful for e.g., "dimming" the entire
  * `main` element when a dialog pops over it.
  */
-.is-blurred,
-.js\\is-blurred {
+.is-blurred {
   -webkit-filter: blur(6px);
           filter: blur(6px);
+}
+
+/**
+ * FontAwesome native list adjustments.
+ */
+.fa-ul {
+  margin-left: auto !important;
+  padding-left: inherit !important;
 }

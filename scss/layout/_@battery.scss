@@ -1,0 +1,67 @@
+/**
+ * Lays out grandchildren in a series that wraps.
+ *
+ * Use-cases: tag clusters, chains of items, navigation etc.
+ */
+
+@mixin battery() {
+	--space: 1rem;
+
+	overflow: hidden;
+
+	*+* {
+		margin-top: 0;
+	}
+
+	&>* {
+		align-items    : center;
+		display        : flex;
+		flex-wrap      : wrap;
+		justify-content: flex-start;
+		margin         : calc(var(--space) / 2 * -1);
+	}
+
+	&>*>* {
+		margin: calc(var(--space) / 2);
+	}
+
+	&.\&arrange {
+		&\:centered>* {
+			justify-content: center;
+		}
+
+		&\:right>* {
+			justify-content: flex-end;
+		}
+	}
+
+	&.\&space {
+		&\:xsmall {
+			--space: var(--beat-xs);
+		}
+
+		&\:small {
+			--space: var(--beat-s);
+		}
+
+		&\:medium {
+			--space: var(--beat-m);
+		}
+
+		&\:large {
+			--space: var(--beat-l);
+		}
+
+		&\:tight {
+			--space: 0;
+		}
+
+		&\:xlarge {
+			--space: var(--beat-xl);
+		}
+	}
+}
+
+.\@battery {
+	@include battery();
+}

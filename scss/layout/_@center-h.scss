@@ -1,0 +1,29 @@
+/**
+ * Centers its children horizontally in a stack
+ * 
+ * Use cases: pretty much anything.
+ */
+
+@mixin center-h() {
+	--height: autofit;
+	--space : beats(1);
+	--width : 100%;
+
+	// Structural settings
+	align-items   : center;
+	box-sizing    : content-box;
+	display       : flex;
+	flex-direction: column;
+	margin-left   : auto;
+	margin-right  : auto;
+
+	// Adjustable settings
+	max-width    : var(--width);
+	min-height   : var(--height);
+	padding-left : var(--space);
+	padding-right: var(--space);
+}
+
+.\@center-h {
+	@include center-h();
+}

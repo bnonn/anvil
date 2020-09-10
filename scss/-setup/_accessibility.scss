@@ -1,0 +1,17 @@
+/**
+ * Set up focus styling for elements we need to tab to, like 
+ * anchors, buttons, cards in a reel, etc.
+ */
+
+@mixin focusable() {
+	transition: all .3s;
+
+	// Accessibility for high-contrast OS themes
+	outline       : var(--border-medium) solid transparent;
+	outline-offset: calc(var(--border-medium) * -1);
+
+	&:focus {
+		outline       : var(--border-medium) solid var(--c-neutral);
+		outline-offset: calc(var(--border-medium) * -1);
+	}
+}

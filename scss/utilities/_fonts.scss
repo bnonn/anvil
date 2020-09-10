@@ -1,0 +1,51 @@
+/**
+ * Specifies font overrides
+ */
+
+@mixin ff-alt() {
+	font-family: var(--ff-alt);
+}
+
+@mixin ff-heading() {
+	font-family: var(--ff-heading);
+}
+
+.\!font {
+
+	// Styles
+
+	&\:alt {
+		@include ff-alt();
+	}
+
+	&\:heading {
+		@include ff-heading();
+	}
+
+	&\:sans {
+		--ff-recursive--mono: MONO"0";
+		font-family         : var(--ff-sans) !important;
+	}
+
+	// Sizes
+
+	&\:xsmall {
+		font-size: var(--fs-xs) !important;
+	}
+
+	&\:small {
+		font-size: var(--fs-s) !important;
+	}
+
+	&\:medium {
+		font-size: var(--fs-m) !important;
+	}
+
+	&\:large {
+		font-size: var(--fs-l) !important;
+	}
+
+	&\:xlarge {
+		font-size: var(--fs-xl) !important;
+	}
+}

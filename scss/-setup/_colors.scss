@@ -1,0 +1,34 @@
+:root {
+	--c-alt         : powderblue;
+	--c-bg          : white;
+	--c-bg--reversed: #333;
+
+	--c-house       : hsl(210, 50%, 50%);
+	--c-house--dark : hsl(210, 50%, 28%);
+	--c-house--light: hsl(210, 35%, 80%);
+
+	--c-neutral         : hsl(210, 5%, 50%);
+	--c-neutral--alpha  : hsla(210, 5%, 50%, 50%);
+	--c-neutral--dark   : hsl(210, 5%, 28%);
+	--c-neutral--light  : hsl(210, 5%, 85%);
+	--c-neutral--lighter: hsl(210, 5%, 92%);
+
+	--c-running          : #333;
+	--c-running--reversed: var(--c-bg);
+
+	--c-info          : hsl(194, 70%, 40%);
+	--c-info--bg      : hsl(194, 100%, 98%);
+	--c-info--dark    : hsl(194, 100%, 27%);
+	--c-info--light   : hsl(194, 68%, 85%);
+	--c-note          : hsl(35, 70%, 50%);
+	--c-alert         : hsl(10, 96%, 56%);
+	--c-alert--bg     : hsl(10, 100%, 96%);
+	--c-alert--dark   : hsl(10, 91%, 42%);
+	--c-alert--light  : hsl(10, 87%, 64%);
+	--c-warning--bg   : var(--c-alert--bg);
+	--c-warning       : var(--c-alert);
+	--c-warning--dark : var(--c-alert--dark);
+	--c-warning--light: var(--c-alert--light);
+
+	--box-shadow-large: 0 0 1rem rgba(0, 0, 0, .1);
+}
