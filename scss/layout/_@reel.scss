@@ -82,19 +82,6 @@
 		}
 	}
 
-	&.\&no-focus {
-		/**
-		 * This is a dummy class for accessibility.js.
-		 * 
-		 * Not every reel contains items that require focusing.
-		 * For instance, a nav reel already contains anchors, so
-		 * creating a tabindex on every list item is going to be
-		 * a real pain for accessibility, since you'll have to
-		 * hit tab twice to get to each link, instead of just
-		 * once.
-		 */
-	}
-
 	&.\&hide-scroller,
 	&.\&no-scroller {
 		scrollbar-color: transparent;
@@ -119,6 +106,32 @@
 		&.\&hide-scroller,
 		&.\&no-scroller {
 			padding-bottom: 0;
+		}
+	}
+
+	&.\&space {
+		&\:tight {
+			--space: 0;
+		}
+
+		&\:xsmall {
+			--space: var(--beat-xs);
+		}
+
+		&\:small {
+			--space: var(--beat-s);
+		}
+
+		&\:medium {
+			--space: var(--beat-m);
+		}
+
+		&\:large {
+			--space: var(--beat-l);
+		}
+
+		&\:xlarge {
+			--space: var(--beat-xl);
 		}
 	}
 }

@@ -1,20 +1,29 @@
 @mixin placeholder() {
-	--aspect-vert : 16;
-	--aspect-horiz: 9;
-	--size        : var(--beat);
+	--aspect-ratio: 16/9;
+	--size        : var(--beat-xl);
 
-	--size-horiz: calc((var(--size) * var(--aspect-horiz))/10);
-	--size-vert : calc((var(--size) * var(--aspect-vert))/10);
+	padding-bottom   : calc(var(--aspect-ratio) * 100%);
+	position         : relative;
+	// width         : var(--size);
 
-	background    : transparent;
-	border        : var(--border-small) solid var(--c-neutral--light);
-	color         : var(--c-neutral--dark);
-	display       : block;
-	font-size     : var(--fs-s);
-	font-weight   : var(--fw-medium);
-	padding       : var(--size-vert) var(--size-horiz);
-	text-align    : center;
-	text-transform: uppercase;
+	&>* {
+		align-items    : center;
+		background     : transparent;
+		border         : var(--border-small) solid var(--c-neutral--light);
+		bottom         : 0;
+		color          : var(--c-neutral--dark);
+		display        : flex;
+		font-size      : var(--fs-s);
+		font-weight    : var(--fw-medium);
+		justify-content: center;
+		left           : 0;
+		overflow       : hidden;
+		position       : absolute;
+		right          : 0;
+		text-align     : center;
+		text-transform : uppercase;
+		top            : 0;
+	}
 
 	&.\&size\:xsmall {
 		--size: var(--beat-xs);

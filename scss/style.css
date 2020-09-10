@@ -44,6 +44,7 @@
   --c-alt: powderblue;
   --c-bg: white;
   --c-bg--reversed: #333;
+  --c-highlight: hsl(46, 100%, 89%);
   --c-house: hsl(210, 50%, 50%);
   --c-house--dark: hsl(210, 50%, 28%);
   --c-house--light: hsl(210, 35%, 80%);
@@ -83,12 +84,11 @@
 	 */
   --bg: var(--c-bg);
   --border: 0;
-  --color: var(--c-running);
   --ff: var(--ff-running);
   --fs: var(--fs-running);
   --fw: var(--fw-normal);
   background-color: var(--bg);
-  color: var(--color);
+  color: var(--c-running);
   font-family: var(--ff);
   font-size: 20px;
   font-size: var(--fs);
@@ -261,30 +261,30 @@ sup {
  */
 @-webkit-keyframes focus-highlight {
   0% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
   10% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
   20% {
-    background-color: rgba(255, 196, 0, 0.25);
+    background: var(--c-highlight);
   }
   100% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
 }
 @keyframes focus-highlight {
   0% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
   10% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
   20% {
-    background-color: rgba(255, 196, 0, 0.25);
+    background: var(--c-highlight);
   }
   100% {
-    background-color: transparent;
+    background: var(--c-bg);
   }
 }
 
@@ -774,22 +774,52 @@ sup {
  * Pull blocks to one side, for quotes, inline nav, asides etc.
  */
 .\@pull {
+  --border-width: 0;
+  --size: 38%;
   --space: var(--beat);
+  border: var(--border-width) solid var(--c-neutral);
+  margin-bottom: calc(var(--space) - var(--border-width));
+  margin-top: calc(var(--space) - var(--border-width));
+  max-width: var(--size) !important;
+}
+
+.\@pull.\&arrange\:left {
+  float: left;
+  margin-right: calc(var(--space) / 2);
+}
+
+.\@pull.\&arrange\:right {
+  float: right;
+  margin-left: calc(var(--space) / 2);
+}
+
+.\@pull.\&size\:small {
+  --size: 38%;
 }
 
 @media (min-width: 72rem) {
-  .\@pull {
-    margin-bottom: var(--space);
-    margin-top: calc(var(--space) - var(--border));
-    max-width: 50%;
+  .\@pull.\&size\:small {
+    --size: 19%;
   }
-  .\@pull.\&align-left {
-    float: left;
-    margin-right: calc(var(--space) / 2);
+}
+
+.\@pull.\&size\:medium {
+  --size: 50%;
+}
+
+@media (min-width: 72rem) {
+  .\@pull.\&size\:medium {
+    --size: 38%;
   }
-  .\@pull.\&align-right {
-    float: right;
-    margin-left: calc(var(--space) / 2);
+}
+
+.\@pull.\&size\:large {
+  --size: 100%;
+}
+
+@media (min-width: 72rem) {
+  .\@pull.\&size\:large {
+    --size: 50%;
   }
 }
 
@@ -886,19 +916,6 @@ sup {
   display: none;
 }
 
-.\@reel.\&no-focus {
-  /**
-		 * This is a dummy class for accessibility.js.
-		 * 
-		 * Not every reel contains items that require focusing.
-		 * For instance, a nav reel already contains anchors, so
-		 * creating a tabindex on every list item is going to be
-		 * a real pain for accessibility, since you'll have to
-		 * hit tab twice to get to each link, instead of just
-		 * once.
-		 */
-}
-
 .\@reel.\&hide-scroller, .\@reel.\&no-scroller {
   scrollbar-color: transparent;
 }
@@ -922,6 +939,30 @@ sup {
 
 .\@reel.is-overflowing.\&hide-scroller, .\@reel.is-overflowing.\&no-scroller {
   padding-bottom: 0;
+}
+
+.\@reel.\&space\:tight {
+  --space: 0;
+}
+
+.\@reel.\&space\:xsmall {
+  --space: var(--beat-xs);
+}
+
+.\@reel.\&space\:small {
+  --space: var(--beat-s);
+}
+
+.\@reel.\&space\:medium {
+  --space: var(--beat-m);
+}
+
+.\@reel.\&space\:large {
+  --space: var(--beat-l);
+}
+
+.\@reel.\&space\:xlarge {
+  --space: var(--beat-xl);
 }
 
 /**
@@ -1113,14 +1154,10 @@ img {
   transition: all .3s;
   outline: var(--border-medium) solid transparent;
   outline-offset: calc(var(--border-medium) * -1);
-  background: var(--c-alert);
-  border: var(--border-medium) solid var(--c-bg);
+  background: var(--c-neutral);
   color: var(--c-running--reversed);
   cursor: pointer;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-bold);
-  padding: 0.75rem 1.5rem;
-  position: relative;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -1130,45 +1167,14 @@ img {
   outline-offset: calc(var(--border-medium) * -1);
 }
 
-.\%button::after {
-  border: var(--border-medium) solid var(--c-bg);
-  bottom: calc(var(--border-large)*-1);
-  content: '';
-  display: block;
-  left: calc(var(--border-large)*-1);
-  position: absolute;
-  right: calc(var(--border-large)*-1);
-  top: calc(var(--border-large)*-1);
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
 .\%button:hover {
-  border-color: var(--c-bg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-.\%button:hover::after {
-  border-color: var(--c-alert);
+  background: var(--c-neutral--dark);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .\%button:focus {
-  background-color: var(--c-alert--dark);
-  border-color: var(--c-bg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-.\%button:focus::after {
-  border-color: var(--c-bg);
-  border-width: var(--border-small);
-  bottom: var(--border-medium);
-  left: var(--border-medium);
-  right: var(--border-medium);
-  top: var(--border-medium);
+  background: var(--c-neutral--darker);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -1179,62 +1185,24 @@ img {
 
 button,
 input[type="submit"] {
-  background: var(--c-alert);
-  border: var(--border-medium) solid var(--c-bg);
+  background: var(--c-neutral);
   color: var(--c-running--reversed);
   cursor: pointer;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-bold);
-  padding: 0.75rem 1.5rem;
-  position: relative;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-button::after,
-input[type="submit"]::after {
-  border: var(--border-medium) solid var(--c-bg);
-  bottom: calc(var(--border-large)*-1);
-  content: '';
-  display: block;
-  left: calc(var(--border-large)*-1);
-  position: absolute;
-  right: calc(var(--border-large)*-1);
-  top: calc(var(--border-large)*-1);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 button:hover,
 input[type="submit"]:hover {
-  border-color: var(--c-bg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-button:hover::after,
-input[type="submit"]:hover::after {
-  border-color: var(--c-alert);
+  background: var(--c-neutral--dark);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 button:focus,
 input[type="submit"]:focus {
-  background-color: var(--c-alert--dark);
-  border-color: var(--c-bg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-button:focus::after,
-input[type="submit"]:focus::after {
-  border-color: var(--c-bg);
-  border-width: var(--border-small);
-  bottom: var(--border-medium);
-  left: var(--border-medium);
-  right: var(--border-medium);
-  top: var(--border-medium);
+  background: var(--c-neutral--darker);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -1245,7 +1213,8 @@ input[type="submit"] i.fas {
 }
 
 dialog {
-  background: var(--c-neutral--lighter);
+  --c-bg: var(--c-neutral--lighter);
+  background: var(--c-bg);
   border: var(--border-medium) solid var(--c-neutral);
   border-radius: var(--border-medium);
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1), 0 2rem 4rem rgba(0, 0, 0, 0.3);
@@ -1396,7 +1365,7 @@ blockquote {
  * Creates form-like boxes for visually emphasizing an important
  * place of interaction, such as calls to action.
  */
-.\%actionbox {
+.\%action-box {
   --background: var(--c-neutral--lighter);
   --border: var(--border-large) solid var(--c-neutral--light);
   background: var(--background);
@@ -1414,20 +1383,35 @@ blockquote {
 }
 
 .\%placeholder {
-  --aspect-vert: 16;
-  --aspect-horiz: 9;
-  --size: var(--beat);
-  --size-horiz: calc((var(--size) * var(--aspect-horiz))/10);
-  --size-vert: calc((var(--size) * var(--aspect-vert))/10);
+  --aspect-ratio: 16/9;
+  --size: var(--beat-xl);
+  padding-bottom: calc(var(--aspect-ratio) * 100%);
+  position: relative;
+}
+
+.\%placeholder > * {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: transparent;
   border: var(--border-small) solid var(--c-neutral--light);
+  bottom: 0;
   color: var(--c-neutral--dark);
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: var(--fs-s);
   font-weight: var(--fw-medium);
-  padding: var(--size-vert) var(--size-horiz);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
   text-align: center;
   text-transform: uppercase;
+  top: 0;
 }
 
 .\%placeholder.\&size\:xsmall {
@@ -1487,6 +1471,79 @@ blockquote {
 
 .\%sticky.\&arrange\:top {
   top: var(--beat-s);
+}
+
+/**
+ * Any kind of important call to action. Can extend buttons or
+ * anchors.
+ */
+.\%action-clicker {
+  background-color: var(--c-alert);
+  border: var(--border-medium) solid var(--c-bg);
+  color: var(--c-running--reversed);
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  position: relative;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%action-clicker::after {
+  border: var(--border-medium) solid var(--c-bg);
+  bottom: calc(var(--border-large)*-1);
+  content: '';
+  display: block;
+  left: calc(var(--border-large)*-1);
+  position: absolute;
+  right: calc(var(--border-large)*-1);
+  top: calc(var(--border-large)*-1);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%action-clicker:hover {
+  background-color: var(--c-alert);
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%action-clicker:hover::after {
+  border-color: var(--c-alert);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%action-clicker:focus {
+  background-color: var(--c-alert);
+  border-color: var(--c-bg);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.\%action-clicker:focus::after {
+  border-color: var(--c-bg);
+  border-width: var(--border-small);
+  bottom: var(--border-medium);
+  left: var(--border-medium);
+  right: var(--border-medium);
+  top: var(--border-medium);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+[type="email"] {
+  border: var(--border-medium) solid var(--c-neutral);
+  margin-bottom: 0.375rem;
+  padding: .63rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+[type="email"]:hover, [type="email"]:focus, [type="email"]:active {
+  border-color: var(--c-neutral--dark);
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 /**
@@ -1555,6 +1612,20 @@ body > header nav ul li a.is-active {
   border-color: var(--c-neutral);
   color: var(--c-running);
   font-weight: var(--fw-bold);
+}
+
+body > header nav ul li a.\%nav-cta {
+  background-color: var(--c-alert);
+  border: 0;
+  border-radius: var(--border-medium);
+  color: var(--c-running--reversed);
+  font-weight: var(--fw-medium);
+  margin-top: 0.75rem;
+  padding: 0.375rem 1.125rem;
+}
+
+body > header nav ul li a.\%nav-cta:hover {
+  background-color: var(--c-alert--dark);
 }
 
 body > header nav[aria-label="main"] {
@@ -1852,6 +1923,10 @@ ol.\+feature-list li::before + * {
   -webkit-box-pack: end !important;
       -ms-flex-pack: end !important;
           justify-content: flex-end !important;
+}
+
+.\!align\:text\:center {
+  text-align: center !important;
 }
 
 .\!align\:text\:left {

@@ -3,7 +3,7 @@
  * place of interaction, such as calls to action.
  */
 
-@mixin actionbox() {
+@mixin action-box() {
 	--background: var(--c-neutral--lighter);
 	--border    : var(--border-large) solid var(--c-neutral--light);
 
@@ -11,6 +11,6 @@
 	border    : var(--border);
 }
 
-.\%actionbox {
-	@include actionbox();
+.\%action-box {
+	@include action-box();
 }

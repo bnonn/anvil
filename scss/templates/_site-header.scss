@@ -63,6 +63,20 @@ body>header {
 						color       : var(--c-running);
 						font-weight : var(--fw-bold);
 					}
+
+					&.\%nav-cta {
+						background-color: var(--c-alert);
+						border          : 0;
+						border-radius   : var(--border-medium);
+						color           : var(--c-running--reversed);
+						font-weight     : var(--fw-medium);
+						margin-top      : beats(.5);
+						padding         : beats(.25) beats(.75);
+
+						&:hover {
+							background-color: var(--c-alert--dark);
+						}
+					}
 				}
 			}
 		}

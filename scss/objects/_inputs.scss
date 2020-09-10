@@ -1,0 +1,13 @@
+[type="email"] {
+	border       : var(--border-medium) solid var(--c-neutral);
+	margin-bottom: beats(.25); // hack for now; TODO: fix, #obvs
+	padding      : .63rem;
+	transition   : all .2s;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: var(--c-neutral--dark);
+		transition  : all .2s;
+	}
+}

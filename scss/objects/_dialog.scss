@@ -1,5 +1,7 @@
 dialog {
-	background   : var(--c-neutral--lighter);
+	--c-bg: var(--c-neutral--lighter);
+
+	background   : var(--c-bg);
 	border       : var(--border-medium) solid var(--c-neutral);
 	border-radius: var(--border-medium);
 	box-shadow   : 0 1rem 1rem rgba(0, 0, 0, 0.1),

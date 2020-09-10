@@ -14,13 +14,12 @@
 
 	--bg    : var(--c-bg);
 	--border: 0;
-	--color : var(--c-running);
 	--ff    : var(--ff-running);
 	--fs    : var(--fs-running);
 	--fw    : var(--fw-normal);
 
 	background-color: var(--bg);
-	color           : var(--color);
+	color           : var(--c-running);
 	font-family     : var(--ff);
 	font-size       : 20px; // fallback
 	font-size       : var(--fs);

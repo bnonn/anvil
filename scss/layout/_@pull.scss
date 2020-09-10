@@ -3,21 +3,50 @@
  */
 
 @mixin pull() {
-	--space: var(--beat);
+	--border-width: 0;
+	--size        : 38%;
+	--space       : var(--beat);
 
-	@include breakpoint($widescreen) {
-		margin-bottom: var(--space);
-		margin-top   : calc(var(--space) - var(--border));
-		max-width    : 50%;
+	border       : var(--border-width) solid var(--c-neutral);
+	margin-bottom: calc(var(--space) - var(--border-width));
+	margin-top   : calc(var(--space) - var(--border-width));
+	max-width    : var(--size) !important;
 
-		&.\&align-left {
+	&.\&arrange {
+		&\:left {
 			float       : left;
 			margin-right: calc(var(--space) / 2);
 		}
 
-		&.\&align-right {
+		&\:right {
 			float      : right;
 			margin-left: calc(var(--space) / 2);
+		}
+	}
+
+	&.\&size {
+		&\:small {
+			--size: 38%;
+
+			@include breakpoint($widescreen) {
+				--size: 19%;
+			}
+		}
+
+		&\:medium {
+			--size: 50%;
+
+			@include breakpoint($widescreen) {
+				--size: 38%;
+			}
+		}
+
+		&\:large {
+			--size: 100%;
+
+			@include breakpoint($widescreen) {
+				--size: 50%;
+			}
 		}
 	}
 }
