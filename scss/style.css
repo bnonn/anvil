@@ -1,4 +1,10 @@
 /**
+ * Anvil prototyping engine
+ *
+ * @package Anvil
+ * @version 2 beta
+ */
+/**
  * Establish rhythm.
  * 
  * We're using a regular "beat" of the line-height, so all spacing
@@ -254,6 +260,10 @@ sup {
  * anchors, buttons, cards in a reel, etc.
  */
 /**
+ * Helper mixin to consistently adjust spacing and sizing on
+ * layout primitives while staying dry.
+ */
+/**
  * Creates an "old lens" effect.
  */
 /**
@@ -366,15 +376,39 @@ sup {
  * instance.
  */
 .\@box {
-  --space-above: var(--beat);
-  --space-below: var(--beat);
-  --space-left: var(--beat);
-  --space-right: var(--beat);
-  margin-top: 0;
+  --space: var(--beat);
+  --space-above: var(--space);
+  --space-below: var(--space);
+  --space-left: var(--space);
+  --space-right: var(--space);
   padding-bottom: var(--space-below);
   padding-left: var(--space-left);
   padding-right: var(--space-right);
   padding-top: var(--space-above);
+}
+
+.\@box.\&space\:tight {
+  --space: 0;
+}
+
+.\@box.\&space\:xsmall {
+  --space: var(--beat-xs);
+}
+
+.\@box.\&space\:small {
+  --space: var(--beat-s);
+}
+
+.\@box.\&space\:medium {
+  --space: var(--beat-m);
+}
+
+.\@box.\&space\:large {
+  --space: var(--beat-l);
+}
+
+.\@box.\&space\:xlarge {
+  --space: var(--beat-xl);
 }
 
 .\@box.\&space\:above\:tight {
@@ -574,7 +608,6 @@ sup {
  */
 .\@center-v {
   --height: 100vh;
-  --space: 1rem;
   --width: 100vw;
   /**
 	 * Structural settings
@@ -594,7 +627,6 @@ sup {
 	 */
   max-width: var(--width);
   min-height: var(--height);
-  padding: var(--space);
   /**
 	 * Align the all-important central element(s).
 	 */
@@ -689,6 +721,186 @@ sup {
       flex-basis: 100%;
 }
 
+.\@columns.\&space\:tight {
+  --space: 0;
+}
+
+.\@columns.\&space\:xsmall {
+  --space: var(--beat-xs);
+}
+
+.\@columns.\&space\:small {
+  --space: var(--beat-s);
+}
+
+.\@columns.\&space\:medium {
+  --space: var(--beat-m);
+}
+
+.\@columns.\&space\:large {
+  --space: var(--beat-l);
+}
+
+.\@columns.\&space\:xlarge {
+  --space: var(--beat-xl);
+}
+
+.\@columns.\&space\:above\:tight {
+  --space-above: 0;
+}
+
+.\@columns.\&space\:above\:xsmall {
+  --space-above: var(--beat-xs);
+}
+
+.\@columns.\&space\:above\:small {
+  --space-above: var(--beat-s);
+}
+
+.\@columns.\&space\:above\:medium {
+  --space-above: var(--beat-m);
+}
+
+.\@columns.\&space\:above\:large {
+  --space-above: var(--beat-l);
+}
+
+.\@columns.\&space\:above\:xlarge {
+  --space-above: var(--beat-xl);
+}
+
+.\@columns.\&space\:below\:tight {
+  --space-below: 0;
+}
+
+.\@columns.\&space\:below\:xsmall {
+  --space-below: var(--beat-xs);
+}
+
+.\@columns.\&space\:below\:small {
+  --space-below: var(--beat-s);
+}
+
+.\@columns.\&space\:below\:medium {
+  --space-below: var(--beat-m);
+}
+
+.\@columns.\&space\:below\:large {
+  --space-below: var(--beat-l);
+}
+
+.\@columns.\&space\:below\:xlarge {
+  --space-below: var(--beat-xl);
+}
+
+.\@columns.\&space\:left\:tight {
+  --space-left: 0;
+}
+
+.\@columns.\&space\:left\:xsmall {
+  --space-left: var(--beat-xs);
+}
+
+.\@columns.\&space\:left\:small {
+  --space-left: var(--beat-s);
+}
+
+.\@columns.\&space\:left\:medium {
+  --space-left: var(--beat-m);
+}
+
+.\@columns.\&space\:left\:large {
+  --space-left: var(--beat-l);
+}
+
+.\@columns.\&space\:left\:xlarge {
+  --space-left: var(--beat-xl);
+}
+
+.\@columns.\&space\:right\:tight {
+  --space-right: 0;
+}
+
+.\@columns.\&space\:right\:xsmall {
+  --space-right: var(--beat-xs);
+}
+
+.\@columns.\&space\:right\:small {
+  --space-right: var(--beat-s);
+}
+
+.\@columns.\&space\:right\:medium {
+  --space-right: var(--beat-m);
+}
+
+.\@columns.\&space\:right\:large {
+  --space-right: var(--beat-l);
+}
+
+.\@columns.\&space\:right\:xlarge {
+  --space-right: var(--beat-xl);
+}
+
+.\@columns.\&space\:vert\:tight {
+  --space-above: 0;
+  --space-below: 0;
+}
+
+.\@columns.\&space\:vert\:xsmall {
+  --space-above: var(--beat-xs);
+  --space-below: var(--beat-xs);
+}
+
+.\@columns.\&space\:vert\:small {
+  --space-above: var(--beat-s);
+  --space-below: var(--beat-s);
+}
+
+.\@columns.\&space\:vert\:medium {
+  --space-above: var(--beat-m);
+  --space-below: var(--beat-m);
+}
+
+.\@columns.\&space\:vert\:large {
+  --space-above: var(--beat-l);
+  --space-below: var(--beat-l);
+}
+
+.\@columns.\&space\:vert\:xlarge {
+  --space-above: var(--beat-xl);
+  --space-below: var(--beat-xl);
+}
+
+.\@columns.\&space\:horiz\:tight {
+  --space-left: 0;
+  --space-right: 0;
+}
+
+.\@columns.\&space\:horiz\:xsmall {
+  --space-left: var(--beat-xs);
+  --space-right: var(--beat-xs);
+}
+
+.\@columns.\&space\:horiz\:small {
+  --space-left: var(--beat-s);
+  --space-right: var(--beat-s);
+}
+
+.\@columns.\&space\:horiz\:medium {
+  --space-left: var(--beat-m);
+  --space-right: var(--beat-m);
+}
+
+.\@columns.\&space\:horiz\:large {
+  --space-left: var(--beat-l);
+  --space-right: var(--beat-l);
+}
+
+.\@columns.\&space\:horiz\:xlarge {
+  --space-left: var(--beat-xl);
+  --space-right: var(--beat-xl);
+}
+
 /**
  * Creates a frame around an image or video to crop it at the
  * right aspect ratio.
@@ -696,16 +908,14 @@ sup {
  * Use cases: hero areas, product photos, etc.
  */
 .\@frame {
-  --aspect-h: 16;
-  --aspect-v: 9;
-  padding-bottom: calc(var(--aspect-h) / var(--aspect-v) * 100%);
+  --aspect-ratio: 9/16;
+  padding-bottom: calc(var(--aspect-ratio) * 100%);
   position: relative;
 }
 
 @media (orientation: portrait) {
   .\@frame {
-    --aspect-h: 1;
-    --aspect-v: 1;
+    --aspect-ratio: 1/1;
   }
 }
 
@@ -965,6 +1175,162 @@ sup {
   --space: var(--beat-xl);
 }
 
+.\@reel.\&space\:above\:tight {
+  --space-above: 0;
+}
+
+.\@reel.\&space\:above\:xsmall {
+  --space-above: var(--beat-xs);
+}
+
+.\@reel.\&space\:above\:small {
+  --space-above: var(--beat-s);
+}
+
+.\@reel.\&space\:above\:medium {
+  --space-above: var(--beat-m);
+}
+
+.\@reel.\&space\:above\:large {
+  --space-above: var(--beat-l);
+}
+
+.\@reel.\&space\:above\:xlarge {
+  --space-above: var(--beat-xl);
+}
+
+.\@reel.\&space\:below\:tight {
+  --space-below: 0;
+}
+
+.\@reel.\&space\:below\:xsmall {
+  --space-below: var(--beat-xs);
+}
+
+.\@reel.\&space\:below\:small {
+  --space-below: var(--beat-s);
+}
+
+.\@reel.\&space\:below\:medium {
+  --space-below: var(--beat-m);
+}
+
+.\@reel.\&space\:below\:large {
+  --space-below: var(--beat-l);
+}
+
+.\@reel.\&space\:below\:xlarge {
+  --space-below: var(--beat-xl);
+}
+
+.\@reel.\&space\:left\:tight {
+  --space-left: 0;
+}
+
+.\@reel.\&space\:left\:xsmall {
+  --space-left: var(--beat-xs);
+}
+
+.\@reel.\&space\:left\:small {
+  --space-left: var(--beat-s);
+}
+
+.\@reel.\&space\:left\:medium {
+  --space-left: var(--beat-m);
+}
+
+.\@reel.\&space\:left\:large {
+  --space-left: var(--beat-l);
+}
+
+.\@reel.\&space\:left\:xlarge {
+  --space-left: var(--beat-xl);
+}
+
+.\@reel.\&space\:right\:tight {
+  --space-right: 0;
+}
+
+.\@reel.\&space\:right\:xsmall {
+  --space-right: var(--beat-xs);
+}
+
+.\@reel.\&space\:right\:small {
+  --space-right: var(--beat-s);
+}
+
+.\@reel.\&space\:right\:medium {
+  --space-right: var(--beat-m);
+}
+
+.\@reel.\&space\:right\:large {
+  --space-right: var(--beat-l);
+}
+
+.\@reel.\&space\:right\:xlarge {
+  --space-right: var(--beat-xl);
+}
+
+.\@reel.\&space\:vert\:tight {
+  --space-above: 0;
+  --space-below: 0;
+}
+
+.\@reel.\&space\:vert\:xsmall {
+  --space-above: var(--beat-xs);
+  --space-below: var(--beat-xs);
+}
+
+.\@reel.\&space\:vert\:small {
+  --space-above: var(--beat-s);
+  --space-below: var(--beat-s);
+}
+
+.\@reel.\&space\:vert\:medium {
+  --space-above: var(--beat-m);
+  --space-below: var(--beat-m);
+}
+
+.\@reel.\&space\:vert\:large {
+  --space-above: var(--beat-l);
+  --space-below: var(--beat-l);
+}
+
+.\@reel.\&space\:vert\:xlarge {
+  --space-above: var(--beat-xl);
+  --space-below: var(--beat-xl);
+}
+
+.\@reel.\&space\:horiz\:tight {
+  --space-left: 0;
+  --space-right: 0;
+}
+
+.\@reel.\&space\:horiz\:xsmall {
+  --space-left: var(--beat-xs);
+  --space-right: var(--beat-xs);
+}
+
+.\@reel.\&space\:horiz\:small {
+  --space-left: var(--beat-s);
+  --space-right: var(--beat-s);
+}
+
+.\@reel.\&space\:horiz\:medium {
+  --space-left: var(--beat-m);
+  --space-right: var(--beat-m);
+}
+
+.\@reel.\&space\:horiz\:large {
+  --space-left: var(--beat-l);
+  --space-right: var(--beat-l);
+}
+
+.\@reel.\&space\:horiz\:xlarge {
+  --space-left: var(--beat-xl);
+  --space-right: var(--beat-xl);
+}
+
 /**
  * Stacks elements one on top of another with sane margins and no
  * pesky extra vertical space.
@@ -1002,9 +1368,184 @@ sup {
   height: 100%;
 }
 
-.\@stack.\&tight,
-.\@stack.\&tight + * {
+.\@stack.\&space\:tight {
   --space: 0;
+}
+
+.\@stack.\&space\:xsmall {
+  --space: var(--beat-xs);
+}
+
+.\@stack.\&space\:small {
+  --space: var(--beat-s);
+}
+
+.\@stack.\&space\:medium {
+  --space: var(--beat-m);
+}
+
+.\@stack.\&space\:large {
+  --space: var(--beat-l);
+}
+
+.\@stack.\&space\:xlarge {
+  --space: var(--beat-xl);
+}
+
+.\@stack.\&space\:above\:tight {
+  --space-above: 0;
+}
+
+.\@stack.\&space\:above\:xsmall {
+  --space-above: var(--beat-xs);
+}
+
+.\@stack.\&space\:above\:small {
+  --space-above: var(--beat-s);
+}
+
+.\@stack.\&space\:above\:medium {
+  --space-above: var(--beat-m);
+}
+
+.\@stack.\&space\:above\:large {
+  --space-above: var(--beat-l);
+}
+
+.\@stack.\&space\:above\:xlarge {
+  --space-above: var(--beat-xl);
+}
+
+.\@stack.\&space\:below\:tight {
+  --space-below: 0;
+}
+
+.\@stack.\&space\:below\:xsmall {
+  --space-below: var(--beat-xs);
+}
+
+.\@stack.\&space\:below\:small {
+  --space-below: var(--beat-s);
+}
+
+.\@stack.\&space\:below\:medium {
+  --space-below: var(--beat-m);
+}
+
+.\@stack.\&space\:below\:large {
+  --space-below: var(--beat-l);
+}
+
+.\@stack.\&space\:below\:xlarge {
+  --space-below: var(--beat-xl);
+}
+
+.\@stack.\&space\:left\:tight {
+  --space-left: 0;
+}
+
+.\@stack.\&space\:left\:xsmall {
+  --space-left: var(--beat-xs);
+}
+
+.\@stack.\&space\:left\:small {
+  --space-left: var(--beat-s);
+}
+
+.\@stack.\&space\:left\:medium {
+  --space-left: var(--beat-m);
+}
+
+.\@stack.\&space\:left\:large {
+  --space-left: var(--beat-l);
+}
+
+.\@stack.\&space\:left\:xlarge {
+  --space-left: var(--beat-xl);
+}
+
+.\@stack.\&space\:right\:tight {
+  --space-right: 0;
+}
+
+.\@stack.\&space\:right\:xsmall {
+  --space-right: var(--beat-xs);
+}
+
+.\@stack.\&space\:right\:small {
+  --space-right: var(--beat-s);
+}
+
+.\@stack.\&space\:right\:medium {
+  --space-right: var(--beat-m);
+}
+
+.\@stack.\&space\:right\:large {
+  --space-right: var(--beat-l);
+}
+
+.\@stack.\&space\:right\:xlarge {
+  --space-right: var(--beat-xl);
+}
+
+.\@stack.\&space\:vert\:tight {
+  --space-above: 0;
+  --space-below: 0;
+}
+
+.\@stack.\&space\:vert\:xsmall {
+  --space-above: var(--beat-xs);
+  --space-below: var(--beat-xs);
+}
+
+.\@stack.\&space\:vert\:small {
+  --space-above: var(--beat-s);
+  --space-below: var(--beat-s);
+}
+
+.\@stack.\&space\:vert\:medium {
+  --space-above: var(--beat-m);
+  --space-below: var(--beat-m);
+}
+
+.\@stack.\&space\:vert\:large {
+  --space-above: var(--beat-l);
+  --space-below: var(--beat-l);
+}
+
+.\@stack.\&space\:vert\:xlarge {
+  --space-above: var(--beat-xl);
+  --space-below: var(--beat-xl);
+}
+
+.\@stack.\&space\:horiz\:tight {
+  --space-left: 0;
+  --space-right: 0;
+}
+
+.\@stack.\&space\:horiz\:xsmall {
+  --space-left: var(--beat-xs);
+  --space-right: var(--beat-xs);
+}
+
+.\@stack.\&space\:horiz\:small {
+  --space-left: var(--beat-s);
+  --space-right: var(--beat-s);
+}
+
+.\@stack.\&space\:horiz\:medium {
+  --space-left: var(--beat-m);
+  --space-right: var(--beat-m);
+}
+
+.\@stack.\&space\:horiz\:large {
+  --space-left: var(--beat-l);
+  --space-right: var(--beat-l);
+}
+
+.\@stack.\&space\:horiz\:xlarge {
+  --space-left: var(--beat-xl);
+  --space-right: var(--beat-xl);
 }
 
 .\@stack.\&split-after-1 > :nth-child(1) {
@@ -1349,7 +1890,8 @@ blockquote {
 }
 
 .\%video {
-  padding: 56.25% 0 0 0;
+  --aspect-ratio: 9/16;
+  padding-bottom: calc(var(--aspect-ratio)*100%);
   position: relative;
 }
 
@@ -1412,6 +1954,10 @@ blockquote {
   text-align: center;
   text-transform: uppercase;
   top: 0;
+}
+
+.\%placeholder.\&size\:tight {
+  --size: 0;
 }
 
 .\%placeholder.\&size\:xsmall {
@@ -1637,7 +2183,7 @@ body > header nav[aria-label="secondary"] {
   font-size: var(--fs-xs);
   position: absolute;
   right: 0.75rem;
-  top: 0;
+  top: 0.375rem;
 }
 
 body > header nav[aria-label="secondary"] a {

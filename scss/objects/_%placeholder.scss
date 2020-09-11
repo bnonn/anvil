@@ -25,25 +25,7 @@
 		top            : 0;
 	}
 
-	&.\&size\:xsmall {
-		--size: var(--beat-xs);
-	}
-
-	&.\&size\:small {
-		--size: var(--beat-s);
-	}
-
-	&.\&size\:medium {
-		--size: var(--beat-m);
-	}
-
-	&.\&size\:large {
-		--size: var(--beat-l);
-	}
-
-	&.\&size\:xlarge {
-		--size: var(--beat-xl);
-	}
+	@include dimension-adjustments(sizing);
 }
 
 .\%placeholder {

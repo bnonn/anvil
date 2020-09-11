@@ -1,5 +1,13 @@
+/**
+ * Anvil prototyping engine
+ *
+ * @package Anvil
+ * @version 2 beta
+ */
+
 @import "typography";
 @import "colors";
 @import "setup";
 @import "breakpoints";
 @import "accessibility";
+@import "dimension-adjustments";

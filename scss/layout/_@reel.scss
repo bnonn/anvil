@@ -109,31 +109,7 @@
 		}
 	}
 
-	&.\&space {
-		&\:tight {
-			--space: 0;
-		}
-
-		&\:xsmall {
-			--space: var(--beat-xs);
-		}
-
-		&\:small {
-			--space: var(--beat-s);
-		}
-
-		&\:medium {
-			--space: var(--beat-m);
-		}
-
-		&\:large {
-			--space: var(--beat-l);
-		}
-
-		&\:xlarge {
-			--space: var(--beat-xl);
-		}
-	}
+	@include dimension-adjustments(spacing);
 }
 
 .\@reel {

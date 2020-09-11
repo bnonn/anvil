@@ -62,6 +62,8 @@
 			flex-basis: 100%;
 		}
 	}
+
+	@include dimension-adjustments(spacing);
 }
 
 .\@columns {

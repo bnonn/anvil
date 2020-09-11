@@ -91,7 +91,7 @@ body>header {
 		font-size: var(--fs-xs);
 		position : absolute;
 		right    : beats(.5);
-		top      : 0;
+		top      : beats(.25);
 
 		a {
 			color  : var(--c-neutral);

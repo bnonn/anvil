@@ -25,10 +25,7 @@
 		height: 100%;
 	}
 
-	&.\&tight,
-	&.\&tight+* {
-		--space: 0;
-	}
+	@include dimension-adjustments(spacing);
 
 	/**
 	 * Position some elements at the top, and others at the bottom, after the
