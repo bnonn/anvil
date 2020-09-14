@@ -1,6 +1,6 @@
 @mixin placeholder() {
-	--aspect-ratio: 16/9;
-	--size        : var(--beat-xl);
+	--aspect-ratio    : 16/9;
+	--placeholder-size: var(--beat-xl);
 
 	padding-bottom   : calc(var(--aspect-ratio) * 100%);
 	position         : relative;
@@ -25,7 +25,7 @@
 		top            : 0;
 	}
 
-	@include dimension-adjustments(sizing);
+	@include dimension-adjustments(placeholder, sizing, na);
 }
 
 .\%placeholder {

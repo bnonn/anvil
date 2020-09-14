@@ -4,16 +4,19 @@
  */
 
 @mixin action-clicker() {
-	background-color: var(--c-alert);
-	border          : var(--border-medium) solid var(--c-bg);
-	color           : var(--c-running--reversed);
+	--button-color: var(--c-alert);
+	--text-color  : var(--c-bg);
+
+	background-color: var(--button-color);
+	border          : var(--border-medium) solid var(--text-color);
+	color           : var(--text-color);
 	cursor          : pointer;
 	font-weight     : var(--fw-bold);
 	position        : relative;
 	transition      : all .2s;
 
 	&::after {
-		border    : var(--border-medium) solid var(--c-bg);
+		border    : var(--border-medium) solid var(--text-color);
 		bottom    : calc(var(--border-large)*-1);
 		content   : '';
 		display   : block;
@@ -25,23 +28,23 @@
 	}
 
 	&:hover {
-		background-color: var(--c-alert);
-		border-color    : var(--c-bg);
+		background-color: var(--button-color);
+		border-color    : var(--text-color);
 		transition      : all .2s;
 
 		&::after {
-			border-color: var(--c-alert);
+			border-color: var(--button-color);
 			transition  : all .2s;
 		}
 	}
 
 	&:focus {
-		background-color: var(--c-alert);
-		border-color    : var(--c-bg);
+		background-color: var(--button-color);
+		border-color    : var(--text-color);
 		transition      : all .2s;
 
 		&::after {
-			border-color: var(--c-bg);
+			border-color: var(--text-color);
 			border-width: var(--border-small);
 			bottom      : var(--border-medium);
 			left        : var(--border-medium);
@@ -49,6 +52,11 @@
 			top         : var(--border-medium);
 			transition  : all .2s;
 		}
+	}
+
+	&.\&secondary {
+		--button-color: var(--c-bg);
+		--text-color  : var(--c-alert);
 	}
 }
 

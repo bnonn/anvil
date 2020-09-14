@@ -5,9 +5,7 @@
  */
 
 @mixin battery() {
-	--space: 1rem;
-
-	overflow: hidden;
+	--battery-space: 1rem;
 
 	*+* {
 		margin-top: 0;
@@ -18,11 +16,11 @@
 		display        : flex;
 		flex-wrap      : wrap;
 		justify-content: flex-start;
-		margin         : calc(var(--space) / 2 * -1);
+		margin         : calc(var(--battery-space) / 2 * -1);
 	}
 
 	&>*>* {
-		margin: calc(var(--space) / 2);
+		margin: calc(var(--battery-space) / 2);
 	}
 
 	&.\&arrange {
@@ -35,31 +33,11 @@
 		}
 	}
 
-	&.\&space {
-		&\:xsmall {
-			--space: var(--beat-xs);
-		}
-
-		&\:small {
-			--space: var(--beat-s);
-		}
-
-		&\:medium {
-			--space: var(--beat-m);
-		}
-
-		&\:large {
-			--space: var(--beat-l);
-		}
-
-		&\:tight {
-			--space: 0;
-		}
-
-		&\:xlarge {
-			--space: var(--beat-xl);
-		}
+	&.\&suppress-scroller {
+		overflow: hidden;
 	}
+
+	@include dimension-adjustments(battery, spacing, na);
 }
 
 .\@battery {

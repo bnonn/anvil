@@ -1,218 +1,56 @@
 /**
  * Helper mixin to consistently adjust spacing and sizing on
- * layout primitives while staying dry.
+ * layout primitives or objects while staying dry.
  */
 
-@mixin dimension-adjustments($dimension) {
+
+@mixin dimension-adjustments($class, $dimension, $axis) {
+
+	$sizes:
+		"tight""0",
+		"xsmall""beat-xs",
+		"small""beat-s",
+		"medium""beat-m",
+		"large""beat-l",
+		"xlarge""beat-xl";
+
 	@if $dimension==spacing {
-
 		&.\&space {
-			&\:tight {
-				--space: 0;
+
+			@each $size-name,
+			$beat-size in $sizes {
+				&\:#{$size-name} {
+					--#{$class}-space: var(--#{$beat-size});
+				}
 			}
 
-			&\:xsmall {
-				--space: var(--beat-xs);
-			}
+			@if $axis !=na {
+				$axes: "above", "below", "left", "right";
 
-			&\:small {
-				--space: var(--beat-s);
-			}
+				@each $new-axis in $axes {
 
-			&\:medium {
-				--space: var(--beat-m);
-			}
+					&\:#{$new-axis} {
 
-			&\:large {
-				--space: var(--beat-l);
-			}
-
-			&\:xlarge {
-				--space: var(--beat-xl);
-			}
-
-			&\:above\:tight {
-				--space-above: 0;
-			}
-
-			&\:above\:xsmall {
-				--space-above: var(--beat-xs);
-			}
-
-			&\:above\:small {
-				--space-above: var(--beat-s);
-			}
-
-			&\:above\:medium {
-				--space-above: var(--beat-m);
-			}
-
-			&\:above\:large {
-				--space-above: var(--beat-l);
-			}
-
-			&\:above\:xlarge {
-				--space-above: var(--beat-xl);
-			}
-
-			&\:below\:tight {
-				--space-below: 0;
-			}
-
-			&\:below\:xsmall {
-				--space-below: var(--beat-xs);
-			}
-
-			&\:below\:small {
-				--space-below: var(--beat-s);
-			}
-
-			&\:below\:medium {
-				--space-below: var(--beat-m);
-			}
-
-			&\:below\:large {
-				--space-below: var(--beat-l);
-			}
-
-			&\:below\:xlarge {
-				--space-below: var(--beat-xl);
-			}
-
-			&\:left\:tight {
-				--space-left: 0;
-			}
-
-			&\:left\:xsmall {
-				--space-left: var(--beat-xs);
-			}
-
-			&\:left\:small {
-				--space-left: var(--beat-s);
-			}
-
-			&\:left\:medium {
-				--space-left: var(--beat-m);
-			}
-
-			&\:left\:large {
-				--space-left: var(--beat-l);
-			}
-
-			&\:left\:xlarge {
-				--space-left: var(--beat-xl);
-			}
-
-			&\:right\:tight {
-				--space-right: 0;
-			}
-
-			&\:right\:xsmall {
-				--space-right: var(--beat-xs);
-			}
-
-			&\:right\:small {
-				--space-right: var(--beat-s);
-			}
-
-			&\:right\:medium {
-				--space-right: var(--beat-m);
-			}
-
-			&\:right\:large {
-				--space-right: var(--beat-l);
-			}
-
-			&\:right\:xlarge {
-				--space-right: var(--beat-xl);
-			}
-
-			&\:vert\:tight {
-				--space-above: 0;
-				--space-below: 0;
-			}
-
-			&\:vert\:xsmall {
-				--space-above: var(--beat-xs);
-				--space-below: var(--beat-xs);
-			}
-
-			&\:vert\:small {
-				--space-above: var(--beat-s);
-				--space-below: var(--beat-s);
-			}
-
-			&\:vert\:medium {
-				--space-above: var(--beat-m);
-				--space-below: var(--beat-m);
-			}
-
-			&\:vert\:large {
-				--space-above: var(--beat-l);
-				--space-below: var(--beat-l);
-			}
-
-			&\:vert\:xlarge {
-				--space-above: var(--beat-xl);
-				--space-below: var(--beat-xl);
-			}
-
-			&\:horiz\:tight {
-				--space-left : 0;
-				--space-right: 0;
-			}
-
-			&\:horiz\:xsmall {
-				--space-left : var(--beat-xs);
-				--space-right: var(--beat-xs);
-			}
-
-			&\:horiz\:small {
-				--space-left : var(--beat-s);
-				--space-right: var(--beat-s);
-			}
-
-			&\:horiz\:medium {
-				--space-left : var(--beat-m);
-				--space-right: var(--beat-m);
-			}
-
-			&\:horiz\:large {
-				--space-left : var(--beat-l);
-				--space-right: var(--beat-l);
-			}
-
-			&\:horiz\:xlarge {
-				--space-left : var(--beat-xl);
-				--space-right: var(--beat-xl);
+						@each $size-name,
+						$beat-size in $sizes {
+							&\:#{$size-name} {
+								--#{$class}-space-#{$new-axis}: var(--#{$beat-size});
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 
 	@else {
 		&.\&size {
-			&\:tight {
-				--size: 0;
-			}
 
-			&\:xsmall {
-				--size: var(--beat-xs);
-			}
-
-			&\:small {
-				--size: var(--beat-s);
-			}
-
-			&\:medium {
-				--size: var(--beat-m);
-			}
-
-			&\:large {
-				--size: var(--beat-l);
-			}
-
-			&\:xlarge {
-				--size: var(--beat-xl);
+			@each $size-name,
+			$beat-size in $sizes {
+				&\:#{$size-name} {
+					--size: var(--#{$beat-size});
+				}
 			}
 		}
 	}

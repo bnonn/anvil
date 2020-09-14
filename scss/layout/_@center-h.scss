@@ -5,9 +5,9 @@
  */
 
 @mixin center-h() {
-	--height: autofit;
-	--space : beats(1);
-	--width : 100%;
+	--height        : autofit;
+	--center-h-space: beats(1);
+	--width         : 100%;
 
 	// Structural settings
 	align-items   : center;
@@ -20,8 +20,10 @@
 	// Adjustable settings
 	max-width    : var(--width);
 	min-height   : var(--height);
-	padding-left : var(--space);
-	padding-right: var(--space);
+	padding-left : var(--center-h-space);
+	padding-right: var(--center-h-space);
+
+	@include dimension-adjustments(center-h, spacing, na);
 }
 
 .\@center-h {

@@ -5,11 +5,13 @@
  */
 
 @mixin grid() {
-	--space: 0;
+	--grid-space: 0;
 
 	display              : grid;
-	grid-gap             : var(--space);
+	grid-gap             : var(--grid-space);
 	grid-template-columns: repeat(auto-fit, minmax(var(--measure-min), 1fr)); // auto add new cols
+
+	@include dimension-adjustments(grid, spacing, na);
 }
 
 .\@grid {

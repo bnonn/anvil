@@ -6,7 +6,7 @@
  */
 
 @mixin stack() {
-	--space: var(--beat);
+	--stack-space: var(--beat);
 
 	display        : flex;
 	flex-direction : column;
@@ -18,14 +18,14 @@
 	}
 
 	&>*+* {
-		margin-top: var(--space);
+		margin-top: var(--stack-space);
 	}
 
 	&:only-child {
 		height: 100%;
 	}
 
-	@include dimension-adjustments(spacing);
+	@include dimension-adjustments(stack, spacing, na);
 
 	/**
 	 * Position some elements at the top, and others at the bottom, after the

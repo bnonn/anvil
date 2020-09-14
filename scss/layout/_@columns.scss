@@ -5,8 +5,8 @@
  */
 
 @mixin columns() {
-	--space    : 1rem;
-	--threshold: 32rem;
+	--columns-space    : 1rem;
+	--columns-threshold: 32rem;
 
 	display  : flex;
 	flex-wrap: wrap;
@@ -17,8 +17,8 @@
 
 	&>* {
 		flex-grow : 1;
-		flex-basis: calc((var(--threshold) - 100%) * 999);
-		margin    : var(--space);
+		flex-basis: calc((var(--columns-threshold) - 100%) * 999);
+		margin    : var(--columns-space);
 		margin-top: 0;
 		min-width : var(--measure-min);
 	}
@@ -63,7 +63,7 @@
 		}
 	}
 
-	@include dimension-adjustments(spacing);
+	@include dimension-adjustments(columns, spacing, na);
 }
 
 .\@columns {

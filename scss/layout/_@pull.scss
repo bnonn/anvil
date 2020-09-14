@@ -4,48 +4,48 @@
 
 @mixin pull() {
 	--border-width: 0;
-	--size        : 38%;
-	--space       : var(--beat);
+	--pull-size   : 38%;
+	--pull-space  : var(--beat);
 
 	border       : var(--border-width) solid var(--c-neutral);
-	margin-bottom: calc(var(--space) - var(--border-width));
-	margin-top   : calc(var(--space) - var(--border-width));
-	max-width    : var(--size) !important;
+	margin-bottom: calc(var(--pull-space) - var(--border-width));
+	margin-top   : calc(var(--pull-space) - var(--border-width));
+	max-width    : var(--pull-size) !important;
 
 	&.\&arrange {
 		&\:left {
 			float       : left;
-			margin-right: calc(var(--space) / 2);
+			margin-right: calc(var(--pull-space) / 2);
 		}
 
 		&\:right {
 			float      : right;
-			margin-left: calc(var(--space) / 2);
+			margin-left: calc(var(--pull-space) / 2);
 		}
 	}
 
 	&.\&size {
 		&\:small {
-			--size: 38%;
+			--pull-size: 38%;
 
 			@include breakpoint($widescreen) {
-				--size: 19%;
+				--pull-size: 19%;
 			}
 		}
 
 		&\:medium {
-			--size: 50%;
+			--pull-size: 50%;
 
 			@include breakpoint($widescreen) {
-				--size: 38%;
+				--pull-size: 38%;
 			}
 		}
 
 		&\:large {
-			--size: 100%;
+			--pull-size: 100%;
 
 			@include breakpoint($widescreen) {
-				--size: 50%;
+				--pull-size: 50%;
 			}
 		}
 	}

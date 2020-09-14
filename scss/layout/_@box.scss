@@ -8,18 +8,18 @@
  */
 
 @mixin box() {
-	--space      : var(--beat);
-	--space-above: var(--space);
-	--space-below: var(--space);
-	--space-left : var(--space);
-	--space-right: var(--space);
+	--box-space      : var(--beat);
+	--box-space-above: var(--box-space);
+	--box-space-below: var(--box-space);
+	--box-space-left : var(--box-space);
+	--box-space-right: var(--box-space);
 
-	padding-bottom: var(--space-below);
-	padding-left  : var(--space-left);
-	padding-right : var(--space-right);
-	padding-top   : var(--space-above);
+	padding-bottom: var(--box-space-below);
+	padding-left  : var(--box-space-left);
+	padding-right : var(--box-space-right);
+	padding-top   : var(--box-space-above);
 
-	@include dimension-adjustments(spacing);
+	@include dimension-adjustments(box, spacing, both);
 }
 
 .\@box {

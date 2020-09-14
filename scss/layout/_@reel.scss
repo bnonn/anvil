@@ -6,7 +6,7 @@
  */
 
 @mixin reel() {
-	--space: 1rem;
+	--reel-space: 1rem;
 
 	display        : flex;
 	height         : auto;
@@ -59,11 +59,11 @@
 	}
 
 	&>:last-child {
-		margin-right: var(--space);
+		margin-right: var(--reel-space);
 	}
 
 	&>*+* {
-		margin-left: var(--space);
+		margin-left: var(--reel-space);
 		margin-top : 0 !important; // in a context of @running
 	}
 
@@ -73,8 +73,7 @@
 		width     : auto;
 	}
 
-	&.\&hide-clicker,
-	&.\&no-clicker {
+	&.\&suppress-clicker {
 
 		&::after,
 		&::before {
@@ -82,8 +81,7 @@
 		}
 	}
 
-	&.\&hide-scroller,
-	&.\&no-scroller {
+	&.\&suppress-scroller {
 		scrollbar-color: transparent;
 
 		&::-webkit-scrollbar {
@@ -101,15 +99,14 @@
 	}
 
 	&.is-overflowing {
-		padding-bottom: var(--space);
+		padding-bottom: var(--reel-space);
 
-		&.\&hide-scroller,
-		&.\&no-scroller {
+		&.\&suppress-scroller {
 			padding-bottom: 0;
 		}
 	}
 
-	@include dimension-adjustments(spacing);
+	@include dimension-adjustments(reel, spacing, na);
 }
 
 .\@reel {

@@ -6,15 +6,16 @@
  */
 
 @mixin overlay() {
-	--space-h: calc(var(--leading) * 1rem);
-	--space-v: var(--space-h);
+	--overlay-space      : calc(var(--leading) * 1rem);
+	--overlay-space-horiz: var(--overlay-space);
+	--overlay-space-vert : var(--overlay-space);
 
 	display   : block;
 	left      : 50%;
 	margin    : 0;
 	max-height: 100vh;
 	max-width : 100vw;
-	padding   : var(--space-v) var(--space-h);
+	padding   : var(--overlay-space-vert) var(--overlay-space-horiz);
 	position  : fixed;
 	top       : 50%;
 	transform : translate(-50%, -50%);
