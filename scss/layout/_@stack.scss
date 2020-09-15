@@ -6,7 +6,8 @@
  */
 
 @mixin stack() {
-	--stack-space: var(--beat);
+	--constrain-width: 100%;
+	--stack-space    : var(--beat);
 
 	display        : flex;
 	flex-direction : column;
@@ -15,6 +16,7 @@
 	&>* {
 		margin-bottom: 0;
 		margin-top   : 0;
+		max-width    : var(--constrain-width);
 	}
 
 	&>*+* {
@@ -26,6 +28,7 @@
 	}
 
 	@include dimension-adjustments(stack, spacing, na);
+	@include constraints();
 
 	/**
 	 * Position some elements at the top, and others at the bottom, after the

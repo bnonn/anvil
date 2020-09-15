@@ -12,6 +12,10 @@
 	margin-top   : calc(var(--pull-space) - var(--border-width));
 	max-width    : var(--pull-size) !important;
 
+	&>*+* {
+		margin-top: 0;
+	}
+
 	&.\&arrange {
 		&\:left {
 			float       : left;

@@ -7,7 +7,7 @@
 @mixin dimension-adjustments($class, $dimension, $axis) {
 
 	$sizes:
-		"tight""0",
+		"tight""tight",
 		"xsmall""beat-xs",
 		"small""beat-s",
 		"medium""beat-m",

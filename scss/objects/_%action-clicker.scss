@@ -5,7 +5,7 @@
 
 @mixin action-clicker() {
 	--button-color: var(--c-alert);
-	--text-color  : var(--c-bg);
+	--text-color  : var(--c-running--reversed);
 
 	background-color: var(--button-color);
 	border          : var(--border-medium) solid var(--text-color);

@@ -1,0 +1,24 @@
+.\%dodging-labels {
+
+	label {
+		color         : var(--c-neutral);
+		cursor        : text;
+		display       : block;
+		font-size     : var(--fs-s);
+		margin-left   : var(--beat-s);
+		margin-top    : -2.1rem; // unfortunately we need to use magic numbers here
+		pointer-events: none;
+		position      : absolute;
+		transition    : all .2s ease;
+	}
+
+	input:not(:placeholder-shown),
+	input:focus {
+		&+label {
+			font-size  : var(--fs-xs);
+			margin-left: 0;
+			margin-top : -4.2rem;
+			transition : all .2s ease;
+		}
+	}
+}

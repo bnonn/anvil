@@ -1,7 +1,7 @@
 @mixin card() {
 	border       : 1px solid var(--c-neutral--light);
 	border-radius: var(--border-large);
-	box-shadow   : var(--box-shadow-large);
+	box-shadow   : var(--border-large) var(--border-large) var(--border-large) rgba(0, 0, 0, .1);
 	max-width    : var(--measure-min) !important;
 }
 

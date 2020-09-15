@@ -3,6 +3,14 @@
 		&\:lighter {
 			background: var(--c-neutral--lighter) !important;
 		}
+
+		&\:lightest {
+			background: var(--c-bg) !important;
+		}
+
+		&\:light {
+			background: var(--c-neutral--light) !important;
+		}
 	}
 
 	&\:border {
@@ -13,10 +21,20 @@
 		&\:lighter {
 			border-color: var(--c-neutral--lighter) !important;
 		}
+
+		&\:lightest {
+			border-color: var(--c-bg) !important;
+		}
 	}
 
 	&\:reversed {
 		background-color: var(--c-bg--reversed);
 		color           : var(--c-running--reversed);
+	}
+
+	&\:text {
+		&\:warning {
+			color: var(--c-warning) !important;
+		}
 	}
 }

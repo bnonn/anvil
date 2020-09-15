@@ -5,13 +5,16 @@
  */
 
 @mixin battery() {
-	--battery-space: 1rem;
-
-	*+* {
-		margin-top: 0;
-	}
+	--battery-space  : 1rem;
+	--constrain-width: 100%;
 
 	&>* {
+		/**
+		* This is a wrapper until flex-box gets a well-supported
+		* gap property; we need to calculate some negative
+		* margins to get the battery items positioned correctly.
+		*/
+
 		align-items    : center;
 		display        : flex;
 		flex-wrap      : wrap;
@@ -20,7 +23,8 @@
 	}
 
 	&>*>* {
-		margin: calc(var(--battery-space) / 2);
+		margin   : calc(var(--battery-space) / 2);
+		max-width: var(--constrain-width);
 	}
 
 	&.\&arrange {
@@ -38,6 +42,7 @@
 	}
 
 	@include dimension-adjustments(battery, spacing, na);
+	@include constraints();
 }
 
 .\@battery {

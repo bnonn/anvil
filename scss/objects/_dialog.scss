@@ -24,7 +24,7 @@ dialog {
 		border     : 0;
 		color      : var(--c-running);
 		cursor     : pointer;
-		height     : 3rem;
+		height     : var(--beat-l);
 		line-height: 3.4rem; // not quite sure why
 		margin     : 0;
 		overflow   : hidden;
@@ -32,16 +32,20 @@ dialog {
 		position   : absolute;
 		right      : 0;
 		top        : 0;
-		width      : 3rem;
+		width      : var(--beat-l);
 
 		&:hover {
-			color     : black;
-			transform : scale(1.1);
+			color     : var(--c-warning);
 			transition: all 0.2s;
 		}
 
+		&:focus {
+			background: var(--c-warning);
+			color     : var(--c-running--reversed);
+		}
+
 		i {
-			font-size : 1.5rem;
+			font-size : var(--beat);
 			font-style: normal;
 		}
 	}

@@ -1,0 +1,31 @@
+/**
+ * Constrain elements to certain predefined settings.
+ */
+
+@mixin constraints() {
+	&.\&constrain {
+		&\:height {
+			&\:max {
+				--constrain-height: 100vh;
+			}
+		}
+
+		&\:width {
+			&\:max {
+				--constrain-width: 100vw;
+			}
+
+			&\:measure {
+				--constrain-width: var(--measure);
+			}
+
+			&\:medium {
+				--constrain-width: calc(var(--measure)/2);
+			}
+
+			&\:min {
+				--constrain-width: var(--measure-min);
+			}
+		}
+	}
+}

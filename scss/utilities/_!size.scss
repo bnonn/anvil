@@ -16,7 +16,13 @@
 		}
 	}
 
-	&\!width {
+	&\:text {
+		&\:xsmall {
+			font-size: var(--fs-xs) !important;
+		}
+	}
+
+	&\:width {
 		&\:measure {
 			max-width: var(--measure) !important;
 		}
