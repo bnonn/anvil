@@ -5,8 +5,6 @@
 
 @mixin review() {
 
-	--height: auto;
-
 	padding: 0;
 
 	/**
@@ -25,16 +23,20 @@
 	 */
 
 	header {
-		background : var(--c-neutral--lighter);
-		display    : flex;
-		padding    : var(--space);
-		padding-top: 0;
+		background: var(--c-neutral--lighter);
+		display   : flex;
+
+		&>* {
+			margin-top   : auto;
+			margin-bottom: auto;
+		}
 
 		li {
-			font      : normal 90% var(--ff-heading);
-			list-style: none;
-			margin    : 0;
-			padding   : 0;
+			font-family: var(--ff-heading);
+			font-size  : var(--fs-xs);
+			list-style : none;
+			margin     : 0;
+			padding    : 0;
 		}
 
 		.__author {
@@ -42,10 +44,10 @@
 		}
 
 		.__avatar {
+			// This should be the wrapper for a user icon in wireframes
 			color       : var(--c-neutral--dark);
 			font-size   : beats(2);
-			margin-right: beats(.5);
-			margin-top  : 1.4rem; // optical adjustment
+			margin-right: var(--beat-xs);
 		}
 
 		.__stars {
@@ -64,10 +66,9 @@
 	 */
 
 	blockquote {
-		font-size       : var(--fs-xs);
-		margin-top      : 0;
-		// margin-bottom: auto;
-		padding         : var(--space);
+		font-size : var(--fs-xs);
+		margin-top: 0;
+		padding   : var(--beat-s);
 	}
 }
 
