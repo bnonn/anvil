@@ -1,9 +1,11 @@
 /**
-* Review elements. Selectors are organized by their order in
-* the review template.
+* Review elements. Selectors are organized below by their 
+* conventional order in the review template.
 */
 
 @mixin review() {
+
+	--review-space: var(--beat-s);
 
 	padding: 0;
 
@@ -11,7 +13,7 @@
 	 * Review image
 	 */
 
-	img {
+	&>img {
 		height    : auto;
 		margin    : 0;
 		object-fit: cover;
@@ -23,12 +25,13 @@
 	 */
 
 	header {
-		background: var(--c-neutral--lighter);
-		display   : flex;
+		align-items: flex-start;
+		background : var(--c-neutral--lighter);
+		display    : flex;
+		padding    : var(--review-space);
 
 		&>* {
-			margin-top   : auto;
-			margin-bottom: auto;
+			margin-top: 0;
 		}
 
 		li {
@@ -47,6 +50,7 @@
 			// This should be the wrapper for a user icon in wireframes
 			color       : var(--c-neutral--dark);
 			font-size   : beats(2);
+			line-height : 1;
 			margin-right: var(--beat-xs);
 		}
 
@@ -68,7 +72,7 @@
 	blockquote {
 		font-size : var(--fs-xs);
 		margin-top: 0;
-		padding   : var(--beat-s);
+		padding   : var(--review-space);
 	}
 }
 

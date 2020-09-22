@@ -2040,10 +2040,11 @@ body > footer {
 }
 
 /**
-* Review elements. Selectors are organized by their order in
-* the review template.
+* Review elements. Selectors are organized below by their 
+* conventional order in the review template.
 */
 .\+review {
+  --review-space: var(--beat-s);
   padding: 0;
   /**
 	 * Review image
@@ -2056,7 +2057,7 @@ body > footer {
 	 */
 }
 
-.\+review img {
+.\+review > img {
   height: auto;
   margin: 0;
   -o-object-fit: cover;
@@ -2065,15 +2066,18 @@ body > footer {
 }
 
 .\+review header {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background: var(--c-neutral--lighter);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: var(--review-space);
 }
 
 .\+review header > * {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 0;
 }
 
 .\+review header li {
@@ -2091,6 +2095,7 @@ body > footer {
 .\+review header .__avatar {
   color: var(--c-neutral--dark);
   font-size: 3rem;
+  line-height: 1;
   margin-right: var(--beat-xs);
 }
 
@@ -2107,7 +2112,7 @@ body > footer {
 .\+review blockquote {
   font-size: var(--fs-xs);
   margin-top: 0;
-  padding: var(--beat-s);
+  padding: var(--review-space);
 }
 
 /**

@@ -1,69 +1,275 @@
-<!doctype HTML>
-<html>
+<?php
 
-<head>
-	<meta charset="UTF-8">
-	<meta content="en-US" name="language">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+$this_page = "home";
+$page_title = "Driver Workflow Apps - Mobile Workflow Apps for Trucking Fleets | Eleos";
 
-	<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-	<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-	<link rel="preconnect" href="//kit.fontawesome.com" crossorigin>
+require_once "head.php";
 
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=
-	IBM+Plex+Mono:400,400i,700|
-	&display=swap" rel="stylesheet">
-
-	<!-- crazy icon links -->
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<meta name="msapplication-TileColor" content="#ffcd1b">
-	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
-	<script src="https://kit.fontawesome.com/8ebf709d8f.js" crossorigin="anonymous"></script>
-
-	<title>The Universal Marketing Plan</title>
-</head>
+?>
 
 <body class="@center-v">
-	<header>
-		<h1>Universal Marketing Plan</h1>
-		<h2>Customer Generation Field Manual</h2>
-	</header>
+	<?php require_once "site-header.php"; ?>
+	<main>
+		<article class="@stack &space:large">
 
-	<main class="@center-h">
-		<article>
-			<h1>No more Rube Goldberg marketing machines</h1>
-			<p class="+lede">The marketing system of every business is different, just as the engine of every car is different. Yet every engine is based on a universal plan: a plan for turning fuel into torque.</p>
+			<section class="@box &space:above:large &space:below:tight %running">
+				<h1>Drivers say that replacing mobilecomm with our app has given them more clarity & freedom, with less downtime & frustration</h1>
 
-			<p><strong>In the same way, every marketing system is based on a universal plan for turning traffic into customers.</strong></p>
+				<p><strong>Eleos is the world’s most advanced driver workflow system. It unifies everything truckers need into a single workflow app that automates trip management and lets you oversee your fleet in real time. It&rsquo;s a full in-cab and out-of-cab solution.</strong></p>
 
-			<p>To learn the basics of this system, get your free field guide now:</p>
+				<div class="@box &space:tight">
+					<div class="%video">
+						<iframe src="https://player.vimeo.com/video/380272362?color=E87722&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					</div>
+					<script src="https://player.vimeo.com/api/player.js"></script>
+				</div>
 
-			<button>Get the Universal Marketing Plan cheat-sheet</button>
+				<p>No more ancient mobilecomm your drivers hate. They have just one app that runs on the tablet in their truck—and on their phone.</p>
+
+				<p>With this app, they can do <em>everything.</em> This makes them happy (and more productive).</p>
+
+				<ul class="+feature-list">
+					<li>
+						<i class="__icon fas fa-phone-laptop"></i>
+						<p><strong>It runs on the tablets in their cabs, and on their phones</strong><br>
+							Drivers love this, because they can keep working with exactly the same interface whether they&rsquo;re on the road, waiting in their truck, having lunch in a diner, or resting up at a truck stop. They can confidently plan or review their routes, update dispatch, or check delivery instructions—wherever they are. No more dead downtime, and no more missing critical updates either. You drastically cut down inefficiency and delays.</p>
+					</li>
+					<li>
+						<i class="__icon fas fa-bring-forward"></i>
+						<p><strong>They get a modern interface that displays what they need, <em>at the time they need it</em></strong><br>
+							No more delivering workday information in a firehose of barely-usable text messages. Eleos drivers never have to hunt for what they need. They never get messages too late. Information is delivered to and from dispatch instantly—so if something changes at either end, corrections and updates can be made in real time.</p>
+					</li>
+					<li>
+						<i class="__icon fas fa-route"></i>
+						<p><strong>It includes a trip planner with truck-safe routing</strong><br>
+							Drivers can see every fuel and truck stop on the map, and get turn-by-turn voice-guided navigation. Once the trip is planned, the app manages every step automatically. No more relying on third-party map apps, or printed turn-by-turn directions.</p>
+					</li>
+					<li>
+						<i class="__icon fas fa-walkie-talkie"></i>
+						<p><strong>Dispatch information is laid out in a clear and beautiful display</strong><br>
+							Drivers can see their route map, with action buttons for each step of the workflow they need to follow. When actions are completed, dispatch gets the information instantly, so they can track progress (and respond to problems) in real time. No more time-consuming texting of information, or costly transmission delays, that frustrate drivers and slow down your business.</p>
+					</li>
+					<li>
+						<i class="__icon fas fa-cog"></i>
+						<p><strong>HOS and ELD information is easily accessible</strong><br>
+							A particularly handy feature for drivers is that they can see where their hours of service will run out <em>on the route map—</em>so they can plan their stops. The app integrates with any telematics system, and works offline if necessary.</p>
+					</li>
+				</ul>
+			</section>
+
+			<section class="@box &space:above:tight &space:below:tight">
+				<div class="@reel">
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Happy Trucker</li>
+								<li>Driver,</li>
+								<li>Big Trucking Co.</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>A testimonial about Eleos from a happy truck driver who never wants to use another system ever again.</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Trucker Carlson</li>
+								<li>Driver,</li>
+								<li>ABC Transportation</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Another testimonial saying all the things we&rsquo;ve just claimed in our copy, to back up our &ldquo;truckers say&rdquo; headline.</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Minnie Driver</li>
+								<li>Driver,</li>
+								<li>Wing and a Song Trucking</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus voluptates quod ullam voluptate, consequatur quo voluptatum exercitationem amet unde!</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Another Name</li>
+								<li>Driver,</li>
+								<li>Out Of Ideas Inc.</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore id, praesentium fugiat possimus ducimus aut rerum. Ea magnam obcaecati deleniti doloribus placeat sed rem, tempore eveniet nesciunt ad corporis iste.</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Happy Trucker</li>
+								<li>Driver,</li>
+								<li>Big Trucking Co.</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>A testimonial about Eleos from a happy truck driver who never wants to use another system ever again.</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Trucker Carlson</li>
+								<li>Driver,</li>
+								<li>ABC Transportation</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Another testimonial saying all the things we&rsquo;ve just claimed in our copy, to back up our &ldquo;truckers say&rdquo; headline.</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Minnie Driver</li>
+								<li>Driver,</li>
+								<li>Wing and a Song Trucking</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus voluptates quod ullam voluptate, consequatur quo voluptatum exercitationem amet unde!</p>
+						</blockquote>
+
+					</article>
+					<article class="%card +review">
+
+						<header>
+							<div class="__avatar @box &space:xsmall">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<ul class="__meta">
+								<li class="__author">Another Name</li>
+								<li>Driver,</li>
+								<li>Out Of Ideas Inc.</li>
+							</ul>
+						</header>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore id, praesentium fugiat possimus ducimus aut rerum. Ea magnam obcaecati deleniti doloribus placeat sed rem, tempore eveniet nesciunt ad corporis iste.</p>
+						</blockquote>
+
+					</article>
+				</div>
+			</section>
+
+			<section class="@box !color:bg:lighter &space:above:large &space:below:large %running">
+				<h2>In-cab solution + driver phone app = huge business success</h2>
+
+				<p>Because it unifies everything a driver needs, Eleos has just one login to remember, just one app to install, just one interface to learn—and no redundant data entry. By being able to do everything in once place, Eleos empowers you to:</p>
+
+				<ul class="@columns +feature-list &short-items" style="--icon-color:var(--c-running);">
+					<li>
+						<i class="__icon fas fa-user-chart"></i>
+						<p><strong>Reduce driver downtime and maximize asset utilization</strong></p>
+					</li>
+					<li>
+						<i class="__icon fas fa-lightbulb-dollar"></i>
+						<p><strong>Boost the efficiency and profitability of your network</strong></p>
+					</li>
+					<li>
+						<i class="__icon fas fa-clipboard-check"></i>
+						<p><strong>Improve compliance with shipper demands</strong></p>
+					</li>
+					<li>
+						<i class="__icon fas fa-router"></i>
+						<p><strong>Eliminate crippling communication outages</strong></p>
+					</li>
+					<li>
+						<i class="__icon fas fa-gas-pump"></i>
+						<p><strong>Reduce fuel cost</strong></p>
+					</li>
+					<li>
+						<i class="__icon fas fa-heart"></i>
+						<p><strong>Increase driver job satisfaction</strong></p>
+					</li>
+				</ul>
+
+			</section>
+
+			<section class="@box %running">
+
+				<h2>Trusted by industry leaders</h2>
+
+				<div class="@center-h" style="background:var(--c-neutral--light); padding:5rem">
+					<h3>Logo cloud</h3>
+				</div>
+			</section>
+
+			<section class="@box %running &space:above:large &space:below:large !color:bg:lighter">
+
+				<h2>Easy customization & integration</h2>
+
+				<p>Safety and compliance is a snap with Eleos. While many trucking companies are struggling to manage COVID-related health check-ins and screenings using traditional mobilecomm, Eleos customers simply add the necessary steps to their workflows. This gives them an enormous leg up, because they can prove to shippers that their drivers are compliant and healthy.</p>
+
+				<p>Customization goes much further than this too. Eleos integrates with whatever telematics system you are using, and can be tailored to whatever specific procedures or systems you already have set up.</p>
+
+
+				<div class="@box %action-box" style="background-color:white;">
+
+					<h2>Request a demo of Eleos</h2>
+
+					<p>If you&rsquo;d like to see the Eleos app in action, why not get a free, zero-obligation demo?</p>
+
+					<button data-target="#datepicker" class="?open(dialog) %action-clicker @box"><i class="fas fa-calendar-alt"></i> Pick a time for a demo <i class="fas fa-chevron-right"></i></button>
+				</div>
+				<!--%action-box-->
+			</section>
+			<!--@box-->
+
 		</article>
 	</main>
 
-	<footer>
-		<p><strong>A publication of <a href="https://informationhighwayman.com">Information Highwayman</a></strong><br />
-			432 Raikes Ave, Te Awamutu 3800<br />
-			New Zealand<br />
-			<a href="mailto:bnonn@informationhighwayman.com">bnonn@informationhighwayman.com</a></p>
-	</footer>
+	<?php require_once "site-footer.php"; ?>
+	<?php require_once "form-request-demo.php"; ?>
+	<?php require_once "scripts.php"; ?>
+
 </body>
 
 </html>
