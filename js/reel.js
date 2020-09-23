@@ -10,7 +10,7 @@ function initReels()
 	const reels = Array.from( document.querySelectorAll( `.${reelClass}` ) );
 	const toggleOverflowClass = el =>
 	{
-		el.classList.toggle( 'is-overflowing', el.scrollWidth > el.clientWidth );
+		el.classList.toggle( 'is\\:overflowing', el.scrollWidth > el.clientWidth );
 	};
 
 	for ( let reel of reels )

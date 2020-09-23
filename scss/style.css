@@ -359,23 +359,23 @@ sup {
 }
 
 .\@battery.\&space\:xsmall {
-  --battery-space: var(--beat-xs);
+  --battery-space: var(--beat-xsmall);
 }
 
 .\@battery.\&space\:small {
-  --battery-space: var(--beat-s);
+  --battery-space: var(--beat-small);
 }
 
 .\@battery.\&space\:medium {
-  --battery-space: var(--beat-m);
+  --battery-space: var(--beat-medium);
 }
 
 .\@battery.\&space\:large {
-  --battery-space: var(--beat-l);
+  --battery-space: var(--beat-large);
 }
 
 .\@battery.\&space\:xlarge {
-  --battery-space: var(--beat-xl);
+  --battery-space: var(--beat-xlarge);
 }
 
 .\@battery.\&constrain\:height\:max {
@@ -423,23 +423,23 @@ sup {
 }
 
 .\@box.\&space\:xsmall {
-  --box-space: var(--beat-xs);
+  --box-space: var(--beat-xsmall);
 }
 
 .\@box.\&space\:small {
-  --box-space: var(--beat-s);
+  --box-space: var(--beat-small);
 }
 
 .\@box.\&space\:medium {
-  --box-space: var(--beat-m);
+  --box-space: var(--beat-medium);
 }
 
 .\@box.\&space\:large {
-  --box-space: var(--beat-l);
+  --box-space: var(--beat-large);
 }
 
 .\@box.\&space\:xlarge {
-  --box-space: var(--beat-xl);
+  --box-space: var(--beat-xlarge);
 }
 
 .\@box.\&space\:above\:tight {
@@ -447,23 +447,23 @@ sup {
 }
 
 .\@box.\&space\:above\:xsmall {
-  --box-space-above: var(--beat-xs);
+  --box-space-above: var(--beat-xsmall);
 }
 
 .\@box.\&space\:above\:small {
-  --box-space-above: var(--beat-s);
+  --box-space-above: var(--beat-small);
 }
 
 .\@box.\&space\:above\:medium {
-  --box-space-above: var(--beat-m);
+  --box-space-above: var(--beat-medium);
 }
 
 .\@box.\&space\:above\:large {
-  --box-space-above: var(--beat-l);
+  --box-space-above: var(--beat-large);
 }
 
 .\@box.\&space\:above\:xlarge {
-  --box-space-above: var(--beat-xl);
+  --box-space-above: var(--beat-xlarge);
 }
 
 .\@box.\&space\:below\:tight {
@@ -471,23 +471,23 @@ sup {
 }
 
 .\@box.\&space\:below\:xsmall {
-  --box-space-below: var(--beat-xs);
+  --box-space-below: var(--beat-xsmall);
 }
 
 .\@box.\&space\:below\:small {
-  --box-space-below: var(--beat-s);
+  --box-space-below: var(--beat-small);
 }
 
 .\@box.\&space\:below\:medium {
-  --box-space-below: var(--beat-m);
+  --box-space-below: var(--beat-medium);
 }
 
 .\@box.\&space\:below\:large {
-  --box-space-below: var(--beat-l);
+  --box-space-below: var(--beat-large);
 }
 
 .\@box.\&space\:below\:xlarge {
-  --box-space-below: var(--beat-xl);
+  --box-space-below: var(--beat-xlarge);
 }
 
 .\@box.\&space\:left\:tight {
@@ -495,23 +495,23 @@ sup {
 }
 
 .\@box.\&space\:left\:xsmall {
-  --box-space-left: var(--beat-xs);
+  --box-space-left: var(--beat-xsmall);
 }
 
 .\@box.\&space\:left\:small {
-  --box-space-left: var(--beat-s);
+  --box-space-left: var(--beat-small);
 }
 
 .\@box.\&space\:left\:medium {
-  --box-space-left: var(--beat-m);
+  --box-space-left: var(--beat-medium);
 }
 
 .\@box.\&space\:left\:large {
-  --box-space-left: var(--beat-l);
+  --box-space-left: var(--beat-large);
 }
 
 .\@box.\&space\:left\:xlarge {
-  --box-space-left: var(--beat-xl);
+  --box-space-left: var(--beat-xlarge);
 }
 
 .\@box.\&space\:right\:tight {
@@ -519,23 +519,23 @@ sup {
 }
 
 .\@box.\&space\:right\:xsmall {
-  --box-space-right: var(--beat-xs);
+  --box-space-right: var(--beat-xsmall);
 }
 
 .\@box.\&space\:right\:small {
-  --box-space-right: var(--beat-s);
+  --box-space-right: var(--beat-small);
 }
 
 .\@box.\&space\:right\:medium {
-  --box-space-right: var(--beat-m);
+  --box-space-right: var(--beat-medium);
 }
 
 .\@box.\&space\:right\:large {
-  --box-space-right: var(--beat-l);
+  --box-space-right: var(--beat-large);
 }
 
 .\@box.\&space\:right\:xlarge {
-  --box-space-right: var(--beat-xl);
+  --box-space-right: var(--beat-xlarge);
 }
 
 /**
@@ -572,23 +572,23 @@ sup {
 }
 
 .\@center-h.\&space\:xsmall {
-  --center-h-space: var(--beat-xs);
+  --center-h-space: var(--beat-xsmall);
 }
 
 .\@center-h.\&space\:small {
-  --center-h-space: var(--beat-s);
+  --center-h-space: var(--beat-small);
 }
 
 .\@center-h.\&space\:medium {
-  --center-h-space: var(--beat-m);
+  --center-h-space: var(--beat-medium);
 }
 
 .\@center-h.\&space\:large {
-  --center-h-space: var(--beat-l);
+  --center-h-space: var(--beat-large);
 }
 
 .\@center-h.\&space\:xlarge {
-  --center-h-space: var(--beat-xl);
+  --center-h-space: var(--beat-xlarge);
 }
 
 /**
@@ -717,23 +717,23 @@ sup {
 }
 
 .\@columns.\&space\:xsmall {
-  --columns-space: var(--beat-xs);
+  --columns-space: var(--beat-xsmall);
 }
 
 .\@columns.\&space\:small {
-  --columns-space: var(--beat-s);
+  --columns-space: var(--beat-small);
 }
 
 .\@columns.\&space\:medium {
-  --columns-space: var(--beat-m);
+  --columns-space: var(--beat-medium);
 }
 
 .\@columns.\&space\:large {
-  --columns-space: var(--beat-l);
+  --columns-space: var(--beat-large);
 }
 
 .\@columns.\&space\:xlarge {
-  --columns-space: var(--beat-xl);
+  --columns-space: var(--beat-xlarge);
 }
 
 /**
@@ -799,23 +799,23 @@ sup {
 }
 
 .\@grid.\&space\:xsmall {
-  --grid-space: var(--beat-xs);
+  --grid-space: var(--beat-xsmall);
 }
 
 .\@grid.\&space\:small {
-  --grid-space: var(--beat-s);
+  --grid-space: var(--beat-small);
 }
 
 .\@grid.\&space\:medium {
-  --grid-space: var(--beat-m);
+  --grid-space: var(--beat-medium);
 }
 
 .\@grid.\&space\:large {
-  --grid-space: var(--beat-l);
+  --grid-space: var(--beat-large);
 }
 
 .\@grid.\&space\:xlarge {
-  --grid-space: var(--beat-xl);
+  --grid-space: var(--beat-xlarge);
 }
 
 /**
@@ -1021,23 +1021,23 @@ sup {
 }
 
 .\@reel.\&space\:xsmall {
-  --reel-space: var(--beat-xs);
+  --reel-space: var(--beat-xsmall);
 }
 
 .\@reel.\&space\:small {
-  --reel-space: var(--beat-s);
+  --reel-space: var(--beat-small);
 }
 
 .\@reel.\&space\:medium {
-  --reel-space: var(--beat-m);
+  --reel-space: var(--beat-medium);
 }
 
 .\@reel.\&space\:large {
-  --reel-space: var(--beat-l);
+  --reel-space: var(--beat-large);
 }
 
 .\@reel.\&space\:xlarge {
-  --reel-space: var(--beat-xl);
+  --reel-space: var(--beat-xlarge);
 }
 
 /**
@@ -1066,8 +1066,8 @@ sup {
 }
 
 .\@stack > * {
-  --head-space: 0;
   margin-bottom: 0;
+  margin-top: 0;
   max-width: var(--constrain-width);
 }
 
@@ -1084,23 +1084,23 @@ sup {
 }
 
 .\@stack.\&space\:xsmall {
-  --stack-space: var(--beat-xs);
+  --stack-space: var(--beat-xsmall);
 }
 
 .\@stack.\&space\:small {
-  --stack-space: var(--beat-s);
+  --stack-space: var(--beat-small);
 }
 
 .\@stack.\&space\:medium {
-  --stack-space: var(--beat-m);
+  --stack-space: var(--beat-medium);
 }
 
 .\@stack.\&space\:large {
-  --stack-space: var(--beat-l);
+  --stack-space: var(--beat-large);
 }
 
 .\@stack.\&space\:xlarge {
-  --stack-space: var(--beat-xl);
+  --stack-space: var(--beat-xlarge);
 }
 
 .\@stack.\&constrain\:height\:max {
@@ -1535,23 +1535,23 @@ blockquote {
 }
 
 .\%placeholder.\&size\:xsmall {
-  --size: var(--beat-xs);
+  --size: var(--beat-xsmall);
 }
 
 .\%placeholder.\&size\:small {
-  --size: var(--beat-s);
+  --size: var(--beat-small);
 }
 
 .\%placeholder.\&size\:medium {
-  --size: var(--beat-m);
+  --size: var(--beat-medium);
 }
 
 .\%placeholder.\&size\:large {
-  --size: var(--beat-l);
+  --size: var(--beat-large);
 }
 
 .\%placeholder.\&size\:xlarge {
-  --size: var(--beat-xl);
+  --size: var(--beat-xlarge);
 }
 
 .\%skip-link {

@@ -14,7 +14,7 @@ require_once "head.php";
 	<main id="main-content">
 		<article class="@stack &space:large">
 
-			<section class="@box &space:above:large &space:below:tight %running">
+			<section class="@box &space:above:large %running">
 				<h1>Drivers say that replacing mobilecomm with our app has given them more clarity & freedom, with less downtime & frustration</h1>
 
 				<p><strong>Eleos is the world’s most advanced driver workflow system. It unifies everything truckers need into a single workflow app that automates trip management and lets you oversee your fleet in real time. It&rsquo;s a full in-cab and out-of-cab solution.</strong></p>
@@ -59,7 +59,7 @@ require_once "head.php";
 				</ul>
 			</section>
 
-			<section class="@box &space:above:tight &space:below:tight">
+			<section class="@box &space:below:large">
 				<div class="@reel">
 					<article class="%card +review">
 
@@ -234,7 +234,7 @@ require_once "head.php";
 
 			</section>
 
-			<section class="@box %running">
+			<section class="@box %running &space:above:large &space:below:large">
 
 				<h2>Trusted by industry leaders</h2>
 
@@ -268,7 +268,7 @@ require_once "head.php";
 	</main>
 
 	<?php require_once "site-footer.php"; ?>
-	<?php require_once "form-request-demo.php"; ?>
+	<?php require_once "dialog.php"; ?>
 	<?php require_once "scripts.php"; ?>
 
 </body>

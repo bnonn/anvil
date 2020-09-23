@@ -8,11 +8,11 @@
 
 	$sizes:
 		"tight""tight",
-		"xsmall""beat-xs",
-		"small""beat-s",
-		"medium""beat-m",
-		"large""beat-l",
-		"xlarge""beat-xl";
+		"xsmall""beat-xsmall",
+		"small""beat-small",
+		"medium""beat-medium",
+		"large""beat-large",
+		"xlarge""beat-xlarge";
 
 	@if $dimension==spacing {
 		&.\&space {
