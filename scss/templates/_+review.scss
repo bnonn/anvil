@@ -42,10 +42,6 @@
 			padding    : 0;
 		}
 
-		.__author {
-			font-weight: var(--fw-bold);
-		}
-
 		.__avatar {
 			// This should be the wrapper for a user icon in wireframes
 			color       : var(--c-neutral--dark);
@@ -54,13 +50,20 @@
 			margin-right: var(--beat-xs);
 		}
 
-		.__stars {
-			color    : var(--c-neutral--dark);
-			font-size: beats(1);
-			margin   : 0;
+		.__meta {
+			.__author {
+				font-weight: var(--fw-bold);
+			}
 
-			i[class*='star'] {
-				color: var(--c-warning);
+			.__stars {
+				color     : var(--c-neutral--dark);
+				font-size : beats(1);
+				margin    : 0;
+				margin-top: calc(var(--beats-xs) * -1);
+
+				i[class*='star'] {
+					color: var(--c-warning);
+				}
 			}
 		}
 	}
