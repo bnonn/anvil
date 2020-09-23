@@ -1,6 +1,6 @@
 @mixin placeholder() {
 	--aspect-ratio    : 16/9;
-	--placeholder-size: var(--beat-xl);
+	--placeholder-size: var(--beat-xlarge);
 
 	padding-bottom   : calc(var(--aspect-ratio) * 100%);
 	position         : relative;

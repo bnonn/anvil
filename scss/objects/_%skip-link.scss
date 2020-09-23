@@ -5,7 +5,7 @@
 	font-size     : var(--fs-xs);
 	font-weight   : var(--fw-medium);
 	left          : var(--beat);
-	padding       : 0 var(--beat-xs);
+	padding       : 0 var(--beat-xsmall);
 	position      : fixed;
 	text-transform: uppercase;
 	transform     : translateY(-100%);
@@ -14,6 +14,6 @@
 
 	&:focus {
 		transform: translateY(0%);
-		top      : var(--beat-s);
+		top      : var(--beat-small);
 	}
 }

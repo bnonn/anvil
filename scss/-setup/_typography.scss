@@ -55,11 +55,11 @@
  	--measure-min  : #{beats(10)};
  	--space        : 0;
 
- 	--beat-xs: calc(var(--leading)*.25rem);
- 	--beat-s : calc(var(--leading)*.5rem);
- 	--beat   : calc(var(--leading)*1rem);
- 	--beat-m : calc(var(--leading)*1rem);
- 	--beat-l : calc(var(--leading)*2rem);
- 	--beat-xl: calc(var(--leading)*3rem);
- 	--tight  : 0;
+ 	--beat-xsmall: calc(var(--leading)*.25rem);
+ 	--beat-small : calc(var(--leading)*.5rem);
+ 	--beat       : calc(var(--leading)*1rem);
+ 	--beat-medium: calc(var(--leading)*1rem);
+ 	--beat-large : calc(var(--leading)*2rem);
+ 	--beat-xlarge: calc(var(--leading)*3rem);
+ 	--tight      : 0;
  }

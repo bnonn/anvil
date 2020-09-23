@@ -10,7 +10,7 @@ $text-inputs: "email",
 	[type="#{$input}"] {
 		border    : var(--border-medium) solid var(--c-neutral);
 		margin-top: .5rem; // to accommodate the dodging placeholder/label text
-		padding   : var(--beat-s);
+		padding   : var(--beat-small);
 		transition: all .2s;
 
 		&:hover,

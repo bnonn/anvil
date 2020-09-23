@@ -11,7 +11,7 @@ require_once "head.php";
 
 <body class="@center-v">
 	<?php require_once "site-header.php"; ?>
-	<main>
+	<main id="main-content">
 		<article class="@stack &space:large">
 
 			<section class="@box &space:above:large &space:below:tight %running">

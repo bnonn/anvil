@@ -6,7 +6,7 @@
  * @package Anvil
  */
 
-define("ANV_VERSION",         "5");
+define("ANV_VERSION",         "v5");
 
 /**
  * Compare a nav item to the current page and return the

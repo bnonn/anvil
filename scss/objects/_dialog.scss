@@ -24,7 +24,7 @@ dialog {
 		border     : 0;
 		color      : var(--c-running);
 		cursor     : pointer;
-		height     : var(--beat-l);
+		height     : var(--beat-large);
 		line-height: 3.4rem; // not quite sure why
 		margin     : 0;
 		overflow   : hidden;
@@ -32,7 +32,7 @@ dialog {
 		position   : absolute;
 		right      : 0;
 		top        : 0;
-		width      : var(--beat-l);
+		width      : var(--beat-large);
 
 		&:hover {
 			color     : var(--c-warning);

@@ -5,7 +5,7 @@
 		cursor        : text;
 		display       : block;
 		font-size     : var(--fs-s);
-		margin-left   : var(--beat-s);
+		margin-left   : var(--beat-small);
 		margin-top    : -2.1rem; // unfortunately we need to use magic numbers here
 		pointer-events: none;
 		position      : absolute;

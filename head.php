@@ -21,7 +21,7 @@
 
 	<!-- Finished loading Google fonts -->
 
-	<link rel="stylesheet" href="https://anvil.bnonn.com/v4/style.css">
+	<link rel="stylesheet" href="https://anvil.bnonn.com/<?= ANV_VERSION; ?>/style.css">
 
 	<link rel="preconnect" href="//kit.fontawesome.com" crossorigin>
 
