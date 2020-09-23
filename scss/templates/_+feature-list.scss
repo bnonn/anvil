@@ -24,8 +24,9 @@
 	width        : calc(var(--icon-size) * var(--icon-size-multiplier));
 
 	&+* {
+		--head-space: 0;
+
 		flex-shrink: 99; // whatever comes after the icon needs to give it space
-		margin-top : 0;
 	}
 
 	.\&short-items & {

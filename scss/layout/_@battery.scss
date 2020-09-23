@@ -27,17 +27,17 @@
 		max-width: var(--constrain-width);
 	}
 
-	&.\&arrange {
-		&\:centered>* {
+	&.\&arrange\: {
+		&centered>* {
 			justify-content: center;
 		}
 
-		&\:right>* {
+		&right>* {
 			justify-content: flex-end;
 		}
 	}
 
-	&.\&suppress-scroller {
+	&.\&suppress\:scroller {
 		overflow: hidden;
 	}
 

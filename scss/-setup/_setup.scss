@@ -12,11 +12,12 @@
 	 * element.
 	 */
 
-	--bg    : var(--c-bg);
-	--border: 0;
-	--ff    : var(--ff-running);
-	--fs    : var(--fs-running);
-	--fw    : var(--fw-normal);
+	--bg        : var(--c-bg);
+	--border    : 0;
+	--head-space: var(--beat);
+	--ff        : var(--ff-running);
+	--fs        : var(--fs-running);
+	--fw        : var(--fw-normal);
 
 	background-color: var(--bg);
 	color           : var(--c-running);
@@ -54,8 +55,8 @@
 	animation-iteration-count: 1;
 }
 
-*+* {
-	margin-top: beats(1);
+*+*:not(body) {
+	margin-top: var(--head-space);
 }
 
 /**

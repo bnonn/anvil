@@ -20,8 +20,8 @@ define("GFONTS",              "Abril+Fatface|IBM+Plex+Sans|IBM+Plex+Mono");
 
 // Site info
 
-define("ANV_TITLE",           "Semantic Anvil Templating System", true);
-define("ANV_SITENAME",        "Semantic Anvil", true);
+define("ANV_TITLE",           "Anvil Templating System", true);
+define("ANV_SITENAME",        "Anvil", true);
 define("ANV_TAGLINE",         "Blazes, only better", true);
 
 

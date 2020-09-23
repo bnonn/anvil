@@ -3,27 +3,27 @@
  */
 
 @mixin constraints() {
-	&.\&constrain {
-		&\:height {
-			&\:max {
+	&.\&constrain\: {
+		&height\: {
+			&max {
 				--constrain-height: 100vh;
 			}
 		}
 
-		&\:width {
-			&\:max {
+		&width\: {
+			&max {
 				--constrain-width: 100vw;
 			}
 
-			&\:measure {
+			&measure {
 				--constrain-width: var(--measure);
 			}
 
-			&\:medium {
+			&medium {
 				--constrain-width: calc(var(--measure)/2);
 			}
 
-			&\:min {
+			&min {
 				--constrain-width: var(--measure-min);
 			}
 		}

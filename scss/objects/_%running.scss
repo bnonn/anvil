@@ -6,7 +6,7 @@
 	font-family: var(--ff-running);
 
 	h1 {
-		margin-top: beats(2);
+		margin-top: var(--beat-l);
 	}
 
 	& h1+h2 {

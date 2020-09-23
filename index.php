@@ -4,6 +4,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']
 $this_page = "home";
 $page_title = "Driver Workflow Apps - Mobile Workflow Apps for Trucking Fleets | Eleos";
 
+require_once "anvil.php";
 require_once "head.php";
 
 ?>

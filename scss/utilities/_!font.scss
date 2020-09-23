@@ -10,42 +10,42 @@
 	font-family: var(--ff-heading);
 }
 
-.\!font {
+.\!font\: {
 
 	// Styles
 
-	&\:alt {
+	&alt {
 		@include ff-alt();
 	}
 
-	&\:heading {
+	&heading {
 		@include ff-heading();
 	}
 
-	&\:sans {
+	&sans {
 		--ff-recursive--mono: MONO"0";
 		font-family         : var(--ff-sans) !important;
 	}
 
 	// Sizes
 
-	&\:xsmall {
+	&xsmall {
 		font-size: var(--fs-xs) !important;
 	}
 
-	&\:small {
+	&small {
 		font-size: var(--fs-s) !important;
 	}
 
-	&\:medium {
+	&medium {
 		font-size: var(--fs-m) !important;
 	}
 
-	&\:large {
+	&large {
 		font-size: var(--fs-l) !important;
 	}
 
-	&\:xlarge {
+	&xlarge {
 		font-size: var(--fs-xl) !important;
 	}
 }

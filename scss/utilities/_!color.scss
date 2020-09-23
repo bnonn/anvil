@@ -1,28 +1,28 @@
 .\!color {
-	&\:bg {
-		&\:lighter {
+	&\:bg\: {
+		&lighter {
 			background: var(--c-neutral--lighter) !important;
 		}
 
-		&\:lightest {
+		&lightest {
 			background: var(--c-bg) !important;
 		}
 
-		&\:light {
+		&light {
 			background: var(--c-neutral--light) !important;
 		}
 	}
 
-	&\:border {
-		&\:bg {
+	&\:border\: {
+		&bg {
 			border-color: var(--c-bg);
 		}
 
-		&\:lighter {
+		&lighter {
 			border-color: var(--c-neutral--lighter) !important;
 		}
 
-		&\:lightest {
+		&lightest {
 			border-color: var(--c-bg) !important;
 		}
 	}
@@ -32,8 +32,8 @@
 		color           : var(--c-running--reversed);
 	}
 
-	&\:text {
-		&\:warning {
+	&\:text\: {
+		&warning {
 			color: var(--c-warning) !important;
 		}
 	}

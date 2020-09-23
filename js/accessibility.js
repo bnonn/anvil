@@ -24,4 +24,4 @@ addAttribute( "a[target='_blank']", "rel", "noopener" ); // All links opening in
  * Add tabindexes to critical elements so they're tappable on mobile.
  */
 
-addAttribute( "dfn[title], abbr[title], .\\@reel:not(.\\?suppress-a11y-assist) > *", "tabindex", "0" );
+addAttribute( "dfn[title], abbr[title], .\\@reel:not(.\\?suppress\\:a11y-assist) > *", "tabindex", "0" );

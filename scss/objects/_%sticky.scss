@@ -2,12 +2,12 @@
 	position: sticky;
 	z-index : 1;
 
-	&.\&arrange {
-		&\:bottom {
+	&.\&arrange\: {
+		&bottom {
 			bottom: var(--beat-s);
 		}
 
-		&\:top {
+		&top {
 			top: var(--beat-s);
 		}
 	}

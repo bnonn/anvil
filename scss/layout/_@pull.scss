@@ -13,23 +13,23 @@
 	max-width    : var(--pull-size) !important;
 
 	&>*+* {
-		margin-top: 0;
+		--head-space: 0;
 	}
 
-	&.\&arrange {
-		&\:left {
+	&.\&arrange\: {
+		&left {
 			float       : left;
 			margin-right: calc(var(--pull-space) / 2);
 		}
 
-		&\:right {
+		&right {
 			float      : right;
 			margin-left: calc(var(--pull-space) / 2);
 		}
 	}
 
-	&.\&size {
-		&\:small {
+	&.\&size\: {
+		&small {
 			--pull-size: 38%;
 
 			@include breakpoint($widescreen) {
@@ -37,7 +37,7 @@
 			}
 		}
 
-		&\:medium {
+		&medium {
 			--pull-size: 50%;
 
 			@include breakpoint($widescreen) {
@@ -45,7 +45,7 @@
 			}
 		}
 
-		&\:large {
+		&large {
 			--pull-size: 100%;
 
 			@include breakpoint($widescreen) {

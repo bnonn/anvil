@@ -25,14 +25,12 @@
 	 */
 
 	header {
+		--head-space: 0;
+
 		align-items: flex-start;
 		background : var(--c-neutral--lighter);
 		display    : flex;
 		padding    : var(--review-space);
-
-		&>* {
-			margin-top: 0;
-		}
 
 		li {
 			font-family: var(--ff-heading);

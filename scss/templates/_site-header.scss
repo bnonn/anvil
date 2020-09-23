@@ -13,8 +13,8 @@ body>header {
 	h1 {
 		font-size  : var(--fs-l);
 		font-weight: var(--fw-medium);
-		margin-top : beats(2);
-		margin-left: beats(1);
+		margin-top : var(--beat-l);
+		margin-left: var(--beat-m);
 		text-align : left;
 	}
 
@@ -58,7 +58,7 @@ body>header {
 						transition     : all .3s;
 					}
 
-					&.is-active {
+					&.is\:active {
 						border-color: var(--c-neutral);
 						color       : var(--c-running);
 						font-weight : var(--fw-bold);
@@ -98,7 +98,7 @@ body>header {
 			padding: beats(.25);
 
 			&:hover,
-			&.is-active {
+			&.is\:active {
 				background: transparent;
 			}
 		}

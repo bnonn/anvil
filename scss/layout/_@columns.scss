@@ -11,15 +11,12 @@
 	display  : flex;
 	flex-wrap: wrap;
 
-	*+* {
-		margin-top: 0;
-	}
-
 	&>* {
+		--head-space: 0;
+
 		flex-grow : 1;
 		flex-basis: calc((var(--columns-threshold) - 100%) * 999);
 		margin    : var(--columns-space);
-		margin-top: 0;
 		min-width : var(--measure-min);
 	}
 

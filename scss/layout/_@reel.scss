@@ -63,8 +63,9 @@
 	}
 
 	&>*+* {
-		margin-left: var(--reel-space);
-		margin-top : 0 !important; // in a context of @running
+		--head-space: 0;
+		margin-left : var(--reel-space);
+		margin-top  : var(--head-space) !important; // in a context of %running
 	}
 
 	&>img {
@@ -73,35 +74,37 @@
 		width     : auto;
 	}
 
-	&.\&suppress-clicker {
+	&.\&suppress\: {
+		&clicker {
 
-		&::after,
-		&::before {
-			display: none;
+			&::after,
+			&::before {
+				display: none;
+			}
+		}
+
+		&scroller {
+			scrollbar-color: transparent;
+
+			&::-webkit-scrollbar {
+				height: 0;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: transparent;
+				background-image: none;
+			}
 		}
 	}
 
-	&.\&suppress-scroller {
-		scrollbar-color: transparent;
-
-		&::-webkit-scrollbar {
-			height: 0;
-		}
-
-		&::-webkit-scrollbar-track {
-			background-color: transparent;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background-color: transparent;
-			background-image: none;
-		}
-	}
-
-	&.is-overflowing {
+	&.is\:overflowing {
 		padding-bottom: var(--reel-space);
 
-		&.\&suppress-scroller {
+		&.\&suppress\:scroller {
 			padding-bottom: 0;
 		}
 	}

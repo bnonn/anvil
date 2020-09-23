@@ -31,6 +31,6 @@ h2 {
 	@include h2();
 
 	*+& {
-		margin-top: beats(2);
+		margin-top: var(--beat-l);
 	}
 }

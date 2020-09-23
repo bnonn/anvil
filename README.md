@@ -1,6 +1,6 @@
-# semantic-anvil
+# Anvil
 
-Semantic Anvil is a CSS framework developed on principles drawn from the wisdom of computer science more generally. One of the key things that makes it different to the typical approach to CSS is the use of the SOLID principle. This in turn leads to an axiomatic, or algorithmic, approach.
+Anvil is a CSS framework developed on principles drawn from the wisdom of computer science more generally. One of the key things that makes it different to the typical approach to CSS is the use of the SOLID principle. This in turn leads to an axiomatic, or algorithmic, approach.
 
 ## 1. SOLID
 
@@ -13,7 +13,7 @@ One class should only ever do one thing. What this means depends on the layer of
 * **Template responsibility:** At the first two layers, CSS is essentially independent of the HTML; the layout and object classes are written with no assumptions (generally) about what the markup structure will look like where they are used. At the template level, HTML and CSS are tightly linked; we are explicitly creating a CSS structure to match and style a defined HTML structure that either _will_ not change, or in fact _must_ always be written the same way. Hence the term _template._ This is not often necessary, and is generally undesirable, as if the markup changes, the CSS breaks. Usually we can simply use composition of layout and objects to achieve what we need on a page, without this danger. But there are some instances where this is inefficient or impossible. Two examples would be the site header (masthead/banner area) and review cards, which must be laid out a particular way, and must be styled precisely to match that layout. Template classes are a natural result of needing repeatable patterns in HTML, and work well with CMSes.
 * **Override responsibility:** This includes utility classes, used to make minor adjustments to a general class. Some common adjustments are separated into utilities in Anvil (e.g., `!color:text:warning`), while others are included as variants in lower-level classes (e.g., `@box &space:vert:tight`).
 * **API responsibility:** I.e., hooks into JavaScript to achieve things that can't be done using standard CSS (the "default" API). This is fairly rare, as Anvil relies very little on JavaScript, but there are some important enhancements and even core functions that require it. E.g., `?open(dialog)` or `?make(sticky)`.
-* **Stateful responsibility:** Also relatively rare, but very important; there are times we need to know the state of an element in order to know what to draw. E.g., `is-active` or `is-stuck`. State classes avoid the `has` keyword to avoid confusion, since we can always use `is` instead; for instance, `has-children` can equally well be `is-parent`.
+* **Stateful responsibility:** Also relatively rare, but very important; there are times we need to know the state of an element in order to know what to draw. E.g., `is:active` or `is:stuck`. State classes avoid the `has` keyword to avoid confusion, since we can always use `is` instead; for instance, `has:children` can equally well be `is:parent`.
 
 ### 2. Open for extension (but closed to modification)
 
@@ -37,7 +37,7 @@ A functional outworking of this is that Anvil's classes are almost entirely flat
 
 ## 2. Axiomatic & algorithmic
 
-In order to properly implement the principles of SOLID, Semantic Anvil is based on an axiomatic and algorithmic style architecture. This means we're starting with monad-like style algorithms, rather than manually-defined per-component definitions. This is inspired by https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ and https://every-layout.dev. The idea is simple, but deep: generate a limited number of discrete and very low-specificity classes for creating any layout, before considering any higher-level prescriptions. Then, only when necessary, we build exceptions to these primitives at a higher specificity.
+In order to properly implement the principles of SOLID, Anvil is based on an axiomatic and algorithmic style architecture. This means we're starting with monad-like style algorithms, rather than manually-defined per-component definitions. This is inspired by https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ and https://every-layout.dev. The idea is simple, but deep: generate a limited number of discrete and very low-specificity classes for creating any layout, before considering any higher-level prescriptions. Then, only when necessary, we build exceptions to these primitives at a higher specificity.
 
 Another way to think of this is as adding some imperative qualities to CSS, rather than relying on pure declaration.
 
@@ -48,8 +48,8 @@ Because the axiomatic system relies on layout primitives and a clear view of the
   - `+` for templates: implementation-level, markup-dependent compositions designed to style specific HTML that will always be the same. Why? Because the plus sign looks like _t_ for template.
   - `&` for variations to primitives, objects, or templates; e.g., `<div class="@box &color:reversed">` to invert the colors or `&size:xlarge` to increase spacing. Why? Because you're specifying a basic class _and_ some extra variation.
  - `!` for utilities: helper classes that make single-use overrides at the implementation level; e.g. `.!text-align:center`. Why? Because they're `!important`.
- - `is-` for states; e.g. `.is-active`
- - `?` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.?is-active`. Why? Because the question mark looks like a hook, and because JavaScript is going to interrogate the page for these classes.
+ - `is:` for states; e.g. `.is:active`
+ - `?` for classes that bind to JavaScript, in order to separate style and functionality; e.g. `.?is:active`. Why? Because the question mark looks like a hook, and because JavaScript is going to interrogate the page for these classes.
 
 All low-level classes are defined using mixins that can then be included in other classes. The idea behind this is extensibility within the code structure of Anvil, _not_ assigning particular layouts to various classes or elements to make front-end development less verbose. In other words, we do _not_ want something like this, just to save us the trouble of explicitly declaring a `<dialog>` element's layout type:
 ```

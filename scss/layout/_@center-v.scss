@@ -57,12 +57,12 @@
 
 	&.\&loose>footer,
 	&.\&loose>&\\footer {
-		margin-top: beats(2)
+		margin-top: var(--beat-l);
 	}
 
 	&.\&loose>header,
 	&.\&loose>&\\header {
-		margin-bottom: beats(2)
+		margin-bottom: var(--beat-l);
 	}
 }
 

@@ -50,12 +50,12 @@ function reelScroll( event )
 	const reel = event.currentTarget.parentNode;
 
 	// check that we actually have an active item
-	if ( !reel.querySelector( ".has-focus" ) )
-		reel.firstElementChild.classList.add( "has-focus" )
+	if ( !reel.querySelector( ".has\\:focus" ) )
+		reel.firstElementChild.classList.add( "has\\:focus" )
 
 	const dir = event.currentTarget.getAttribute( "rel" ),
 		reelItems = reel.querySelectorAll( ":scope > *" ),
-		activeItem = reel.querySelector( ".has-focus" ),
+		activeItem = reel.querySelector( ".has\\:focus" ),
 		prevButton = reel.querySelector( "[rel='prev']" );
 
 	let focusIndex = [].slice // we're going to need the active element index
@@ -88,8 +88,8 @@ function reelScroll( event )
 	 * Focus the new slide based on the index we calculated.
 	 */
 
-	activeItem.classList.remove( "has-focus" );
-	reelItems[focusIndex].classList.add( "has-focus" );
+	activeItem.classList.remove( "has\\:focus" );
+	reelItems[focusIndex].classList.add( "has\\:focus" );
 	reelItems[focusIndex].focus();
 
 	/**

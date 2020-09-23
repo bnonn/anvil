@@ -8,9 +8,9 @@ function toggleBlur()
 
 	blurrableEls.forEach( ( el ) =>
 	{
-		el.classList.contains( "is-blurred" )
-			? el.classList.remove( "is-blurred" )
-			: el.classList.add( "is-blurred" );
+		el.classList.contains( "is\\:blurred" )
+			? el.classList.remove( "is\\:blurred" )
+			: el.classList.add( "is\\:blurred" );
 	} );
 }
 
