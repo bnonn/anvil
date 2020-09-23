@@ -1,6 +1,6 @@
 @mixin h1() {
 	font-family: var(--ff-heading);
-	font-size  : var(--fs-xl);
+	font-size  : var(--fs-xlarge);
 	font-weight: var(--fw-normal);
 	line-height: 1.1;
 
@@ -10,7 +10,7 @@
 }
 
 @mixin h2() {
-	font-size  : var(--fs-l);
+	font-size  : var(--fs-large);
 	font-weight: var(--fw-bold);
 }
 

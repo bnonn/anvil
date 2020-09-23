@@ -30,22 +30,22 @@
 	// Sizes
 
 	&xsmall {
-		font-size: var(--fs-xs) !important;
+		font-size: var(--fs-xsmall) !important;
 	}
 
 	&small {
-		font-size: var(--fs-s) !important;
+		font-size: var(--fs-small) !important;
 	}
 
 	&medium {
-		font-size: var(--fs-m) !important;
+		font-size: var(--fs-medium) !important;
 	}
 
 	&large {
-		font-size: var(--fs-l) !important;
+		font-size: var(--fs-large) !important;
 	}
 
 	&xlarge {
-		font-size: var(--fs-xl) !important;
+		font-size: var(--fs-xlarge) !important;
 	}
 }

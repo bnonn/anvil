@@ -11,7 +11,7 @@ body>header {
 	}
 
 	h1 {
-		font-size  : var(--fs-l);
+		font-size  : var(--fs-large);
 		font-weight: var(--fw-medium);
 		margin-top : var(--beat-large);
 		margin-left: var(--beat-medium);
@@ -19,7 +19,7 @@ body>header {
 	}
 
 	h2 {
-		font-size    : var(--fs-xs);
+		font-size    : var(--fs-xsmall);
 		font-weight  : var(--fw-normal);
 		margin-bottom: beats(1);
 		margin-left  : beats(1);
@@ -46,7 +46,7 @@ body>header {
 					color          : var(--c-neutral--dark);
 					display        : block;
 					font-family    : var(--ff-heading);
-					font-size      : var(--fs-xs);
+					font-size      : var(--fs-xsmall);
 					margin-right   : var(--border-large); // aesthetic separation
 					padding        : beats(.75) 1rem beats(.75) beats(.5); // optical adjustment
 					text-decoration: none;
@@ -88,7 +88,7 @@ body>header {
 	}
 
 	nav[aria-label="secondary"] {
-		font-size: var(--fs-xs);
+		font-size: var(--fs-xsmall);
 		position : absolute;
 		right    : beats(.5);
 		top      : beats(.25);
