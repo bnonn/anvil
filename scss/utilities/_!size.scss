@@ -1,30 +1,24 @@
 .\!size {
-	&\:border {
-		&\:small {
+	&\:border\: {
+		&small {
 			border-style: solid;
 			border-width: var(--border-small);
 		}
 
-		&\:medium {
+		&medium {
 			border-style: solid;
 			border-width: var(--border-medium);
 		}
 
-		&\:large {
+		&large {
 			border-style: solid;
 			border-width: var(--border-large);
 		}
 	}
 
-	&\:text {
-		&\:xsmall {
+	&\:text\: {
+		&xsmall {
 			font-size: var(--fs-xsmall) !important;
-		}
-	}
-
-	&\:width {
-		&\:measure {
-			max-width: var(--measure) !important;
 		}
 	}
 }

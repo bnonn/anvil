@@ -3,8 +3,8 @@
 <header>
 	<div class="@columns &space:tight" style="--threshold:var(--measure);">
 		<hgroup>
-			<h1>Eleos</h1>
-			<h2>The unified workflow app that automates trip management &amp; makes drivers happy</h2>
+			<h1>Anvil</h1>
+			<h2>A modular approach to laying out websites</h2>
 		</hgroup>
 		<nav aria-label="main">
 			<ul class="@reel &suppress:scroller ?suppress:a11y-assist &suppress:clicker &space:tight">
@@ -18,7 +18,7 @@
 	</div>
 	<!--@columns-->
 	<nav aria-label="secondary">
-		<ul class="@reel &suppress:scroller &suppress:a11y-assist &suppress:clicker &space:tight">
+		<ul class="@reel &suppress:scroller ?suppress:a11y-assist &suppress:clicker &space:tight">
 			<li><a href="#0" <?= is_active("developers", $this_page); ?>>Developers</a></li>
 			<li><a href="#0" <?= is_active("careers", $this_page); ?>>Careers</a></li>
 			<li><a href="#0" <?= is_active("support", $this_page); ?>>Support</a></li>

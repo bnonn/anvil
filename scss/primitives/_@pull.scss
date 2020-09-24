@@ -7,10 +7,10 @@
 	--pull-size   : 38%;
 	--pull-space  : var(--beat);
 
-	border       : var(--border-width) solid var(--c-neutral);
-	margin-bottom: calc(var(--pull-space) - var(--border-width));
-	margin-top   : calc(var(--pull-space) - var(--border-width));
-	max-width    : var(--pull-size) !important;
+	border          : var(--border-width) solid var(--c-neutral);
+	// margin-bottom: calc(var(--pull-space) - var(--border-width));
+	// margin-top   : calc(var(--pull-space) - var(--border-width));
+	max-width       : var(--pull-size) !important;
 
 	&>*+* {
 		--head-space: 0;
@@ -46,10 +46,12 @@
 		}
 
 		&large {
-			--pull-size: 100%;
+			--pull-size : 100%;
+			--pull-space: 0;
 
 			@include breakpoint($widescreen) {
-				--pull-size: 50%;
+				--pull-size : 50%;
+				--pull-space: var(--beat);
 			}
 		}
 	}

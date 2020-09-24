@@ -1,12 +1,13 @@
 /**
- * Watch for clicks on links in the <summary> of details elements
- * and toggle the expanded state.
+ * Progressive enhancement to enable links in the <summary> of
+ * details elements to expand them. Watches for clicks and 
+ * toggles the expanded state.
  */
 
 ( function ()
 {
 	"use strict";
-	const className = 'details a._toggle';
+	const className = 'details a.\\?toggle';
 	const toggles = Array.from( document.querySelectorAll( `${className}` ) );
 
 	let getClosest = function ( el, selector )

@@ -1,0 +1,7 @@
+@mixin suppress() {
+	&.\&suppress\: {
+		&owl {
+			--head-space: initial;
+		}
+	}
+}

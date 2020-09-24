@@ -2,7 +2,7 @@
  * Anvil prototyping engine
  *
  * @package Anvil
- * @version 4 beta
+ * @version 5 beta
  */
 /**
  * Establish rhythm.
@@ -114,7 +114,6 @@
   border-width: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-variation-settings: var(--ff-recursive--mono), var(--ff-recursive--slnt), var(--ff-recursive--crsv);
   margin: 0;
   max-width: 100vw;
   outline: 0;
@@ -258,17 +257,6 @@ sup {
 }
 
 /**
- * Set up focus styling for elements we need to tab to, like 
- * anchors, buttons, cards in a reel, etc.
- */
-/**
- * Helper mixin to consistently adjust spacing and sizing on
- * layout primitives or objects while staying dry.
- */
-/**
- * Constrain elements to certain predefined settings.
- */
-/**
  * Creates an "old lens" effect.
  */
 /**
@@ -303,6 +291,17 @@ sup {
   }
 }
 
+/**
+ * Set up focus styling for elements we need to tab to, like 
+ * anchors, buttons, cards in a reel, etc.
+ */
+/**
+ * Helper mixin to consistently adjust spacing and sizing on
+ * layout primitives or objects while staying dry.
+ */
+/**
+ * Constrain elements to certain predefined settings.
+ */
 /**
  * Lays out grandchildren in a series that wraps.
  *
@@ -848,8 +847,6 @@ sup {
   --pull-size: 38%;
   --pull-space: var(--beat);
   border: var(--border-width) solid var(--c-neutral);
-  margin-bottom: calc(var(--pull-space) - var(--border-width));
-  margin-top: calc(var(--pull-space) - var(--border-width));
   max-width: var(--pull-size) !important;
 }
 
@@ -889,11 +886,13 @@ sup {
 
 .\@pull.\&size\:large {
   --pull-size: 100%;
+  --pull-space: 0;
 }
 
 @media (min-width: 72rem) {
   .\@pull.\&size\:large {
     --pull-size: 50%;
+    --pull-space: var(--beat);
   }
 }
 
@@ -1391,21 +1390,17 @@ dialog .\?close\(dialog\) i {
  */
 .\%notice {
   --bg: #f1f1f1;
-  --border: var(--border-large);
-  --border-color: #e0e0e0;
-  --color: black;
-  border: var(--border);
-  border-color: var(--border-color);
-  border-left-width: 3rem;
-  border-radius: .4rem;
+  border: var(--border-large);
+  border-color: var(--c-neutral--light);
+  border-left-width: var(--beat-large);
+  border-radius: var(--border-large);
   border-style: solid;
-  color: var(--color);
   font-family: var(--ff-heading);
-  padding: 0.75rem;
+  padding: var(--beat-small);
   position: relative;
 }
 
-.\%notice\\icon {
+.\%notice .__icon {
   font-size: 1.5rem;
   left: -3rem;
   position: absolute;
@@ -1415,18 +1410,14 @@ dialog .\?close\(dialog\) i {
 
 .\%notice.\&info {
   --bg: var(--c-info--bg);
-  --border-color: var(--c-info--light);
-  --color: var(--c-info--dark);
+  border-color: var(--c-info--light);
+  color: var(--c-info--dark);
 }
 
 .\%notice.\&warning {
   --bg: var(--c-warning--bg);
-  --border-color: var(--c-warning--light);
-  --color: var(--c-warning--dark);
-}
-
-.\%notice > * {
-  font-family: inherit;
+  border-color: var(--c-warning--light);
+  color: var(--c-warning--dark);
 }
 
 /**
@@ -2353,16 +2344,8 @@ ol.\+feature-list li::before + * {
   font-size: var(--fs-xsmall) !important;
 }
 
-.\!size\:width\:measure {
-  max-width: var(--measure) !important;
-}
-
 .\!space\:above\:tight {
   margin-top: 0 !important;
-}
-
-.\!suppress\:owl {
-  --head-space: initial;
 }
 
 /**

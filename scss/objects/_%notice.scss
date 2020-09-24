@@ -3,22 +3,18 @@
  */
 
 @mixin notice() {
-	--bg          : #f1f1f1;
-	--border      : var(--border-large);
-	--border-color: #e0e0e0;
-	--color       : black;
+	--bg: #f1f1f1;
 
-	border           : var(--border);
-	border-color     : var(--border-color);
-	border-left-width: beats(2);
-	border-radius    : .4rem;
+	border           : var(--border-large);
+	border-color     : var(--c-neutral--light);
+	border-left-width: var(--beat-large);
+	border-radius    : var(--border-large);
 	border-style     : solid;
-	color            : var(--color);
 	font-family      : var(--ff-heading);
-	padding          : beats(.5);
+	padding          : var(--beat-small);
 	position         : relative;
 
-	&\\icon {
+	.__icon {
 		font-size : beats(1);
 		left      : -#{beats(2)};
 		position  : absolute;
@@ -27,21 +23,16 @@
 	}
 
 	&.\&info {
-		--bg          : var(--c-info--bg);
-		--border-color: var(--c-info--light);
-		--color       : var(--c-info--dark);
+		--bg        : var(--c-info--bg);
+		border-color: var(--c-info--light);
+		color       : var(--c-info--dark);
 	}
 
 	&.\&warning {
-		--bg          : var(--c-warning--bg);
-		--border-color: var(--c-warning--light);
-		--color       : var(--c-warning--dark);
+		--bg        : var(--c-warning--bg);
+		border-color: var(--c-warning--light);
+		color       : var(--c-warning--dark);
 	}
-
-	&>* {
-		font-family: inherit; // override default p, ol etc
-	}
-
 }
 
 .\%notice {
