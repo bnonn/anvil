@@ -1523,11 +1523,11 @@ dialog .\?close\(dialog\) i {
 }
 
 .\%notice .__icon {
-  font-size: 1.5rem;
-  left: -3rem;
+  font-size: var(--beat-medium);
+  left: calc(var(--beat-large)*-1);
   position: absolute;
   text-align: center;
-  width: 3rem;
+  width: var(--beat-large);
 }
 
 .\%notice.\&info {

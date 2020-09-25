@@ -15,11 +15,11 @@
 	position         : relative;
 
 	.__icon {
-		font-size : beats(1);
-		left      : -#{beats(2)};
+		font-size : var(--beat-medium);
+		left      : calc(var(--beat-large)*-1);
 		position  : absolute;
 		text-align: center;
-		width     : beats(2);
+		width     : var(--beat-large);
 	}
 
 	&.\&info {
