@@ -1716,7 +1716,7 @@ blockquote {
   --text-color: var(--c-running--reversed);
   background-color: var(--button-color);
   border: var(--border-medium) solid var(--text-color);
-  color: var(--text-color);
+  color: var(--text-color) !important;
   cursor: pointer;
   font-weight: var(--fw-bold);
   position: relative;
@@ -1738,7 +1738,7 @@ blockquote {
 }
 
 .\%action-clicker:hover {
-  background-color: var(--button-color);
+  background-color: var(--button-color) !important;
   border-color: var(--text-color);
   -webkit-transition: all .2s;
   transition: all .2s;
@@ -1753,6 +1753,7 @@ blockquote {
 .\%action-clicker:focus {
   background-color: var(--button-color);
   border-color: var(--text-color);
+  outline: 0;
   -webkit-transition: all .2s;
   transition: all .2s;
 }

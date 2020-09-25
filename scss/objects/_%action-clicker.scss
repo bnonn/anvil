@@ -9,7 +9,7 @@
 
 	background-color: var(--button-color);
 	border          : var(--border-medium) solid var(--text-color);
-	color           : var(--text-color);
+	color           : var(--text-color) !important; // anchor specificity sucks
 	cursor          : pointer;
 	font-weight     : var(--fw-bold);
 	position        : relative;
@@ -28,7 +28,7 @@
 	}
 
 	&:hover {
-		background-color: var(--button-color);
+		background-color: var(--button-color) !important;
 		border-color    : var(--text-color);
 		transition      : all .2s;
 
@@ -41,6 +41,7 @@
 	&:focus {
 		background-color: var(--button-color);
 		border-color    : var(--text-color);
+		outline         : 0; // for anchors
 		transition      : all .2s;
 
 		&::after {
