@@ -27,6 +27,8 @@
 			@if $axis !=na {
 				$axes: "above", "below", "left", "right";
 
+				// TODO: figure out conditional logic for vertical and horizontal
+
 				@each $new-axis in $axes {
 
 					&\:#{$new-axis} {

@@ -3,12 +3,21 @@
  */
 
 @mixin pull() {
-	--border-width: 0;
-	--pull-size   : 38%;
-	--pull-space  : var(--beat);
+	--pull-size       : 38%;
+	--pull-space      : var(--beat);
+	--pull-space-vert : var(--pull-space);
+	--pull-space-above: var(--pull-space-vert);
+	--pull-space-below: var(--pull-space-vert);
+	--pull-space-left : 0;
+	--pull-space-right: 0;
 
-	border   : var(--border-width) solid var(--c-neutral);
-	max-width: var(--pull-size) !important;
+	margin-bottom: var(--pull-space-below);
+	margin-left  : var(--pull-space-left);
+	margin-right : var(--pull-space-right);
+	margin-top   : var(--pull-space-above);
+	max-width    : var(--pull-size) !important;
+
+	@include dimension-adjustments(pull, spacing, vertical);
 
 	&>*+* {
 		--head-space: 0;
@@ -16,17 +25,15 @@
 
 	&.\&arrange\: {
 		&left {
-			@include breakpoint($widescreen) {
-				float       : left;
-				margin-right: calc(var(--pull-space) / 2);
-			}
+			--pull-space-right: var(--beat-small);
+
+			float: left;
 		}
 
 		&right {
-			@include breakpoint($widescreen) {
-				float      : right;
-				margin-left: calc(var(--pull-space) / 2);
-			}
+			--pull-space-left: var(--beat-small);
+
+			float: right;
 		}
 	}
 
@@ -48,12 +55,16 @@
 		}
 
 		&large {
-			--pull-size : 100%;
-			--pull-space: 0;
+			--pull-size: 100%;
+
+			margin-left : 0;
+			margin-right: 0;
 
 			@include breakpoint($widescreen) {
-				--pull-size : 50%;
-				--pull-space: var(--beat);
+				--pull-size: 50%;
+
+				margin-left : var(--pull-space-left);
+				margin-right: var(--pull-space-right);
 			}
 		}
 	}

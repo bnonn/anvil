@@ -843,29 +843,152 @@ sup {
  * Pull blocks to one side, for quotes, inline nav, asides etc.
  */
 .\@pull {
-  --border-width: 0;
   --pull-size: 38%;
   --pull-space: var(--beat);
-  border: var(--border-width) solid var(--c-neutral);
+  --pull-space-vert: var(--pull-space);
+  --pull-space-above: var(--pull-space-vert);
+  --pull-space-below: var(--pull-space-vert);
+  --pull-space-left: 0;
+  --pull-space-right: 0;
+  margin-bottom: var(--pull-space-below);
+  margin-left: var(--pull-space-left);
+  margin-right: var(--pull-space-right);
+  margin-top: var(--pull-space-above);
   max-width: var(--pull-size) !important;
+}
+
+.\@pull.\&space\:tight {
+  --pull-space: var(--tight);
+}
+
+.\@pull.\&space\:xsmall {
+  --pull-space: var(--beat-xsmall);
+}
+
+.\@pull.\&space\:small {
+  --pull-space: var(--beat-small);
+}
+
+.\@pull.\&space\:medium {
+  --pull-space: var(--beat-medium);
+}
+
+.\@pull.\&space\:large {
+  --pull-space: var(--beat-large);
+}
+
+.\@pull.\&space\:xlarge {
+  --pull-space: var(--beat-xlarge);
+}
+
+.\@pull.\&space\:above\:tight {
+  --pull-space-above: var(--tight);
+}
+
+.\@pull.\&space\:above\:xsmall {
+  --pull-space-above: var(--beat-xsmall);
+}
+
+.\@pull.\&space\:above\:small {
+  --pull-space-above: var(--beat-small);
+}
+
+.\@pull.\&space\:above\:medium {
+  --pull-space-above: var(--beat-medium);
+}
+
+.\@pull.\&space\:above\:large {
+  --pull-space-above: var(--beat-large);
+}
+
+.\@pull.\&space\:above\:xlarge {
+  --pull-space-above: var(--beat-xlarge);
+}
+
+.\@pull.\&space\:below\:tight {
+  --pull-space-below: var(--tight);
+}
+
+.\@pull.\&space\:below\:xsmall {
+  --pull-space-below: var(--beat-xsmall);
+}
+
+.\@pull.\&space\:below\:small {
+  --pull-space-below: var(--beat-small);
+}
+
+.\@pull.\&space\:below\:medium {
+  --pull-space-below: var(--beat-medium);
+}
+
+.\@pull.\&space\:below\:large {
+  --pull-space-below: var(--beat-large);
+}
+
+.\@pull.\&space\:below\:xlarge {
+  --pull-space-below: var(--beat-xlarge);
+}
+
+.\@pull.\&space\:left\:tight {
+  --pull-space-left: var(--tight);
+}
+
+.\@pull.\&space\:left\:xsmall {
+  --pull-space-left: var(--beat-xsmall);
+}
+
+.\@pull.\&space\:left\:small {
+  --pull-space-left: var(--beat-small);
+}
+
+.\@pull.\&space\:left\:medium {
+  --pull-space-left: var(--beat-medium);
+}
+
+.\@pull.\&space\:left\:large {
+  --pull-space-left: var(--beat-large);
+}
+
+.\@pull.\&space\:left\:xlarge {
+  --pull-space-left: var(--beat-xlarge);
+}
+
+.\@pull.\&space\:right\:tight {
+  --pull-space-right: var(--tight);
+}
+
+.\@pull.\&space\:right\:xsmall {
+  --pull-space-right: var(--beat-xsmall);
+}
+
+.\@pull.\&space\:right\:small {
+  --pull-space-right: var(--beat-small);
+}
+
+.\@pull.\&space\:right\:medium {
+  --pull-space-right: var(--beat-medium);
+}
+
+.\@pull.\&space\:right\:large {
+  --pull-space-right: var(--beat-large);
+}
+
+.\@pull.\&space\:right\:xlarge {
+  --pull-space-right: var(--beat-xlarge);
 }
 
 .\@pull > * + * {
   --head-space: 0;
 }
 
-@media (min-width: 72rem) {
-  .\@pull.\&arrange\:left {
-    float: left;
-    margin-right: calc(var(--pull-space) / 2);
-  }
+.\@pull.\&arrange\:left {
+  --pull-space-right: var(--beat-small);
+  float: left;
 }
 
-@media (min-width: 72rem) {
-  .\@pull.\&arrange\:right {
-    float: right;
-    margin-left: calc(var(--pull-space) / 2);
-  }
+.\@pull.\&arrange\:right {
+  --pull-space-left: var(--beat-small);
+  float: right;
 }
 
 .\@pull.\&size\:small {
@@ -890,13 +1013,15 @@ sup {
 
 .\@pull.\&size\:large {
   --pull-size: 100%;
-  --pull-space: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (min-width: 72rem) {
   .\@pull.\&size\:large {
     --pull-size: 50%;
-    --pull-space: var(--beat);
+    margin-left: var(--pull-space-left);
+    margin-right: var(--pull-space-right);
   }
 }
 
