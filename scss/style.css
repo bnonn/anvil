@@ -854,14 +854,18 @@ sup {
   --head-space: 0;
 }
 
-.\@pull.\&arrange\:left {
-  float: left;
-  margin-right: calc(var(--pull-space) / 2);
+@media (min-width: 72rem) {
+  .\@pull.\&arrange\:left {
+    float: left;
+    margin-right: calc(var(--pull-space) / 2);
+  }
 }
 
-.\@pull.\&arrange\:right {
-  float: right;
-  margin-left: calc(var(--pull-space) / 2);
+@media (min-width: 72rem) {
+  .\@pull.\&arrange\:right {
+    float: right;
+    margin-left: calc(var(--pull-space) / 2);
+  }
 }
 
 .\@pull.\&size\:small {

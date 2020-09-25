@@ -7,10 +7,8 @@
 	--pull-size   : 38%;
 	--pull-space  : var(--beat);
 
-	border          : var(--border-width) solid var(--c-neutral);
-	// margin-bottom: calc(var(--pull-space) - var(--border-width));
-	// margin-top   : calc(var(--pull-space) - var(--border-width));
-	max-width       : var(--pull-size) !important;
+	border   : var(--border-width) solid var(--c-neutral);
+	max-width: var(--pull-size) !important;
 
 	&>*+* {
 		--head-space: 0;
@@ -18,13 +16,17 @@
 
 	&.\&arrange\: {
 		&left {
-			float       : left;
-			margin-right: calc(var(--pull-space) / 2);
+			@include breakpoint($widescreen) {
+				float       : left;
+				margin-right: calc(var(--pull-space) / 2);
+			}
 		}
 
 		&right {
-			float      : right;
-			margin-left: calc(var(--pull-space) / 2);
+			@include breakpoint($widescreen) {
+				float      : right;
+				margin-left: calc(var(--pull-space) / 2);
+			}
 		}
 	}
 
