@@ -20,7 +20,7 @@
 	}
 
 	&>*+* {
-		--head-space: var(--stack-space);
+		margin-top: var(--stack-space);
 	}
 
 	&:only-child {
