@@ -10,11 +10,17 @@
 	<!-- Load Google fonts; see https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
 
 	<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0..1,300..900&display=swap">
-	<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0..1,300..900&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2
+			?family=Work+Sans:ital,wght@0..1,300..900
+			&display=swap">
+	<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2
+			?family=Work+Sans:ital,wght@0..1,300..900
+			&display=swap">
 
 	<noscript>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0..1,300..900&display=swap">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2
+				?family=Work+Sans:ital,wght@0..1,300..900
+				&display=swap">
 	</noscript>
 
 	<!-- Load FontAwesome -->

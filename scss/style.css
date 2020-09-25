@@ -1195,16 +1195,10 @@ b {
   --fw: var(--fw-bold);
 }
 
-em,
-i {
-  --ff-recursive--slnt: "slnt"-15;
-}
-
 /**
  * Used to establish sane baselines for headings.
  */
 .\%heading {
-  --ff-recursive--mono: "MONO"0;
   font-family: var(--ff-heading);
   letter-spacing: -.03em;
   line-height: 1.2;
@@ -1217,7 +1211,6 @@ h3,
 h4,
 h5,
 h6 {
-  --ff-recursive--mono: "MONO"0;
   font-family: var(--ff-heading);
   letter-spacing: -.03em;
   line-height: 1.2;
@@ -1928,16 +1921,17 @@ body > header hgroup {
 body > header h1 {
   font-size: var(--fs-large);
   font-weight: var(--fw-medium);
-  margin-top: var(--beat-large);
+  margin-bottom: 0;
   margin-left: var(--beat-medium);
+  margin-top: var(--beat-large);
   text-align: left;
 }
 
 body > header h2 {
   font-size: var(--fs-xsmall);
   font-weight: var(--fw-normal);
-  margin-bottom: 1.5rem;
-  margin-left: 1.5rem;
+  margin-bottom: var(--beat-medium);
+  margin-left: var(--beat-medium);
   margin-top: auto !important;
 }
 
@@ -2247,7 +2241,6 @@ ol.\+feature-list li::before + * {
 }
 
 .\!font\:sans {
-  --ff-recursive--mono: MONO"0";
   font-family: var(--ff-sans) !important;
 }
 
@@ -2342,10 +2335,6 @@ ol.\+feature-list li::before + * {
 
 .\!size\:text\:xsmall {
   font-size: var(--fs-xsmall) !important;
-}
-
-.\!space\:above\:tight {
-  margin-top: 0 !important;
 }
 
 /**

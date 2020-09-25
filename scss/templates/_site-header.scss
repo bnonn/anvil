@@ -11,18 +11,19 @@ body>header {
 	}
 
 	h1 {
-		font-size  : var(--fs-large);
-		font-weight: var(--fw-medium);
-		margin-top : var(--beat-large);
-		margin-left: var(--beat-medium);
-		text-align : left;
+		font-size    : var(--fs-large);
+		font-weight  : var(--fw-medium);
+		margin-bottom: 0;
+		margin-left  : var(--beat-medium);
+		margin-top   : var(--beat-large);
+		text-align   : left;
 	}
 
 	h2 {
 		font-size    : var(--fs-xsmall);
 		font-weight  : var(--fw-normal);
-		margin-bottom: beats(1);
-		margin-left  : beats(1);
+		margin-bottom: var(--beat-medium);
+		margin-left  : var(--beat-medium);
 		margin-top   : auto !important;
 	}
 

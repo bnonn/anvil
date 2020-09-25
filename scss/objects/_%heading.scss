@@ -3,11 +3,10 @@
  */
 
 @mixin heading() {
-	--ff-recursive--mono: "MONO"0;
-	font-family         : var(--ff-heading);
-	letter-spacing      : -.03em;
-	line-height         : 1.2;
-	max-width           : var(--measure);
+	font-family   : var(--ff-heading);
+	letter-spacing: -.03em;
+	line-height   : 1.2;
+	max-width     : var(--measure);
 }
 
 .\%heading {
