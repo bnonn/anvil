@@ -1,0 +1,10 @@
+figure {
+	background-color: var(--c-neutral--light);
+
+	figcaption {
+		font-size  : var(--fs-xsmall);
+		line-height: 1.2;
+		margin-top : var(--beat-xsmall);
+		text-align : center;
+	}
+}
