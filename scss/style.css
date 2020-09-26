@@ -257,6 +257,17 @@ sup {
 }
 
 /**
+ * Constrain elements to certain predefined settings.
+ */
+/**
+ * Helper mixin to consistently adjust spacing and sizing on
+ * layout primitives or objects while staying dry.
+ */
+/**
+ * Set up focus styling for elements we need to tab to, like 
+ * anchors, buttons, cards in a reel, etc.
+ */
+/**
  * Creates an "old lens" effect.
  */
 /**
@@ -291,17 +302,6 @@ sup {
   }
 }
 
-/**
- * Set up focus styling for elements we need to tab to, like 
- * anchors, buttons, cards in a reel, etc.
- */
-/**
- * Helper mixin to consistently adjust spacing and sizing on
- * layout primitives or objects while staying dry.
- */
-/**
- * Constrain elements to certain predefined settings.
- */
 /**
  * Lays out grandchildren in a series that wraps.
  *
