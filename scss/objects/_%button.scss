@@ -4,18 +4,18 @@
 
 @mixin button() {
 	background : var(--c-neutral);
-	color      : var(--c-running--reversed);
+	color      : var(--c-running-reversed);
 	cursor     : pointer;
 	font-family: var(--ff-sans);
 	transition : all .2s;
 
 	&:hover {
-		background: var(--c-neutral--dark);
+		background: var(--c-neutral-dark);
 		transition: all .2s;
 	}
 
 	&:focus {
-		background: var(--c-neutral--darker);
+		background: var(--c-neutral-darker);
 		transition: all .2s;
 	}
 

@@ -37,7 +37,7 @@
 
 @mixin feature-list() {
 	--icon                : "\f251";
-	--icon-bg             : var(--c-neutral--light);
+	--icon-bg             : var(--c-neutral-light);
 	--icon-border         : transparent;
 	--icon-color          : var(--c-running);
 	--icon-size           : 2.5rem;
@@ -84,7 +84,7 @@ ol.\+feature-list {
 	li::before {
 		@include feature-list-icon();
 
-		color            : var(--c-neutral--dark);
+		color            : var(--c-neutral-dark);
 		counter-increment: features;
 		content          : counter(features);
 		font-weight      : var(--fw-heavy);

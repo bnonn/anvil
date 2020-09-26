@@ -6,7 +6,7 @@
 	--bg: #f1f1f1;
 
 	border           : var(--border-large);
-	border-color     : var(--c-neutral--light);
+	border-color     : var(--c-neutral-light);
 	border-left-width: var(--beat-large);
 	border-radius    : var(--border-large);
 	border-style     : solid;
@@ -23,15 +23,15 @@
 	}
 
 	&.\&info {
-		--bg        : var(--c-info--bg);
-		border-color: var(--c-info--light);
-		color       : var(--c-info--dark);
+		--bg        : var(--c-info-bg);
+		border-color: var(--c-info-light);
+		color       : var(--c-info-dark);
 	}
 
 	&.\&warning {
-		--bg        : var(--c-warning--bg);
-		border-color: var(--c-warning--light);
-		color       : var(--c-warning--dark);
+		--bg        : var(--c-warning-bg);
+		border-color: var(--c-warning-light);
+		color       : var(--c-warning-dark);
 	}
 }
 

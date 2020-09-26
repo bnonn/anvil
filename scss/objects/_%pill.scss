@@ -1,6 +1,6 @@
 @mixin pill() {
-	--bg   : var(--c-neutral--light);
-	--color: var(--c-neutral--dark);
+	--bg   : var(--c-neutral-light);
+	--color: var(--c-neutral-dark);
 
 	background   : var(--bg);
 	border-radius: var(--border-medium);

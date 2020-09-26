@@ -1,5 +1,5 @@
 dialog {
-	--c-bg: var(--c-neutral--lighter);
+	--c-bg: var(--c-neutral-lighter);
 
 	background   : var(--c-bg);
 	border       : var(--border-medium) solid var(--c-neutral);
@@ -41,7 +41,7 @@ dialog {
 
 		&:focus {
 			background: var(--c-warning);
-			color     : var(--c-running--reversed);
+			color     : var(--c-running-reversed);
 		}
 
 		i {

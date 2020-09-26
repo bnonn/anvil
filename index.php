@@ -238,7 +238,7 @@ require_once "head.php";
 
 				<h2>Trusted by industry leaders</h2>
 
-				<div class="@center-h" style="background:var(--c-neutral--light); padding:5rem">
+				<div class="@center-h" style="background:var(--c-neutral-light); padding:5rem">
 					<h3>Logo cloud</h3>
 				</div>
 			</section>

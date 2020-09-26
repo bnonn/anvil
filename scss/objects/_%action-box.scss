@@ -4,8 +4,8 @@
  */
 
 @mixin action-box() {
-	--background: var(--c-neutral--lighter);
-	--border    : var(--border-large) solid var(--c-neutral--light);
+	--background: var(--c-neutral-lighter);
+	--border    : var(--border-large) solid var(--c-neutral-light);
 
 	background: var(--background);
 	border    : var(--border);

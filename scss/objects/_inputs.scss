@@ -16,7 +16,7 @@ $text-inputs: "email",
 		&:hover,
 		&:focus,
 		&:active {
-			border-color: var(--c-neutral--dark);
+			border-color: var(--c-neutral-dark);
 			transition  : all .2s;
 		}
 
@@ -27,6 +27,6 @@ $text-inputs: "email",
 }
 
 label {
-	color    : var(--c-neutral--dark);
+	color    : var(--c-neutral-dark);
 	font-size: var(--fs-small);
 }

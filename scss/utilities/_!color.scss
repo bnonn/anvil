@@ -1,7 +1,7 @@
 .\!color {
 	&\:bg\: {
 		&lighter {
-			background: var(--c-neutral--lighter) !important;
+			background: var(--c-neutral-lighter) !important;
 		}
 
 		&lightest {
@@ -9,7 +9,7 @@
 		}
 
 		&light {
-			background: var(--c-neutral--light) !important;
+			background: var(--c-neutral-light) !important;
 		}
 	}
 
@@ -19,7 +19,7 @@
 		}
 
 		&lighter {
-			border-color: var(--c-neutral--lighter) !important;
+			border-color: var(--c-neutral-lighter) !important;
 		}
 
 		&lightest {
@@ -28,8 +28,8 @@
 	}
 
 	&\:reversed {
-		background-color: var(--c-bg--reversed);
-		color           : var(--c-running--reversed);
+		background-color: var(--c-bg-reversed);
+		color           : var(--c-running-reversed);
 	}
 
 	&\:text\: {

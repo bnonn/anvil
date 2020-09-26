@@ -13,7 +13,7 @@
 	overflow-x     : auto;
 	overflow-y     : hidden;
 	position       : relative;
-	scrollbar-color: var(--c-neutral--light) var(--c-neutral);
+	scrollbar-color: var(--c-neutral-light) var(--c-neutral);
 
 	/**
 	 * Make sure the scrollbar is visible...
@@ -24,19 +24,19 @@
 	}
 
 	&::-webkit-scrollbar-track {
-		background-color: var(--c-neutral--light);
+		background-color: var(--c-neutral-light);
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: var(--c-neutral--light);
-		background-image: linear-gradient(var(--c-neutral--light) 0, var(--c-neutral--light) 0.25rem, var(--c-neutral) 0.25rem, var(--c-neutral) 0.75rem, var(--c-neutral--light) 0.75rem);
+		background-color: var(--c-neutral-light);
+		background-image: linear-gradient(var(--c-neutral-light) 0, var(--c-neutral-light) 0.25rem, var(--c-neutral) 0.25rem, var(--c-neutral) 0.75rem, var(--c-neutral-light) 0.75rem);
 	}
 
 	&>[rel] {
 		// Scroller buttons
 		align-items  : center;
-		background   : var(--c-neutral--light);
-		border       : var(--border-small) solid var(--c-neutral--light);
+		background   : var(--c-neutral-light);
+		border       : var(--border-small) solid var(--c-neutral-light);
 		bottom       : 0;
 		border-radius: var(--border-small);
 		cursor       : pointer;
