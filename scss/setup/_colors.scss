@@ -32,5 +32,10 @@
 	--c-warning-dark : var(--c-alert-dark);
 	--c-warning-light: var(--c-alert-light);
 
+	--c-input-border       : var(--c-neutral);
+	--c-input-border-active: var(--c-neutral-dark);
+	--c-progress-bar-1     : var(--c-neutral);
+	--c-progress-bar-2     : var(--c-warning);
+
 	--box-shadow-large: 0 0 1rem rgba(0, 0, 0, .1);
 }

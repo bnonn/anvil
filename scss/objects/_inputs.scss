@@ -7,8 +7,9 @@ $text-inputs: "email",
 "url";
 
 @each $input in $text-inputs {
+
 	[type="#{$input}"] {
-		border    : var(--border-medium) solid var(--c-neutral);
+		border    : var(--border-medium) solid var(--c-input-border);
 		margin-top: .5rem; // to accommodate the dodging placeholder/label text
 		padding   : var(--beat-small);
 		transition: all .2s;
@@ -16,7 +17,7 @@ $text-inputs: "email",
 		&:hover,
 		&:focus,
 		&:active {
-			border-color: var(--c-neutral-dark);
+			border-color: var(--c-input-border-active);
 			transition  : all .2s;
 		}
 

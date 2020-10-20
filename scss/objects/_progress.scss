@@ -22,8 +22,8 @@ progress {
 					rgba(255, 255, 255, .25),
 					rgba(0, 0, 0, .25)),
 				-webkit-linear-gradient(left,
-					var(--c-neutral),
-					var(--c-warning));
+					var(--c-progress-bar-1),
+					var(--c-progress-bar-2));
 
 			border-radius: 2px;
 			background-size: 2rem 1rem,
@@ -42,8 +42,8 @@ progress {
 					rgba(255, 255, 255, 0.25),
 					rgba(0, 0, 0, 0.25)),
 				-moz-linear-gradient(left,
-					var(--c-neutral),
-					var(--c-warning));
+					var(--c-progress-bar-1),
+					var(--c-progress-bar-2));
 
 			border-radius: var(--border-medium);
 			background-size: 2rem 1rem,
