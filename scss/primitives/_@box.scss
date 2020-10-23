@@ -21,6 +21,7 @@
 	padding-top   : var(--box-space-above);
 
 	@include dimension-adjustments(box, spacing, both);
+	@include suppress();
 }
 
 .\@box {

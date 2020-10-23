@@ -542,6 +542,10 @@ sup {
   --box-space-right: var(--beat-xlarge);
 }
 
+.\@box.\&suppress\:owl {
+  --head-space: initial;
+}
+
 /**
  * Centers its children horizontally in a stack
  * 
