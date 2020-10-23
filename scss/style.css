@@ -1777,6 +1777,13 @@ blockquote {
   transition: all .2s;
 }
 
+.\%action-clicker small {
+  display: block;
+  font-size: var(--fs-xsmall);
+  font-weight: var(--fw-light);
+  margin-top: var(--border-medium);
+}
+
 .\%action-clicker.\&secondary {
   --button-color: var(--c-bg);
   --text-color: var(--c-alert);
