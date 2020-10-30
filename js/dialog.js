@@ -14,32 +14,28 @@ function toggleBlur()
 	} );
 }
 
+// Listen for clicks that should open a modal
+
 for ( let trigger of modalTriggers )
 {
-	trigger.addEventListener( "click", () =>
+	trigger.addEventListener( "click", ( event ) =>
 	{
-		// Get the target modal from the href or data-target attribute
+		// Prevent things like buttons in forms from submitting instead of opening the next modal
+		event.preventDefault();
+
+		// Get the target modal from the href or data-target attribute and show it
 		var target = trigger.dataset.target || trigger.getAttribute( "href" );
 		document.querySelector( target ).showModal();
+
+		// Blur the background for greater effect
 		toggleBlur();
 	} )
 }
 
-// modalTriggers.forEach( ( trigger ) =>
-// {
-// 	// Listen for clicks that should open a modal
-// 	trigger.addEventListener( "click", () =>
-// 	{
-// 		// Get the target modal from the href or data-target attribute
-// 		var target = trigger.dataset.target || trigger.getAttribute( "href" );
-// 		document.querySelector( target ).showModal();
-// 		toggleBlur();
-// 	} );
-// } );
+// Register modals with the polyfill to set up functionality for non-compliant browsers
 
 for ( let modal of modals )
 {
-	// Register the modal with the polyfill to set up functionality for non-compliant browsers
 	dialogPolyfill.registerDialog( modal );
 
 	// Listen for clicks on the modal's close button
