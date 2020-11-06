@@ -690,32 +690,32 @@ sup {
   min-width: var(--measure-min);
 }
 
-.\@columns.\&max-2 > :nth-last-child(n+3),
-.\@columns.\&max-2 > :nth-last-child(n+3) ~ * {
+.\@columns.\&max\:2 > :nth-last-child(n+3),
+.\@columns.\&max\:2 > :nth-last-child(n+3) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max-3 > :nth-last-child(n+4),
-.\@columns.\&max-3 > :nth-last-child(n+4) ~ * {
+.\@columns.\&max\:3 > :nth-last-child(n+4),
+.\@columns.\&max\:3 > :nth-last-child(n+4) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max-4 > :nth-last-child(n+5),
-.\@columns.\&max-4 > :nth-last-child(n+5) ~ * {
+.\@columns.\&max\:4 > :nth-last-child(n+5),
+.\@columns.\&max\:4 > :nth-last-child(n+5) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max-5 > :nth-last-child(n+6),
-.\@columns.\&max-5 > :nth-last-child(n+6) ~ * {
+.\@columns.\&max\:5 > :nth-last-child(n+6),
+.\@columns.\&max\:5 > :nth-last-child(n+6) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max-6 > :nth-last-child(n+7),
-.\@columns.\&max-6 > :nth-last-child(n+7) ~ * {
+.\@columns.\&max\:6 > :nth-last-child(n+7),
+.\@columns.\&max\:6 > :nth-last-child(n+7) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
@@ -1276,6 +1276,26 @@ sup {
   margin-bottom: auto;
 }
 
+/**
+ * Create a Pinterest-style masonry layout.
+ *
+ * Used for: cards of various sorts, mostly.
+ */
+.\@masonry {
+  --space: var(--beat);
+  -webkit-column-gap: var(--space);
+          column-gap: var(--space);
+  -webkit-column-width: var(--measure-min);
+          column-width: var(--measure-min);
+}
+
+.\@masonry > * {
+  display: inline-block;
+  margin-bottom: var(--space);
+  margin-top: 0;
+  width: 100%;
+}
+
 a {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -1574,7 +1594,6 @@ dialog .\?close\(dialog\) i {
   border-radius: var(--border-large);
   -webkit-box-shadow: var(--border-large) var(--border-large) var(--border-large) rgba(0, 0, 0, 0.1);
           box-shadow: var(--border-large) var(--border-large) var(--border-large) rgba(0, 0, 0, 0.1);
-  max-width: var(--measure-min) !important;
 }
 
 details summary + * {

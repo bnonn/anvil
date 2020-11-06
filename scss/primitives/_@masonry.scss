@@ -1,0 +1,23 @@
+/**
+ * Create a Pinterest-style masonry layout.
+ *
+ * Used for: cards of various sorts, mostly.
+ */
+
+@mixin masonry() {
+	--space: var(--beat);
+
+	column-gap  : var(--space);
+	column-width: var(--measure-min);
+
+	&>* {
+		display      : inline-block;
+		margin-bottom: var(--space);
+		margin-top   : 0;
+		width        : 100%;
+	}
+}
+
+.\@masonry {
+	@include masonry();
+}
