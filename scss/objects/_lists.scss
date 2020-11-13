@@ -1,0 +1,20 @@
+dl {
+
+	dd,
+	dt {
+		padding-left : var(--beat);
+		padding-right: var(--beat);
+	}
+
+	dt {
+		@include heading();
+		font-weight: var(--fw-bold);
+	}
+}
+
+ol,
+ul {
+	li {
+		margin-left: 1rem;
+	}
+}
