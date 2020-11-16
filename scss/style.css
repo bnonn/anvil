@@ -672,6 +672,9 @@ sup {
 .\@columns {
   --columns-space: 1rem;
   --columns-threshold: 32rem;
+}
+
+.\@columns > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,68 +682,67 @@ sup {
       flex-wrap: wrap;
 }
 
-.\@columns > * {
+.\@columns > * > * {
   --head-space: 0;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: calc((var(--columns-threshold) - 100%) * 999);
       flex-basis: calc((var(--columns-threshold) - 100%) * 999);
-  margin: var(--columns-space);
-  min-width: var(--measure-min);
+  margin: calc(var(--columns-space) / 2);
 }
 
-.\@columns.\&max\:2 > :nth-last-child(n+3),
-.\@columns.\&max\:2 > :nth-last-child(n+3) ~ * {
+.\@columns > *.\&max\:2 > :nth-last-child(n+3),
+.\@columns > *.\&max\:2 > :nth-last-child(n+3) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max\:3 > :nth-last-child(n+4),
-.\@columns.\&max\:3 > :nth-last-child(n+4) ~ * {
+.\@columns > *.\&max\:3 > :nth-last-child(n+4),
+.\@columns > *.\&max\:3 > :nth-last-child(n+4) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max\:4 > :nth-last-child(n+5),
-.\@columns.\&max\:4 > :nth-last-child(n+5) ~ * {
+.\@columns > *.\&max\:4 > :nth-last-child(n+5),
+.\@columns > *.\&max\:4 > :nth-last-child(n+5) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max\:5 > :nth-last-child(n+6),
-.\@columns.\&max\:5 > :nth-last-child(n+6) ~ * {
+.\@columns > *.\&max\:5 > :nth-last-child(n+6),
+.\@columns > *.\&max\:5 > :nth-last-child(n+6) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&max\:6 > :nth-last-child(n+7),
-.\@columns.\&max\:6 > :nth-last-child(n+7) ~ * {
+.\@columns > *.\&max\:6 > :nth-last-child(n+7),
+.\@columns > *.\&max\:6 > :nth-last-child(n+7) ~ * {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-.\@columns.\&space\:tight {
+.\@columns > *.\&space\:tight {
   --columns-space: var(--tight);
 }
 
-.\@columns.\&space\:xsmall {
+.\@columns > *.\&space\:xsmall {
   --columns-space: var(--beat-xsmall);
 }
 
-.\@columns.\&space\:small {
+.\@columns > *.\&space\:small {
   --columns-space: var(--beat-small);
 }
 
-.\@columns.\&space\:medium {
+.\@columns > *.\&space\:medium {
   --columns-space: var(--beat-medium);
 }
 
-.\@columns.\&space\:large {
+.\@columns > *.\&space\:large {
   --columns-space: var(--beat-large);
 }
 
-.\@columns.\&space\:xlarge {
+.\@columns > *.\&space\:xlarge {
   --columns-space: var(--beat-xlarge);
 }
 
@@ -1389,12 +1391,6 @@ h2 {
 
 * + h2 {
   margin-top: var(--beat-large);
-}
-
-dl dd,
-dl dt {
-  padding-left: var(--beat);
-  padding-right: var(--beat);
 }
 
 dl dt {

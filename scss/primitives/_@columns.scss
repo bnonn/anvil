@@ -8,61 +8,62 @@
 	--columns-space    : 1rem;
 	--columns-threshold: 32rem;
 
-	display  : flex;
-	flex-wrap: wrap;
-
 	&>* {
-		--head-space: 0;
+		display  : flex;
+		flex-wrap: wrap;
 
-		flex-grow : 1;
-		flex-basis: calc((var(--columns-threshold) - 100%) * 999);
-		margin    : var(--columns-space);
-		min-width : var(--measure-min);
+		&>* {
+			--head-space: 0;
+
+			flex-grow : 1;
+			flex-basis: calc((var(--columns-threshold) - 100%) * 999);
+			margin    : calc(var(--columns-space) / 2);
+		}
+
+		&.\&max\: {
+			&2 {
+
+				&> :nth-last-child(n+3),
+				&> :nth-last-child(n+3)~* {
+					flex-basis: 100%;
+				}
+			}
+
+			&3 {
+
+				&> :nth-last-child(n+4),
+				&> :nth-last-child(n+4)~* {
+					flex-basis: 100%;
+				}
+			}
+
+			&4 {
+
+				&> :nth-last-child(n+5),
+				&> :nth-last-child(n+5)~* {
+					flex-basis: 100%;
+				}
+			}
+
+			&5 {
+
+				&> :nth-last-child(n+6),
+				&> :nth-last-child(n+6)~* {
+					flex-basis: 100%;
+				}
+			}
+
+			&6 {
+
+				&> :nth-last-child(n+7),
+				&> :nth-last-child(n+7)~* {
+					flex-basis: 100%;
+				}
+			}
+		}
+
+		@include dimension-adjustments(columns, spacing, na);
 	}
-
-	&.\&max\: {
-		&2 {
-
-			&> :nth-last-child(n+3),
-			&> :nth-last-child(n+3)~* {
-				flex-basis: 100%;
-			}
-		}
-
-		&3 {
-
-			&> :nth-last-child(n+4),
-			&> :nth-last-child(n+4)~* {
-				flex-basis: 100%;
-			}
-		}
-
-		&4 {
-
-			&> :nth-last-child(n+5),
-			&> :nth-last-child(n+5)~* {
-				flex-basis: 100%;
-			}
-		}
-
-		&5 {
-
-			&> :nth-last-child(n+6),
-			&> :nth-last-child(n+6)~* {
-				flex-basis: 100%;
-			}
-		}
-
-		&6 {
-
-			&> :nth-last-child(n+7),
-			&> :nth-last-child(n+7)~* {
-				flex-basis: 100%;
-			}
-		}
-	}
-
-	@include dimension-adjustments(columns, spacing, na);
 }
 
 .\@columns {

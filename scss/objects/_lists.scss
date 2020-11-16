@@ -1,10 +1,7 @@
 dl {
 
 	dd,
-	dt {
-		padding-left : var(--beat);
-		padding-right: var(--beat);
-	}
+	dt {}
 
 	dt {
 		@include heading();
