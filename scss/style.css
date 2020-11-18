@@ -687,8 +687,8 @@ sup {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-preferred-size: calc((var(--columns-threshold) - 100%) * 999);
-      flex-basis: calc((var(--columns-threshold) - 100%) * 999);
+  -ms-flex-preferred-size: calc((var(--columns-threshold) - (100%-var(--columns-space))) * 999);
+      flex-basis: calc((var(--columns-threshold) - (100%-var(--columns-space))) * 999);
   margin: calc(var(--columns-space) / 2);
 }
 
@@ -1810,7 +1810,6 @@ blockquote {
 .\%action-clicker small {
   display: block;
   font-size: var(--fs-xsmall);
-  font-weight: var(--fw-light);
   margin-top: var(--border-medium);
 }
 
@@ -2303,6 +2302,7 @@ body > footer {
   font-size: 90%;
   list-style: none;
   margin-left: 0;
+  min-width: calc((var(--measure)/2) - (var(--columns-space)*2));
 }
 
 .\+feature-list li .__icon {

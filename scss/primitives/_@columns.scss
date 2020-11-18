@@ -16,7 +16,7 @@
 			--head-space: 0;
 
 			flex-grow : 1;
-			flex-basis: calc((var(--columns-threshold) - 100%) * 999);
+			flex-basis: calc((var(--columns-threshold) - (100%-var(--columns-space))) * 999);
 			margin    : calc(var(--columns-space) / 2);
 		}
 

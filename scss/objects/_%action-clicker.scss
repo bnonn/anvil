@@ -56,10 +56,9 @@
 	}
 
 	small {
-		display    : block;
-		font-size  : var(--fs-xsmall);
-		font-weight: var(--fw-light);
-		margin-top : var(--border-medium);
+		display   : block;
+		font-size : var(--fs-xsmall);
+		margin-top: var(--border-medium);
 	}
 
 	&.\&secondary {
