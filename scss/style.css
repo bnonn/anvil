@@ -2076,7 +2076,7 @@ progress[value]::-moz-progress-bar {
 .\%dodging-labels input:focus + label {
   font-size: var(--fs-xsmall);
   margin-left: 0;
-  margin-top: -4.2rem;
+  margin-top: -4.4rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
