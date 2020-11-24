@@ -105,7 +105,7 @@ This doesn't mean there is never any need for a `block__element`-style naming co
 
 Every class has its own file.
 
-All filenames are singular; we have `_button.scss` and `_+feature-list.scss`, not `_buttons.scss` and `_+feature-list.scss`. This is because we're building discrete, single-use objects. They can have variants, but there is only ever _one fundamental object_ per class.
+All filenames are singular; we have `_button.scss` and `_+feature-list.scss`, not `_buttons.scss` and `_+feature-lists.scss`. This is because we're building discrete, single-use objects. They can have variants, but there is only ever _one fundamental object_ per class. When there is an exception to this rule, it is because the SCSS file actually does contain multiple types of something. This is rare, but sometimes it makes more sense to group element types that require very little code; e.g., `_lists.scss` contains definitions for `ul`, `ol` and `dl`.
 
 ## Class types
 
