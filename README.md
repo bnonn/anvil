@@ -1,4 +1,4 @@
-# Anvil CSS Templating Engine
+# Anvil Templating Engine
 
 Anvil is a CSS framework, for certain values of that term, developed for rapid prototyping and web development. It is essentially a tool for creating native wireframes/mockups which can then be easily extended into full websites. 
 
