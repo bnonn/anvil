@@ -30,7 +30,7 @@
 
 	<!-- THE STYLESHEET YOU ARE LOOKING FOR IS BELOW -->
 
-	<link rel="stylesheet" href="https://anvil.bnonn.com/<?= ANV_VERSION; ?>/style.css">
+	<link rel="stylesheet" href="https://anvil.bnonn.com/<?= ANV_VERSION; ?>/anvil.css">
 
 	<!-- THE STYLESHEET YOU ARE LOOKING FOR IS ABOVE -->
 

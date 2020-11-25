@@ -2059,6 +2059,16 @@ progress[value]::-moz-progress-bar {
   background-size: 2rem 1rem, 100% 100%, 100% 100%;
 }
 
+.\%dodging-label,
+.\%dodging-labels {
+  /**
+	 * Plural nomenclature included because usually this is
+	 * applied to forms, where each label in the form will be
+	 * dodging.
+	 */
+}
+
+.\%dodging-label label,
 .\%dodging-labels label {
   color: var(--c-neutral);
   cursor: text;
@@ -2072,6 +2082,8 @@ progress[value]::-moz-progress-bar {
   transition: all .2s ease;
 }
 
+.\%dodging-label input:not(:placeholder-shown) + label,
+.\%dodging-label input:focus + label,
 .\%dodging-labels input:not(:placeholder-shown) + label,
 .\%dodging-labels input:focus + label {
   font-size: var(--fs-xsmall);

@@ -2,7 +2,7 @@
 
 set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 $this_page = "home";
-$page_title = "Driver Workflow Apps - Mobile Workflow Apps for Trucking Fleets | Eleos";
+$page_title = "Anvil: algorithmic CSS framework";
 
 require_once "anvil.php";
 require_once "head.php";
@@ -15,18 +15,9 @@ require_once "head.php";
 		<article class="@stack &space:large">
 
 			<section class="@box &space:above:large %running">
-				<h1>Drivers say that replacing mobilecomm with our app has given them more clarity & freedom, with less downtime & frustration</h1>
+				<h1>Anvil</h1>
 
-				<p><strong>Eleos is the world’s most advanced driver workflow system. It unifies everything truckers need into a single workflow app that automates trip management and lets you oversee your fleet in real time. It&rsquo;s a full in-cab and out-of-cab solution.</strong></p>
-
-				<div class="@box &space:tight">
-					<div class="%video">
-						<iframe src="https://player.vimeo.com/video/380272362?color=E87722&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-					</div>
-					<script src="https://player.vimeo.com/api/player.js"></script>
-				</div>
-
-				<p>No more ancient mobilecomm your drivers hate. They have just one app that runs on the tablet in their truck—and on their phone.</p>
+				<p><strong>Anvil is a CSS framework developed on principles drawn from the wisdom of computer science more generally. Its key feature is its deliberately <abbr>SOLID</abbr> methodology, which produces an axiomatic or algorithmic approach to styling.</strong></p>
 
 				<p>With this app, they can do <em>everything.</em> This makes them happy (and more productive).</p>
 

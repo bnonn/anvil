@@ -54,6 +54,6 @@ define("EMAIL",               "bnonn@informationhighwayman.com", true);
 // define("ANV_STYLESHEET",      get_stylesheet_uri());
 // define("ANV_DEV_STYLESHEET",  get_template_directory_uri() . "/dev/style.css");
 // define("ANV_URL",             get_site_url());
-define("ANV_VERSION",         "1");
+define("ANV_VERSION",         "6");
 define("ANV_FULL_VERSION",    ANV_VERSION . ANV_REVISION);
 define("LOCAL_MAIL",          ADDRESS . ", " . CITY . ", " . POSTCODE);

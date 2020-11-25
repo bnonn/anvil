@@ -7,6 +7,7 @@
  */
 
 :root {
+
 	/**
 	 * Global variables we want to use on potentially any
 	 * element.
@@ -63,7 +64,7 @@
 	cursor: progress;
 }
 
-/*
+/**
  * Change the cursor on control elements in all browsers.
  */
 
@@ -71,7 +72,7 @@
 	cursor: pointer;
 }
 
-/*
+/**
  * Change the cursor on disabled, not-editable, or otherwise
  * inoperable elements in all browsers.
  */
@@ -81,7 +82,7 @@
 	cursor: not-allowed;
 }
 
-/*
+/**
  * Remove the tapping delay on clickable elements in all browsers.
  */
 
@@ -134,7 +135,7 @@ strong {
 	font-weight: bolder;
 }
 
-/*
+/**
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 
@@ -146,7 +147,7 @@ iframe {
 	border-style: none;
 }
 
-/*
+/**
  * Add the correct display in all browsers.
  */
 
