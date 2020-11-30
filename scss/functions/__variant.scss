@@ -1,0 +1,74 @@
+/**
+ * Helper mixin to easily add standard variants to any layout
+ * primitives or objects while staying dry. Generates class names
+ * for each primitive/object according to standard nomenclature;
+ * e.g., `.@battery.&space:large`.
+ *
+ * Called from the mixin defining the class; e.g., from the
+ * @battery primitive, to add standard spacing variants, call:
+ *
+ * ```
+ *   @include variant(battery, spacing);
+ * ```
+ */
+
+
+@mixin variant($class, $variant) {
+
+	/**
+	 * Connect the sizes that we're going to want to use in the
+	 * generated class names to the actual CSS custom properties
+	 * that make them sing.
+	 */
+
+	$sizes:
+		"tight""tight",
+		"xsmall""beat-xsmall",
+		"small""beat-small",
+		"medium""beat-medium",
+		"large""beat-large",
+		"xlarge""beat-xlarge";
+
+	@if $dimension==spacing {
+		&.\&space {
+
+			@each $size-name,
+			$beat-size in $sizes {
+				&\:#{$size-name} {
+					--#{$class}-space: var(--#{$beat-size});
+				}
+			}
+
+			@if $axis !=na {
+				$axes: "above", "below", "left", "right";
+
+				// TODO: figure out conditional logic for vertical and horizontal
+
+				@each $new-axis in $axes {
+
+					&\:#{$new-axis} {
+
+						@each $size-name,
+						$beat-size in $sizes {
+							&\:#{$size-name} {
+								--#{$class}-space-#{$new-axis}: var(--#{$beat-size});
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@else {
+		&.\&size {
+
+			@each $size-name,
+			$beat-size in $sizes {
+				&\:#{$size-name} {
+					--size: var(--#{$beat-size});
+				}
+			}
+		}
+	}
+}

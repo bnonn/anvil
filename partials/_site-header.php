@@ -4,7 +4,7 @@
 	<div class="@columns &space:tight" style="--threshold:var(--measure);">
 		<hgroup>
 			<h1>Anvil</h1>
-			<h2>A modular approach to laying out websites</h2>
+			<h2>Algorithmic CSS framework for rapidly laying out websites</h2>
 		</hgroup>
 		<nav aria-label="main">
 			<ul class="@reel &suppress:scroller ?suppress:a11y-assist &suppress:clicker &space:tight">
@@ -15,14 +15,18 @@
 				<li><a href="#0" <?= is_active("contact", $this_page); ?>><i class="fas fa-envelope"></i> Contact</a></li>
 			</ul>
 		</nav>
-	</div>
-	<!--@columns-->
+
+		<!-- This is what a secondary nav would look like:
+
 	<nav aria-label="secondary">
 		<ul class="@reel &suppress:scroller ?suppress:a11y-assist &suppress:clicker &space:tight">
-			<li><a href="#0" <?= is_active("developers", $this_page); ?>>Developers</a></li>
-			<li><a href="#0" <?= is_active("careers", $this_page); ?>>Careers</a></li>
-			<li><a href="#0" <?= is_active("support", $this_page); ?>>Support</a></li>
-			<li><a href="#0" <?= is_active("blog", $this_page); ?>>Blog</a></li>
+			<li><a href="#0">Developers</a></li>
+			<li><a href="#0">Careers</a></li>
+			<li><a href="#0">Support</a></li>
+			<li><a href="#0">Blog</a></li>
 		</ul>
-	</nav>
+	</nav> -->
+
+	</div>
+	<!--@columns-->
 </header>

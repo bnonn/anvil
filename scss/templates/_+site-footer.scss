@@ -2,7 +2,8 @@
  * Main site footer
  */
 
-body>footer {
+body>footer,
+.\+site-footer {
 	background: var(--c-neutral-light);
 	padding   : beats(3);
 }

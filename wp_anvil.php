@@ -1,7 +1,8 @@
 <?php
 
 /**
- * The base configuration for Anvil
+ * The base configuration for Anvil on WordPress, which is
+ * NOT YET BUILT.
  *
  * This file contains the following configurations:
  *

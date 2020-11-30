@@ -8,12 +8,13 @@
 @mixin reel() {
 	--reel-space: 1rem;
 
-	display        : flex;
-	height         : auto;
-	overflow-x     : auto;
-	overflow-y     : hidden;
-	position       : relative;
-	scrollbar-color: var(--c-neutral-light) var(--c-neutral);
+	display         : flex;
+	height          : auto;
+	overflow-x      : auto;
+	overflow-y      : hidden;
+	position        : relative;
+	scroll-snap-type: x mandatory;
+	scrollbar-color : var(--c-neutral-light) var(--c-neutral);
 
 	/**
 	 * Make sure the scrollbar is visible...
@@ -33,7 +34,7 @@
 	}
 
 	&>[rel] {
-		// Scroller buttons
+		// Scroller buttons; TODO: make these actually work!
 		align-items  : center;
 		background   : var(--c-neutral-light);
 		border       : var(--border-small) solid var(--c-neutral-light);
@@ -53,9 +54,13 @@
 	}
 
 	&>* {
+
+		// Reel items
+
 		@include focusable();
 
-		flex: 0 0 auto;
+		flex             : 0 0 auto;
+		scroll-snap-align: start;
 	}
 
 	&>:last-child {
@@ -63,7 +68,7 @@
 	}
 
 	&>*+* {
-		--head-space: 0;
+		--head-space: 0; // suppress default owl top margin
 		margin-left : var(--reel-space);
 		margin-top  : var(--head-space) !important; // in a context of %running
 	}
