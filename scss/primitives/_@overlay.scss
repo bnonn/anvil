@@ -1,8 +1,8 @@
 /**
- * Stick an element in the middle of the screen, out of the
+ * Sticks an element in the middle of the screen, out of the
  * normal flow, above everything else.
  *
- * Used on <dialog> elements and so forth.
+ * Use cases: <dialog> elements and so forth.
  */
 
 @mixin overlay() {

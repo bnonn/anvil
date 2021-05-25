@@ -1,0 +1,25 @@
+{
+  "name": "anvl",
+  "version": "7.1",
+  "description": "Please refer to the externally-hosted [Anvil Documentation](https://www.notion.so/bnonn/Documentation-770e22a9a0da489e90c850272b361482).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnonn/semantic-anvil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnonn/semantic-anvil/issues"
+  },
+  "homepage": "https://github.com/bnonn/semantic-anvil#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
