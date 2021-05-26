@@ -1,6 +1,8 @@
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("./scss/style.css");
-	eleventyConfig.addWatchTarget("./scss/style.css");
-	return {
-	};
+	// Watch CSS
+	eleventyConfig.addPassthroughCopy("assets");
+
+	// Add shortcode for mailing address
+
+	eleventyConfig.addShortcode("mailingAddress", (multiline = false) => exports.mailingAddress(multiline = false));
 };

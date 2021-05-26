@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<meta content="en-US" name="language">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<meta property="og:title" content="{{ title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | prepend: site.url }}">
+<meta property="og:image" content="/assets/avatar.png"> <!-- TODO: create this... -->
+<meta property="og:description" content="{{ site.description }}">
+
+<link rel="canonical" href="{{ page.url | prepend: site.url }}">
+
+<!-- Load Google fonts; see https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
+
+{% if anvl.useGfonts %}
+
+	<link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2
+			?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
+			&display=swap">
+	<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2
+			?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
+			&display=swap">
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2
+				?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
+				&display=swap">
+	</noscript>
+
+{% endif %}
+
+<!-- Load FontAwesome; TODO: sort out how this will work with hosted sites -->
+
+<link rel="preconnect" href="//kit.fontawesome.com" crossorigin="crossorigin">
+<script src="https://kit.fontawesome.com/43a0645cd7.js" crossorigin="anonymous"></script>
+
+<!-- Load Anvl framework -->
+
+<link rel="stylesheet" href="/assets/anvl.css">
+
+<title>
+	{{ site.name :: title }}
+</title>

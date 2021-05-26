@@ -1,0 +1,8 @@
+{
+	"revision": 1,
+	"color": "#b81600",
+	"useGfonts": true,
+	"gfontFamilies": [
+		"Work+Sans:ital,wght@0..1,300..900"
+	]
+}
