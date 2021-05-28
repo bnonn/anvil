@@ -5,11 +5,11 @@
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ page.url | prepend: site.url }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="/assets/avatar.png"> <!-- TODO: create this... -->
 <meta property="og:description" content="{{ site.description }}">
 
-<link rel="canonical" href="{{ page.url | prepend: site.url }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
 <!-- Load Google fonts; see https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
 
@@ -17,16 +17,34 @@
 
 	<link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin">
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2
-			?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
-			&display=swap">
+	{%- for family in anvl.gfontFamilies -%}
+			{%- if (loop.first) -%}
+				?family={{ family }}
+			{%- else -%}
+				&family={{ family }}
+			{%- endif -%}
+		{%- endfor -%}
+		&display=swap">
 	<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2
-			?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
-			&display=swap">
+		{%- for family in anvl.gfontFamilies -%}
+			{%- if (loop.first) -%}
+				?family={{ family }}
+			{%- else -%}
+				&family={{ family }}
+			{%- endif -%}
+		{%- endfor -%}
+		&display=swap">
 
 	<noscript>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2
-				?family={% for family in anvl.gfontFamilies %} {{ family }} {% endfor %}
-				&display=swap">
+		{%- for family in anvl.gfontFamilies -%}
+			{%- if (loop.first) -%}
+				?family={{ family }}
+			{%- else -%}
+				&family={{ family }}
+			{%- endif -%}
+		{%- endfor -%}
+		&display=swap">
 	</noscript>
 
 {% endif %}
@@ -41,5 +59,5 @@
 <link rel="stylesheet" href="/assets/anvl.css">
 
 <title>
-	{{ site.name :: title }}
+	{{ site.name }} :: {{ title }}
 </title>

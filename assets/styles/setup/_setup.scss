@@ -1,17 +1,17 @@
 /**
- * Set up the page and fix any cross-browser weirdness
- */
+* Set up the page and fix any cross-browser weirdness
+*/
 
 /**
- * Site setup
- */
+* Site setup
+*/
 
 :root {
 
 	/**
-	 * Global variables we want to use on potentially any
-	 * element.
-	 */
+	* Global variables we want to use on potentially any
+	* element.
+	*/
 
 	--bg        : var(--c-bg);
 	--border    : 0;
@@ -32,9 +32,7 @@
 	scroll-behavior : smooth;
 }
 
-*,
-:after,
-:before {
+* {
 	border-style  : solid;
 	border-width  : 0;
 	box-sizing    : border-box;
@@ -47,14 +45,18 @@
 }
 
 :target {
-	animation-name           : focus-highlight;
-	animation-duration       : 9s;
-	animation-iteration-count: 1;
+	-webkit-animation-name           : focus-highlight;
+	animation-name                   : focus-highlight;
+	-webkit-animation-duration       : 9s;
+	animation-duration               : 9s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count        : 1;
 }
 
-*+*:not(body) {
+body *+* {
 	margin-top: var(--head-space);
 }
+
 
 /**
  * Change the cursor on busy elements in all browsers.

@@ -1,8 +1,8 @@
 /**
- * Anvil prototyping engine
+ * Anvil Templating Engine
  *
  * @package Anvil
- * @version 5 beta
+ * @version 6
  */
 /**
  * Establish rhythm.
@@ -83,16 +83,16 @@
 }
 
 /**
- * Set up the page and fix any cross-browser weirdness
- */
+* Set up the page and fix any cross-browser weirdness
+*/
 /**
- * Site setup
- */
+* Site setup
+*/
 :root {
   /**
-	 * Global variables we want to use on potentially any
-	 * element.
-	 */
+	* Global variables we want to use on potentially any
+	* element.
+	*/
   --bg: var(--c-bg);
   --border: 0;
   --head-space: var(--beat);
@@ -111,9 +111,7 @@
   scroll-behavior: smooth;
 }
 
-*,
-:after,
-:before {
+* {
   border-style: solid;
   border-width: 0;
   -webkit-box-sizing: border-box;
@@ -128,14 +126,14 @@
 
 :target {
   -webkit-animation-name: focus-highlight;
-          animation-name: focus-highlight;
+  animation-name: focus-highlight;
   -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  animation-duration: 9s;
   -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
-* + *:not(body) {
+body * + * {
   margin-top: var(--head-space);
 }
 
@@ -146,14 +144,14 @@
   cursor: progress;
 }
 
-/*
+/**
  * Change the cursor on control elements in all browsers.
  */
 [aria-controls] {
   cursor: pointer;
 }
 
-/*
+/**
  * Change the cursor on disabled, not-editable, or otherwise
  * inoperable elements in all browsers.
  */
@@ -162,7 +160,7 @@
   cursor: not-allowed;
 }
 
-/*
+/**
  * Remove the tapping delay on clickable elements in all browsers.
  */
 a,
@@ -214,7 +212,7 @@ strong {
   font-weight: bolder;
 }
 
-/*
+/**
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 details {
@@ -225,7 +223,7 @@ iframe {
   border-style: none;
 }
 
-/*
+/**
  * Add the correct display in all browsers.
  */
 summary {
@@ -829,10 +827,10 @@ sup {
 }
 
 /**
- * Stick an element in the middle of the screen, out of the
+ * Sticks an element in the middle of the screen, out of the
  * normal flow, above everything else.
  *
- * Used on <dialog> elements and so forth.
+ * Use cases: <dialog> elements and so forth.
  */
 .\@overlay {
   --overlay-space: calc(var(--leading) * 1rem);
@@ -851,7 +849,9 @@ sup {
 }
 
 /**
- * Pull blocks to one side, for quotes, inline nav, asides etc.
+ * Pulls an element to one side.
+ *
+ * Use cases: quotes, inline nav, asides etc.
  */
 .\@pull {
   --pull-size: 38%;
@@ -1051,6 +1051,8 @@ sup {
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
   scrollbar-color: var(--c-neutral-light) var(--c-neutral);
   /**
 	 * Make sure the scrollbar is visible...
@@ -1102,6 +1104,7 @@ sup {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .\@reel > *:focus {
@@ -1279,9 +1282,9 @@ sup {
 }
 
 /**
- * Create a Pinterest-style masonry layout.
+ * Creates a Pinterest-style masonry layout.
  *
- * Used for: cards of various sorts, mostly.
+ * Use cases: laying out large numbers of cards, mostly.
  */
 .\@masonry {
   --space: var(--beat);
@@ -2107,16 +2110,20 @@ figure figcaption {
 /**
  * Site header, including nav.
  */
-body > header {
+body > header,
+.\+site-header {
   background: var(--c-neutral-light);
+  margin-top: 0;
   max-width: none;
 }
 
-body > header hgroup {
+body > header hgroup,
+.\+site-header hgroup {
   border-bottom: var(--border-small) solid var(--c-neutral);
 }
 
-body > header h1 {
+body > header h1,
+.\+site-header h1 {
   font-size: var(--fs-large);
   font-weight: var(--fw-medium);
   margin-bottom: 0;
@@ -2125,7 +2132,8 @@ body > header h1 {
   text-align: left;
 }
 
-body > header h2 {
+body > header h2,
+.\+site-header h2 {
   font-size: var(--fs-xsmall);
   font-weight: var(--fw-normal);
   margin-bottom: var(--beat-medium);
@@ -2133,21 +2141,26 @@ body > header h2 {
   margin-top: auto !important;
 }
 
-body > header nav {
+body > header nav,
+.\+site-header nav {
   margin-top: 0;
 }
 
 body > header nav,
-body > header nav ul {
+body > header nav ul,
+.\+site-header nav,
+.\+site-header nav ul {
   max-width: none;
 }
 
-body > header nav ul {
+body > header nav ul,
+.\+site-header nav ul {
   list-style: none;
   width: auto;
 }
 
-body > header nav ul li a {
+body > header nav ul li a,
+.\+site-header nav ul li a {
   border-bottom: var(--border-large) solid transparent;
   color: var(--c-neutral-dark);
   display: block;
@@ -2161,19 +2174,22 @@ body > header nav ul li a {
   transition: all .5s;
 }
 
-body > header nav ul li a:hover {
+body > header nav ul li a:hover,
+.\+site-header nav ul li a:hover {
   text-decoration: underline;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-body > header nav ul li a.is\:active {
+body > header nav ul li a.is\:active,
+.\+site-header nav ul li a.is\:active {
   border-color: var(--c-neutral);
   color: var(--c-running);
   font-weight: var(--fw-bold);
 }
 
-body > header nav ul li a.\%nav-cta {
+body > header nav ul li a.\%nav-cta,
+.\+site-header nav ul li a.\%nav-cta {
   background-color: var(--c-alert);
   border: 0;
   border-radius: var(--border-medium);
@@ -2183,35 +2199,42 @@ body > header nav ul li a.\%nav-cta {
   padding: 0.375rem 1.125rem;
 }
 
-body > header nav ul li a.\%nav-cta:hover {
+body > header nav ul li a.\%nav-cta:hover,
+.\+site-header nav ul li a.\%nav-cta:hover {
   background-color: var(--c-alert-dark);
 }
 
-body > header nav[aria-label="main"] {
+body > header nav[aria-label="main"],
+.\+site-header nav[aria-label="main"] {
   border-bottom: var(--border-small) solid var(--c-neutral);
   margin-top: auto;
 }
 
-body > header nav[aria-label="secondary"] {
+body > header nav[aria-label="secondary"],
+.\+site-header nav[aria-label="secondary"] {
   font-size: var(--fs-xsmall);
   position: absolute;
   right: 0.75rem;
   top: 0.375rem;
 }
 
-body > header nav[aria-label="secondary"] a {
+body > header nav[aria-label="secondary"] a,
+.\+site-header nav[aria-label="secondary"] a {
   color: var(--c-neutral);
   padding: 0.375rem;
 }
 
-body > header nav[aria-label="secondary"] a:hover, body > header nav[aria-label="secondary"] a.is\:active {
+body > header nav[aria-label="secondary"] a:hover, body > header nav[aria-label="secondary"] a.is\:active,
+.\+site-header nav[aria-label="secondary"] a:hover,
+.\+site-header nav[aria-label="secondary"] a.is\:active {
   background: transparent;
 }
 
 /**
  * Main site footer
  */
-body > footer {
+body > footer,
+.\+site-footer {
   background: var(--c-neutral-light);
   padding: 4.5rem;
 }
@@ -2412,18 +2435,18 @@ ol.\+feature-list li::before + * {
   text-shadow: -0.1rem -0.1rem 0.02rem rgba(30, 144, 255, 0.4), 0.1rem 0.1rem 0.02rem rgba(255, 69, 0, 0.4);
 }
 
-.\!h1 {
+.\&impersonate\:h1 {
   font-family: var(--ff-heading);
   font-size: var(--fs-xlarge);
   font-weight: var(--fw-normal);
   line-height: 1.1;
 }
 
-.\!h1 strong {
+.\&impersonate\:h1 strong {
   font-weight: var(--fw-medium);
 }
 
-.\!h2 {
+.\&impersonate\:h2 {
   font-size: var(--fs-large);
   font-weight: var(--fw-bold);
 }
@@ -2552,3 +2575,4 @@ ol.\+feature-list li::before + * {
   margin-left: auto !important;
   padding-left: inherit !important;
 }
+/*# sourceMappingURL=style.css.map */
