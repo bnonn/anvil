@@ -1,9 +1,17 @@
-export function mailingAddress(multiline = false) {
-	return multiline === true
+/**
+ * 
+ * @param {boolean} multiline 
+ * @returns a mailing address for the site, either inline or as a block
+ * 
+ */
+
+module.exports = function getMailingAddress(format) {
+	const contact = require("../../_data/contact.json");
+	return format.multiline
 		? `<address>
-				${config.contact.street}<br>
-				${config.contact.city} ${config.contact.postcode}<br>
-				${config.contact.country}
+			${contact.street}<br>
+			${contact.city} ${contact.postcode}<br>
+			${contact.country}
 			</address>`
-		: `${config.contact.street}, ${config.contact.city}, ${config.contact.postcode}`
+		: `${contact.street}, ${contact.city}, ${contact.postcode}`;
 }

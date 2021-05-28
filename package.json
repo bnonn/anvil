@@ -1,6 +1,6 @@
 {
   "name": "anvl",
-  "version": "7.1",
+  "version": "0.7.1",
   "description": "Please refer to the externally-hosted [Anvil Documentation](https://www.notion.so/bnonn/Documentation-770e22a9a0da489e90c850272b361482).",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

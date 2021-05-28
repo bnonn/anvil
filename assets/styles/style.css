@@ -2107,13 +2107,16 @@ figure figcaption {
   text-align: center;
 }
 
+address {
+  font-style: normal;
+}
+
 /**
  * Site header, including nav.
  */
 body > header,
 .\+site-header {
   background: var(--c-neutral-light);
-  margin-top: 0;
   max-width: none;
 }
 
